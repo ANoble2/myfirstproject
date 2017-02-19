@@ -43,7 +43,12 @@ session_start ();
 
                 <?php
                 if (isset ($_SESSION['user'])) { ?>
+                <form class="navbar-form navbar-right" action="logout.php" method="post">
+                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Log Out </button>
 
+                </form>
+
+                    <?php } else { ?>
                      <form class="navbar-form navbar-right" action="login.php" method="post">
                         <div class="form-group">
                         <input type="text" placeholder="Username" class="form-control" name="username">
@@ -54,9 +59,7 @@ session_start ();
                             <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </button>
                      </form>
-                <?php
-
-                ?>
+                <?php } ?>
                     </div>
                 </form>
 
