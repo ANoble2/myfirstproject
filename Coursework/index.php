@@ -44,7 +44,7 @@ session_start ();
                 <?php
                 if (isset ($_SESSION['user'])) { ?>
                 <form class="navbar-form navbar-right" action="logout.php" method="post">
-                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Log Out </button>
+                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
 
                 </form>
 
