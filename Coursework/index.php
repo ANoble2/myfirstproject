@@ -43,16 +43,16 @@
 
                     <div class="form-group">
 
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                        </ul>
+                        <form class="nav navbar-nav navbar-right">
+                            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
+                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </button>
+
+                        </form>
                     </div>
                 </form>
 
             </div>
 
-        </div>
         </div>
     </nav>
 </head>
@@ -108,7 +108,6 @@
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <script scr="material/js/bootstrap.js"></script>
         <![endif]-->
 </body>
 </html>
