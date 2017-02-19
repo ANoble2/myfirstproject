@@ -1,3 +1,10 @@
+<?php
+
+session_start ();
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,21 +40,23 @@
                     <li><a href="">Page 1</a></li>
                     <li><a href="">Page 2</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
-                    <div class="form-group">
-                        <input type="text" placeholder="Email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control">
-                    </div>
 
-                    <div class="form-group">
+                <?php
+                if (isset ($_SESSION['user'])) { ?>
 
-                        <form class="nav navbar-nav navbar-right">
+                     <form class="navbar-form navbar-right" action="login.php" method="post">
+                        <div class="form-group">
+                        <input type="text" placeholder="Username" class="form-control" name="username">
+                         </div>
+                         <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control" name="password">
+                            </div>
                             <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
                             <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </button>
+                     </form>
+                <?php
 
-                        </form>
+                ?>
                     </div>
                 </form>
 
