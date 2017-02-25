@@ -22,7 +22,7 @@ function printWantedBanner($name, $specsowned, $mugsowned, $sausagerollsowned)
 printWantedBanner("Ashley Noble",1,2,3);
 printWantedBanner("Rusty the Dog",3,4,5);
 printWantedBanner("Fiona Calder",6,7,8);
-printWantedBanner("Rex the Dog",9,10,11);
+printWantedBanner("Rex the Dog",1,4,2);
 ?>
 
 
