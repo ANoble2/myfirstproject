@@ -8,16 +8,20 @@
     $name = "Ash";
 $myage = 18;
 
-    if ($myage > 16) {
-        print "buy specs!";
+    if ($myage >= 21) {
+        print " Ash can buy specs, mugs and sauage rolls!";
     }
-    elseif ($myage > 18) {
-        print "buy mugs";
+    elseif ($myage >= 18) {
+        print "Ash can buy specs and mugs";
+    }
+    elseif ($myage >= 16) {
+        print "Ash can buy specs";
     }
     else {
-        print "buy sausage rolls";
+        echo "You can't buy anything";
     }
-    ?>
+?>
+
     </p>
 </body>
 </html>
