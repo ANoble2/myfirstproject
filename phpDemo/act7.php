@@ -7,7 +7,7 @@
 
 function awardforcapture($specsowned, $mugsowned, $sausagerollsowned)
 {
-    $award = 10 * (($specsowned * $mugsowned * $sausagerollsowned)/3);
+    $award = 10 * (($specsowned * $mugsowned * $sausagerollsowned)/2);
     return $award;
 }
 function printWantedBanner($name, $specsowned, $mugsowned, $sausagerollsowned)
