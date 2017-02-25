@@ -12,7 +12,7 @@
    Comment:<textarea name="comment" rows="5" cols="40"></textarea><br>
     <input type="submit" value="Submit">
     <?php
-    if(isset($_POST['submit'])) {
+    if(isset($_SERVER['submit'])) {
         $forename = $_POST["forename"];
         $surname = $_POST["surname"];
         $gender = $_POST["gender"];
