@@ -7,9 +7,8 @@
 
 <?php
 $query = $_GET["query"];
-echo "Hello". $Earth;
-echo "Hello". $Mars;
-echo "Hello". $Uranus;
+echo "Hello". $query;
+
 
 ?>
 
