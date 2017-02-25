@@ -12,14 +12,14 @@ $provisionedActivities = array("Specs", "Mugs", "Sausage Rolls"); // declares th
 echo "<h1>My Array</h1>";
 printprovisionedActivities($provisionedActivities);
 
-$provisionedActivities[1] = "Hats"; // modifies position 1 (re)
+$provisionedActivities[1] = "T-shirts"; // modifies position 1 (re)
 
-echo "<h1>Swap in Hats</h1>";
+echo "<h1>Swap in T-shirts</h1>";
 printprovisionedActivities($provisionedActivities);
 
 unset($provisionedActivities[2]); // removes the array in position 2
 
-echo "<h1>Take out Sausage Rolls</h1>";
+echo "<h1>Remove Sausage Rolls</h1>";
 printprovisionedActivities($provisionedActivities);
 
 
