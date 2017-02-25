@@ -7,7 +7,7 @@
 
 for ($x = 1; $x < 30; $x++)
 {
-    $y = 0; //I'm using this as a marker to tell that at least one thing is being made
+    $y = 0; // marker to tell  least one thing is being made
     echo "<p>On day " . $x . " the following products are available: ";
     if ($x % 2 == 0)
     {
@@ -24,9 +24,9 @@ for ($x = 1; $x < 30; $x++)
         echo "Sausage Rolls";
         $y = 1;
     }
-    if ($y != 1) //if one thing isn't being made on this day then it displays that nothing is available that day.
+    if ($y != 1) //if nothing being made will display none is available that day.
     {
-        echo "NONE";
+        echo "NONE Available";
     }
     echo "</p>";
 }
