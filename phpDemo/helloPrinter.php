@@ -6,7 +6,7 @@
 
 
 <?php
-echo "Hello " . $_GET['planet'];
+echo "Hello " . $_GET['planet']. " at " . $_GET['web'];;
 ?>
 
 </body>
