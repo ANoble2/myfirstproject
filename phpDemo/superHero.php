@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-if($_SERVER['submit']) {
+if(isset($_POST["submit"])) {
     $forename = $_POST["forename"];
     $surname = $_POST["surname"];
     $gender = $_POST["gender"];
@@ -13,15 +13,13 @@ if($_SERVER['submit']) {
     echo $forename . $surname . $gender . $comment;
 }
 ?>
-<form action="" method="post" <?php echo $_SERVER['PHP_SELF']; ?>>
+<form action="<?php $_SERVER['php_self']; ?>" method="post">
     <label>Forename</label><input type="text" name="forename">
     <label>Surname</label><input type= "text" name="surname" ><br>
     <input type="radio" name="gender" value="male" checked > Male<br>
     <input type="radio" name="gender" value="female"> Female<br>
    Comment:<textarea name="comment" rows="5" cols="40"></textarea><br>
     <input type="submit" value="Submit">
-
-
 </form>
 
 
