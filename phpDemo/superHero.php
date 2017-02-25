@@ -4,14 +4,16 @@
 </head>
 <body>
 <?php
-$forename = $_POST["forename"];
-$surname = $_POST["surname"];
-$gender = $_POST["gender"];
-$comment = $_POST["comment"];
+if(isset($_POST['submit'])) {
+    $forename = $_POST["forename"];
+    $surname = $_POST["surname"];
+    $gender = $_POST["gender"];
+    $comment = $_POST["comment"];
 
-echo $forename . $surname . $gender . $comment;
+    echo $forename . $surname . $gender . $comment;
+}
 ?>
-<form action="" method="post">
+<form action="" method="post" <?php echo $_SERVER['PHP_SELF']; ?>>
     <label>Forename</label><input type="text" name="forename">
     <label>Surname</label><input type= "text" name="surname" ><br>
     <input type="radio" name="gender" value="male" checked > Male<br>
