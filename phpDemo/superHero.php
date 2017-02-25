@@ -3,8 +3,15 @@
 <head>
 </head>
 <body>
+<?php
+$forename = $_POST["forename"];
+$surname = $_POST["surname"];
+$gender = $_POST["gender"];
+$comment = $_POST["comment"];
 
-<form action="superHeroResponse.php" method="post">
+echo $forename . $surname . $gender . $comment;
+?>
+<form action="" method="post">
     <label>Forename</label><input type="text" name="forename">
     <label>Surname</label><input type= "text" name="surname" ><br>
     <input type="radio" name="gender" value="male" checked > Male<br>
