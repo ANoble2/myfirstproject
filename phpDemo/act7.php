@@ -19,9 +19,9 @@ function printWantedBanner($name, $specsowned, $mugsowned, $sausagerollsowned)
     echo "<p>Sausage Rolls: " . $sausagerollsowned . "</p>";
     echo "<p>Award for capture: £" . awardforcapture($specsowned,$mugsowned,$sausagerollsowned) . "</p><br><br>";
 }
-printWantedBanner("Ashley",1,2,3);
-printWantedBanner("Rusty",3,4,5);
-printWantedBanner("Fiona",6,7,8);
+printWantedBanner("Ashley Noble",1,2,3);
+printWantedBanner("Rusty the Dog",3,4,5);
+printWantedBanner("Fiona Calder",6,7,8);
 ?>
 
 
