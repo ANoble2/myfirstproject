@@ -5,9 +5,9 @@
 <body>
 
 
-<a href="helloPrinter.php?planet=Earth">Earth</a>
-<a href="helloPrinter.php?planet=Mars">Mars</a>
-<a href="helloPrinter.php?planet=Uranus&web=W3schools.com">Uranus</a>
+<a href="helloPrinter.php?query=Earth">Earth</a>
+<a href="helloPrinter.php?query=Mars">Mars</a>
+<a href="helloPrinter.php?query=Uranus">Uranus</a>
 
 
 </body>

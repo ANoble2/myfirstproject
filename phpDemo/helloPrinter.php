@@ -6,7 +6,11 @@
 
 
 <?php
-echo "Hello " . $_GET['planet']. " at " . $_GET['web'];;
+$query = $_GET["query"];
+echo "Hello". $Earth;
+echo "Hello". $Mars;
+echo "Hello". $Uranus;
+
 ?>
 
 </body>
