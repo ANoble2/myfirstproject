@@ -15,7 +15,7 @@
     ?>
 
     <?php
-    $myage = "24";
+    $myage = 24;
     if ($myage == "Simon") {
         print "I know you!";
     }
