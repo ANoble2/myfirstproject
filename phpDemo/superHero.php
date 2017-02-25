@@ -4,7 +4,7 @@
 </head>
 <body>
 <?php
-if(isset($_POST['submit'])) {
+if($_SERVER['submit']) {
     $forename = $_POST["forename"];
     $surname = $_POST["surname"];
     $gender = $_POST["gender"];
