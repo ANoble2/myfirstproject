@@ -10,10 +10,10 @@
 
 <form action="checklogin.php" method="post">
     Name:<br>
-    <input type="text" name="Ashley"><br>
+    <input type="text" name="name"><br>
     <br>
     Password:<br>
-    <input type="text" name="cisco">
+    <input type="text" name="password">
     <br><br>
     <input type="submit" value="Submit">
 </form>
