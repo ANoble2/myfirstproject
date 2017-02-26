@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo $forename . $surname . $gender . $comment;
 }
 ?>
-<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+<form action="" method="post">
     <label>Forename</label><input type="text" name="forename">
     <label>Surname</label><input type= "text" name="surname" ><br>
     <input type="radio" name="gender" value="male" checked > Male<br>
