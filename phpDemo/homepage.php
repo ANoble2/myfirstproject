@@ -19,4 +19,3 @@ function displayAccessLevelInformation($accesslevel)
 }
 
 ?>
-hi
