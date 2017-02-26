@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <label>Surname</label><input type= "text" name="surname" ><br>
     <input type="radio" name="gender" value="male" checked > Male<br>
     <input type="radio" name="gender" value="female"> Female<br>
-   Comment:<textarea name="comment" rows="5" cols="40"></textarea><br>
+   Super Power choice:<textarea name="comment" rows="5" cols="40"></textarea><br>
     <input type="submit" value="Submit">
 </form>
 
