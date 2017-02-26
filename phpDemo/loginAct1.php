@@ -6,14 +6,12 @@
 </head>
 <body>
 
-
-
 <form action="checklogin.php" method="post">
     Name:<br>
-    <input type="text" name="name"><br>
+    <input type="text" name="name">
     <br>
     Password:<br>
-    <input type="text" name="password">
+    <input type="password" name="password">
     <br><br>
     <input type="submit" value="Submit">
 </form>
