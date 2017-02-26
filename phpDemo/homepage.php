@@ -19,14 +19,3 @@ function displayAccessLevelInformation($accessLevel)
 }
 
 ?>
-
-<!DOCTYPE html> 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Logged in Page</title>
-</head>
-<body>
-
-</body>
-</html>
