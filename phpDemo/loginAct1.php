@@ -1,27 +1,21 @@
 <!DOCTYPE html> 
-<?php
-$cookie_name = "username";
-setcookie('access_level','standarduser');
-
-?>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
 </head>
 <body>
 
-<?php
-$username = "Ashley";
-$password = "cisco";
 
 
-?>
-
-<form action="homepage.php" method="post">
-    Name: <input type="text" name="name"><br>
-    Password: <input type="text" name="password"><br>
-    <input type="submit">
+<form action="checklogin.php" method="post">
+    Name:<br>
+    <input type="text" name="name"><br>
+    <br>
+    Password:<br>
+    <input type="text" name="password">
+    <br><br>
+    <input type="submit" value="Submit">
 </form>
-
-
 </body>
 </html>
