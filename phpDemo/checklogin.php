@@ -7,3 +7,4 @@ if ($username =="username" && $password=="password"){
 }
 
 header('Location: homepage.php');
+?>
