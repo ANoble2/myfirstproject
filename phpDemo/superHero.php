@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $gender = $_POST["gender"];
     $comment = $_POST["comment"];
 
-    echo $forename . $surname . $gender . $comment;
+    echo "<p> {$forename} {$surname} {$gender} {$comment}</p>";
 }
 ?>
 <form action="" method="post">
