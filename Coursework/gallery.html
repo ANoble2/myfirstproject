@@ -23,7 +23,7 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">My Project</a>
+                <a class="navbar-brand" href="#">Visual Upload</a>
 
             </div>
 
@@ -33,15 +33,9 @@
                     <li class="active"><a href="">Gallery</a></li>
                     <li><a href="">Page 2</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="" method="post">
-                    <div class="form-group">
-                        <input type="text" placeholder="Username" class="form-control" name="username">
-                    </div>
-                    <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="password">
-                    </div>
-                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
-                    <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </button>
+                <form class="navbar-form navbar-right" action="logout.php" method="post">
+                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
+
                 </form>
 
             </div>
@@ -55,13 +49,45 @@
 
 <div class="container">
     <div class="jumbotron">
-        <h2>>My Gallery</h2>
+        <h2 style="text-align:center">My Gallery</h2>
     </div>
 
     <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="material/images/integration.PNG" target="_blank">
+                        <img src="material/images/integration.PNG" alt="image1" style="width:100%">
+                        <div class="caption">
+                            <p>example 1.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="material/images/integration.PNG" target="_blank">
+                        <img src="material/images/integration.PNG" alt="image2" style="width:100%">
+                        <div class="caption">
+                            <p>example 2.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <a href="material/images/integration.PNG" target="_blank">
+                        <img src="material/images/integration.PNG" alt="image3" style="width:100%">
+                        <div class="caption">
+                            <p>example 3.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-
-
+        </div>
 
 
 
