@@ -45,21 +45,23 @@ session_start ();
                 if (isset ($_SESSION['user'])) { ?>
                 <form class="navbar-form navbar-right" action="logout.php" method="post">
                     <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
-
                 </form>
 
                     <?php } else { ?>
+                <form class="navbar-form navbar-right">
+                <a href="register.php" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </a>
+                    </form>
                      <form class="navbar-form navbar-right" action="login.php" method="post">
                         <div class="form-group">
-                        <input type="text" placeholder="Username" class="form-control" name="username">
+                        <input type="text" placeholder="Username" class="form-control" name="loginusername">
                          </div>
                          <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="password">
+                        <input type="password" placeholder="Password" class="form-control" name="loginpassword">
                             </div>
-                            <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
-                            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </button>
+                         <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
+
                      </form>
-                <?php } ?>
+
                     </div>
                 </form>
 
@@ -73,8 +75,8 @@ session_start ();
 
 <div class="container">
     <div class="jumbotron">
-        <h1>Image Gallery - PHP MySQL</h1>
-        <p>Bootstrap is the most popular HTML, CSS, and JS framework for developing responsive, mobile-first projects on the web.</p>
+        <h1>Visual Upload - Photo Gallery</h1>
+        <p>Upload and share unlimited photos.Register a free account today!</p>
     </div>
 
     <div class="container">
@@ -99,7 +101,7 @@ session_start ();
             </div>
         </div>
 
-
+        <?php } ?>
 
 
 
