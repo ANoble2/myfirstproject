@@ -13,10 +13,7 @@ $last = $_POST["last"];
 $uid = $_POST["uid"];
 $pwd = $_POST["pwd"];
 
-echo $first;
-echo $last;
-echo $uid;
-echo $pwd;
+$sql = "insert into user (first,last) VALUES ()"
 ?>
 
 

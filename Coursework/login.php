@@ -10,8 +10,8 @@ session_start();
 
 include ('connection.php');
 
-$username = $_POST ['loginusername'];
-$password = $_POST ['loginpassword'];
+$username = $_POST ['username'];
+$password = $_POST ['password'];
 
 $query = mysql_query ("select * from users where username = '$username'and password = '$password'");
 

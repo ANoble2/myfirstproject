@@ -2,7 +2,6 @@
 
 session_start ();
 
-
 ?>
 
 <!DOCTYPE html>
@@ -30,40 +29,48 @@ session_start ();
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">My Project</a>
+                <a class="navbar-brand" href="#">Visual Upload</a>
 
             </div>
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
-                    <li><a href="">Page 1</a></li>
-                    <li><a href="">Page 2</a></li>
                 </ul>
 
                 <?php
                 if (isset ($_SESSION['user'])) { ?>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                        <li class="active"><a href="#">Gallery</a></li>
+                        <li class="active"><a href="#">Upload</a></li>
+                    </ul>
+
                 <form class="navbar-form navbar-right" action="logout.php" method="post">
+                    <P> Welcome <?php echo $_SESSION ['username'];?></P>
                     <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
                 </form>
 
+
                     <?php } else { ?>
+
                 <form class="navbar-form navbar-right">
                 <a href="register.php" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </a>
                     </form>
                      <form class="navbar-form navbar-right" action="login.php" method="post">
                         <div class="form-group">
-                        <input type="text" placeholder="Username" class="form-control" name="loginusername">
+                        <input type="text" placeholder="Username" class="form-control" name="username">
                          </div>
                          <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="loginpassword">
+                        <input type="password" placeholder="Password" class="form-control" name="password">
                             </div>
                          <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
 
                      </form>
-
+                    <?php } ?>
                     </div>
-                </form>
+
 
             </div>
 
@@ -101,7 +108,6 @@ session_start ();
             </div>
         </div>
 
-        <?php } ?>
 
 
 
@@ -113,15 +119,10 @@ session_start ();
 
 
 
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
+
+
         <script src="material/js/bootstrap.min.js"></script>
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+        <script src=material/js/jquery-1.10.2.min.js></script>
+
 </body>
 </html>
