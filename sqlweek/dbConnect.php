@@ -28,3 +28,15 @@ if (!$link) {
     exit;
 }
 ?>
+
+<!DOCTYPE html> 
+<html>
+<head>
+</head>
+<body>
+<h1>Please show something</h1>
+
+
+
+</body>
+</html>
