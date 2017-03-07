@@ -15,8 +15,9 @@ include ("dbConnect.php");
     <h1>My First Database Thing!</h1>
 </header>
 
-<body>
+<main>
 
+<ul>
 <?php
 // create a SQL query as a string
 $sql_query = "SELECT * FROM marvelmovies";
@@ -26,12 +27,12 @@ $result = $link->query($sql_query);
 // use fetch_array() to return an associative array
 while($row = $result->fetch_array()){
 $movieTitle = $row['title'];
-    echo "<p>{$movieTitle}</p>";
+    echo "<li>{$movieTitle}</li>";
 }
 
 ?>
-
-</body>
+    </ul>
+</main>
 
 <footer>
 
