@@ -6,7 +6,7 @@
  * Time: 12:34
  */
 $connectstr_dbhost = '';
-$connectstr_dbname = '';
+$connectstr_dbname = 'marvelheroes';
 $connectstr_dbusername = '';
 $connectstr_dbpassword = '';
 foreach ($_SERVER as $key => $value) {
