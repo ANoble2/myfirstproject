@@ -28,7 +28,7 @@ include ("dbConnect.php");
     <ul>
         <?php
         // create a SQL query as a string
-        $sql_query = "SELECT * FROM marvelmovies where produtionStudio='Marvel Studios'";
+        $sql_query = "SELECT * FROM marvelmovies where productionStudio='Marvel Studios'";
         // execute the SQL query
         $result = $link->query($sql_query);
         // iterate over $result object one $row at a time
