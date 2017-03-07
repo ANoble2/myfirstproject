@@ -5,8 +5,6 @@
  * Date: 07/03/2017
  * Time: 12:34
  */
-echo "DBTEST";
-
 $connectstr_dbhost = '';
 $connectstr_dbname = '';
 $connectstr_dbusername = '';
