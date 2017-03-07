@@ -29,14 +29,4 @@ if (!$link) {
 }
 ?>
 
-<!DOCTYPE html> 
-<html>
-<head>
-</head>
-<body>
-<h1>Please show something on screen </h1>
 
-
-
-</body>
-</html>
