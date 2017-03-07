@@ -34,7 +34,7 @@ if (!$link) {
 <head>
 </head>
 <body>
-<h1>Please show something</h1>
+<h1>Please show something on screen </h1>
 
 
 
