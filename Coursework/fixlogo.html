@@ -99,6 +99,14 @@
                 </div>
             </div>
 
+
+                    <form class="navbar-form navbar-right" action="logout.php" method="post">
+                        Welcome :<?php echo $_SESSION['username']; ?>
+                        <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span><a href="logout.php">Log Out</a></button>
+                    </form>
+                    <a class="btn btn-lg btn-default" href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
+
+
                     <hr>
                     <footer class="footer">
                         <p>&copy; 2017 Ashley Noble</p>

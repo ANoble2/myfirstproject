@@ -41,10 +41,10 @@ if(!isset($_SESSION['username'])){
                     <li class=""><a href="uploadimages.php">Upload</a></li>
                 </ul>
 
-                </form>
-                    <form class="navbar-form navbar-right" action="logout.php" method="post">
+
+                    <form class="navbar-form navbar-right">
                         Welcome :<?php echo $_SESSION['username']; ?>
-                        <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span><a href="logout.php">Log Out</a></button>
+                        <a class="btn btn-lg btn-default" href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
                     </form>
 
                 </div>
