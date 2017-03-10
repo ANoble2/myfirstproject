@@ -83,6 +83,7 @@ if(isset($_POST['btn-login'])){
 <body>
 
 
+
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -90,6 +91,7 @@ if(isset($_POST['btn-login'])){
                 <h1> Viusal upload</h1><br>
                 <img src="material/images/logo.PNG" width="304" height="236"/>
             </div>
+        </div>
             <div class="col-md-5
             <div style="width: 500px; margin: 50px auto;" >
             <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
@@ -121,10 +123,12 @@ if(isset($_POST['btn-login'])){
                 <hr/>
                 <a href="register.php">Register</a>
             </form>
+    </div>
+    </div>
         </div>
     </div>
 </div>
-</div>
+
 
 
 
