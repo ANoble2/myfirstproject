@@ -87,7 +87,7 @@ if(isset($_POST['btn-login'])){
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h1> Viusal upload</h1><br>
+                <h1> Viusal Upload</h1><br>
                 <img src="material/images/logo.PNG" width="304" height="236"/>
             </div>
             <div class="col-md-5">
