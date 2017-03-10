@@ -81,7 +81,16 @@ if(!isset($_SESSION['username'])){
                 <p> PHP MySQL, Bootstrap  </p>
 
             </div>
+
+
         </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2017 Ashley Noble</p>
+    </footer>
+</div><!-- end of container-->
 
 
         <script src="material/js/bootstrap.min.js"></script>
