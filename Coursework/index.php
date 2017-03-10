@@ -120,7 +120,7 @@ if(isset($_POST['btn-login'])){
 </div>
 </div>
 
-
+<img src="material/images/responsive.PNG" class="img-rounded" alt="Responsive" width="304" height="236">
 
 
 
