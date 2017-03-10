@@ -123,7 +123,9 @@ if(isset($_POST['btn-login'])){
     </div>
 </div>
 
-
+<footer class="footer">
+    <p>&copy; 2017 Ashley Noble</p>
+</footer>
 
 
 <script src="material/js/bootstrap.min.js"></script>
