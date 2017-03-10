@@ -64,7 +64,7 @@ if(!$error){
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="material/css/bootstrap.min.css">
+    <link rel="stylesheet" href="material/css/bootstrap.css">
 
     <nav class="navbar navbar-default">
         <div class="container">
