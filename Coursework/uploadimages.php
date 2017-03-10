@@ -1,3 +1,38 @@
+<?php
+
+if (isset($_POST["upload"])) {
+
+    $img_file = $_FILES["img_file"]["name"];
+    $folderName = "images/";
+    $validExt = array("jpg", "png", "jpeg", "bmp", "gif");
+
+    if ($img_file == "") {
+        $msg = errorMessage( "Attach an image");
+    } elseif ($_FILES["img_file"]["size"] <= 0 ) {
+        $msg = errorMessage( "Image is not proper.");
+    } else {
+        $ext = strtolower(end(explode(".", $img_file)));
+
+        if ( !in_array($ext, $validExt) )  {
+            $msg = errorMessage( "Not a valid image file");
+        } else {
+            $filePath = $folderName. rand(10000, 990000). '_'. time().'.'.$ext;
+
+            if ( move_uploaded_file( $_FILES["img_file"]["tmp_name"], $filePath)) {
+                $sql = "INSERT INTO tbl_demo5 VALUES (NULL, '".prepare_input($filePath) ."')";
+
+                $msg = ( mysql_query($sql))  ? successMessage("Uploaded and saved to database.") : errorMessage( "Problem in saving to database");
+
+            } else {
+                $msg = errorMessage( "Problem in uploading file");
+            }
+
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +45,7 @@
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
-
+</head>
     <nav class="navbar navbar-default">
         <div class="container">
 
@@ -43,7 +78,7 @@
         </div>
 
     </nav>
-</head>
+
 
 <body>
 <div class="container">
@@ -57,13 +92,13 @@
     <div class="panel-heading">Choose image to Upload
     </div>
     <div id="panelbody1" class="panel-body">
-        <form action="upload.php" method="post" enctype="multipart/form-data">
+        <form action="" method="post" enctype="multipart/form-data" onSubmit="return validateImage();" >>
             Select image to upload:
             <br>
             <br>
-            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="file" name="img_file" id="img_file">
             <br>
-            <input type="submit" value="Upload Image" name="submit">
+            <input type="submit"  value="Upload Image" name="upload">
         </form>
     </div>
 </div>
@@ -74,10 +109,10 @@
 </body>
 </html>
 
-
-
 <script src="material/js/bootstrap.min.js"></script>
 <script src=material/js/jquery-1.10.2.min.js></script>
 
+
 </body>
 </html>
+
