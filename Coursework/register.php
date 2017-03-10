@@ -1,5 +1,54 @@
 <?php
 include ('dbConnect.php');
+
+$error = false;
+if(isset($_POST['btn-register'])){
+    //Help prevent sql injection with cleaning user input
+    $username = $_POST['username'];
+    $username = strip_tags($username);
+    $username = htmlspecialchars($username);
+
+    $email = $_POST['email'];
+    $email = strip_tags($email);
+    $email = htmlspecialchars($email);
+
+    $password = $_POST['password'];
+    $password = strip_tags($password);
+    $password = htmlspecialchars($password);
+}
+
+//validate the users input
+if(empty($username)){
+    $error = true;
+    $errorUsername = 'Please input username';
+}
+
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    $error = true;
+    $errorEmail = 'Please a valid input email';
+}
+
+if(empty($password)){
+    $error = true;
+    $errorPassword = 'Please password';
+}elseif(strlen($password) < 8){
+    $error = true;
+    $errorPassword = 'Password must at least 8 characters';
+}
+
+
+//insert data if no error
+if(!$error){
+    // create a SQL query as a string
+    $sql = "insert into tbl_users(username, email ,password)
+                values('$username', '$email', '$password')";
+    if(mysqli_query($link, $sql)){
+        $successMsg = ' You have Registered Successfully. <a href="index.php">click here to login</a>';
+    }else{
+        echo 'Error '.mysqli_error($link);
+    }
+
+}
 ?>
 
 <!DOCTYPE html>
