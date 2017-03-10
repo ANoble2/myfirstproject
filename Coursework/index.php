@@ -83,22 +83,6 @@ if(isset($_POST['btn-login'])){
 <body>
 
 
-
-<div class="jumbotron">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1> Viusal upload</h1><br>
-                <img src="material/images/logo.PNG" width="304" height="236"/>
-            </div>
-
-
-        </div> <!-- end of row div-->
-
-</div> <!-- end of contrainer-->
-
-</div> <!-- end of jumbotron -->
-
 <div class="jumbotron">
     <div class="container">
         <div class="row">
