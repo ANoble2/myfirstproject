@@ -85,7 +85,7 @@ if(isset($_POST['btn-login'])){
 <div class="container">
     <div class="jumbotron">
         <h1>Hi</h1>
-    </div>
+
     <div style="width: 500px; margin: 50px auto;">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
             <center><h2>Login</h2></center>
@@ -117,6 +117,7 @@ if(isset($_POST['btn-login'])){
             <a href="register.php">Register</a>
         </form>
     </div>
+</div>
 </div>
 
 
