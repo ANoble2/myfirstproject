@@ -65,6 +65,27 @@ if(!$error){
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="material/css/bootstrap.min.css">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">Visual Upload</a>
+
+            </div>
+
+        </div>
+    </nav>
+
 </head>
 <body>
 <div class="container">
@@ -112,6 +133,7 @@ if(!$error){
             </div>
         </div>
     </div>
+    <hr>
     <footer class="footer">
         <p>&copy; 2017 Ashley Noble</p>
     </footer>

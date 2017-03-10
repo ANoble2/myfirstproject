@@ -86,7 +86,7 @@ if(!isset($_SESSION['username'])){
         </div>
 
     </div>
-
+    <hr>
     <footer class="footer">
         <p>&copy; 2017 Ashley Noble</p>
     </footer>
