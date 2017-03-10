@@ -36,6 +36,8 @@ if(empty($password)){
     $errorPassword = 'Password must at least 8 characters';
 }
 
+//encrypt password with md5
+$password = md5($password);
 
 //insert data if no error
 if(!$error){
