@@ -16,8 +16,9 @@ if(!isset($_SESSION['username'])){
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
+    <link href="material/css/bootstrap-theme.min.css" rel="stylesheet">
 
-</head>
+
     <nav class="navbar navbar-default">
         <div class="container">
 
@@ -38,10 +39,11 @@ if(!isset($_SESSION['username'])){
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="">View Gallery</a></li>
-                    <li class="active"><a href="">Upload images</a></li>
+                    <li><a href="">Gallery</a></li>
+                    <li class="active"><a href="">Upload Images</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
+                    Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->
                     <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
                 </form>
 
@@ -51,31 +53,36 @@ if(!isset($_SESSION['username'])){
 
     </nav>
 
+</head>
+
 
 <body>
+
 <div class="container">
     <div class="jumbotron">
 
-        <h2>Upload Images</h2>
-    </div>
+        <div class="panel panel-primary">
+            <div class="panel-heading">Choose an image to Upload
+            </div>
+            <div id="panelbody1" class="panel-body">
+                <form action="" method="post" enctype="multipart/form-data" onSubmit="return validateImage();" >>
+                    Select image to upload:
+                    <br>
+                    <br>
+                    <input type="file" name="img_file" id="img_file">
+                    <br>
+                    <input type="submit"  value="Upload Image" name="upload">
+                </form>
+            </div>
+        </div>
+        </div>
 
 
-<div class="panel panel-primary">
-    <div class="panel-heading">Choose an image to Upload
-    </div>
-    <div id="panelbody1" class="panel-body">
-        <form action="" method="post" enctype="multipart/form-data" onSubmit="return validateImage();" >>
-            Select image to upload:
-            <br>
-            <br>
-            <input type="file" name="img_file" id="img_file">
-            <br>
-            <input type="submit"  value="Upload Image" name="upload">
-        </form>
-    </div>
-</div>
+    <footer class="footer">
+        <p>&copy; 2017 Ashley Noble</p>
+    </footer>
 
-
+</div> <!-- end of container-->
 
 
 </body>

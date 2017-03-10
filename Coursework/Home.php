@@ -38,12 +38,12 @@ if(!isset($_SESSION['username'])){
                 <ul class="nav navbar-nav">
                     <li class="active"><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Gallery</a></li>
-                    <li class=""><a href="uploadimages.php">Upload</a></li>
+                    <li class=""><a href="uploadimages.php">Upload Images</a></li>
                 </ul>
 
 
                     <form class="navbar-form navbar-right">
-                        Welcome : <?php echo $_SESSION['username']; ?>
+                        Welcome : <?php echo $_SESSION['username']; ?><!-- display logged in users name -->
                         <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
                     </form>
 
