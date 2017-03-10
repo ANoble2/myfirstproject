@@ -85,7 +85,7 @@ if(isset($_POST['btn-login'])){
 <div class="container">
     <div class="jumbotron">
         <h1>Hi</h1>
-
+        <img src="material/images/logoimage.PNG" class="img-rounded" alt="Responsive" width="304" height="236">
     <div style="width: 500px; margin: 50px auto;">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
             <center><h2>Login</h2></center>
