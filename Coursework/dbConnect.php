@@ -26,7 +26,7 @@ if (!$link) {
     exit;
 }
 else{
-    echo "Booyya!!!";
+    echo "Please Work!!!";
 }
 ?>
 
