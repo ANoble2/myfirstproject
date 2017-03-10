@@ -20,17 +20,17 @@ if(isset($_POST['btn-register'])){
 //validate the users input
 if(empty($username)){
     $error = true;
-    $errorUsername = 'Please input username';
+    $errorUsername = 'Please enter username';
 }
 
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
     $error = true;
-    $errorEmail = 'Please a valid input email';
+    $errorEmail = 'Please enter a valid email address';
 }
 
 if(empty($password)){
     $error = true;
-    $errorPassword = 'Please password';
+    $errorPassword = 'Please enter password';
 }elseif(strlen($password) < 8){
     $error = true;
     $errorPassword = 'Password must at least 8 characters';
@@ -41,7 +41,7 @@ $password = md5($password);
 
 //insert data if no error
 if(!$error){
-    // create a SQL query as a string
+    //  SQL query as a string for inserting information to database
     $sql = "insert into tbl_users(username, email ,password)
                 values('$username', '$email', '$password')";
     if(mysqli_query($link, $sql)){

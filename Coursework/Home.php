@@ -1,7 +1,8 @@
 <?php
-
-session_start ();
-
+session_start();
+if(!isset($_SESSION['username'])){
+    header('location:index.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +15,7 @@ session_start ();
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
-    <link href="material/css/bootstrap.css" rel="stylesheet">
+    <link href="material/css/bootstrap.min.css" rel="stylesheet">
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -35,44 +36,18 @@ session_start ();
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="active"><a href="Home.php">Home</a></li>
+                    <li class=""><a href="gallery.php">Gallery</a></li>
+                    <li class=""><a href="uploadimages.php">Upload</a></li>
                 </ul>
 
-                <?php
-                if (isset ($_SESSION['user'])) { ?>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li class="active"><a href="#">Home</a></li>
-                        <li class="active"><a href="#">Gallery</a></li>
-                        <li class="active"><a href="#">Upload</a></li>
-                    </ul>
-
-                <form class="navbar-form navbar-right" action="logout.php" method="post">
-                    <P> Welcome <?php echo $_SESSION ['username'];?></P>
-                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
                 </form>
-
-
-                    <?php } else { ?>
-
-                <form class="navbar-form navbar-right">
-                <a href="register.php" type="button" class="btn btn-default"><span class="glyphicon glyphicon-user"></span> Sign Up </a>
+                    <form class="navbar-form navbar-right" action="logout.php" method="post">
+                        Welcome :<?php echo $_SESSION['username']; ?>
+                        <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span><a href="logout.php">Log Out</a></button>
                     </form>
-                     <form class="navbar-form navbar-right" action="login.php" method="post">
-                        <div class="form-group">
-                        <input type="text" placeholder="Username" class="form-control" name="username">
-                         </div>
-                         <div class="form-group">
-                        <input type="password" placeholder="Password" class="form-control" name="password">
-                            </div>
-                         <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-in"></span> Login </button>
 
-                     </form>
-                    <?php } ?>
-                    </div>
-
-
-            </div>
+                </div>
 
         </div>
     </nav>
@@ -83,7 +58,7 @@ session_start ();
 <div class="container">
     <div class="jumbotron">
         <h1>Visual Upload - Photo Gallery</h1>
-        <p>Upload and share unlimited photos.Register a free account today!</p>
+        <p>Welcome to Visual Upload! you can now upload and view your images.</p>
     </div>
 
     <div class="container">
@@ -92,12 +67,12 @@ session_start ();
             <div class="col-md-4">
                 <img src="material/images/image%20gallery.PNG" class="img-rounded" alt="Image Gallery" width="304" height="236">
                 <h2>Image Gallery</h2>
-                <p>Grid Responsive Image Gallery with Image Uploader.</p>
+                <p>View your uploaded images.</p>
             </div>
             <div class="col-md-4">
-                <img src="material/images/responsive.PNG" class="img-rounded" alt="Responsive" width="304" height="236">
-                <h2>Responsive</h2>
-                <p> Responsive Gallery and Control Panel</p>
+                <img src="material/images/upload.PNG." class="img-rounded" alt="Responsive" width="304" height="236">
+                <h2>Upload images</h2>
+                <p> Upload and save your images </p>
 
             </div>
             <div class="col-md-4">
@@ -109,20 +84,8 @@ session_start ();
         </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
         <script src="material/js/bootstrap.min.js"></script>
-        <script src=material/js/jquery-1.10.2.min.js></script>
+
 
 </body>
 </html>

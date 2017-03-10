@@ -23,7 +23,7 @@ $check = mysql_num_rows ($query);
 
 if($check > 0) {
     $session['user'] = $username;
-    header('location:Home.php');
+    header('location:index1.php');
 }
 
 else {

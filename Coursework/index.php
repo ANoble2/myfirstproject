@@ -1,6 +1,52 @@
 <?php
+session_start();
 include ('dbConnect.php');
+
+
+$error = false;
+if(isset($_POST['btn-login'])){
+    //Help prevent sql injection with cleaning user input
+    $email = trim($_POST['email']);
+    $email = htmlspecialchars(strip_tags($email));
+
+    $password = trim($_POST['password']);
+    $password = htmlspecialchars(strip_tags($password));
+
+    if(empty($email)){
+        $error = true;
+        $errorEmail = 'Please enter email';
+    }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        $error = true;
+        $errorEmail = 'Please enter a valid email address';
+    }
+//validate the users input
+    if(empty($password)){
+        $error = true;
+        $errorPassword = 'Please enter password';
+    }elseif(strlen($password)< 8){
+        $error = true;
+        $errorPassword = 'Password  must be at least 8 character';
+    }
+
+    if(!$error){
+        $password = md5($password);
+        // SQL query as a string for selecting all from email column matches email address provided
+        $sql = "select * from tbl_users where email='$email' ";
+        // execute the SQL query
+        $result = mysqli_query($link, $sql);
+        $count = mysqli_num_rows($result);
+        $row = mysqli_fetch_assoc($result);
+        if($count==1 && $row['password'] == $password){
+            $_SESSION['username'] = $row['username'];
+            header('location: Home.php');
+        }else{
+            $errorMsg = 'Incorrect Username or Password';
+        }
+    }
+}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,11 +57,31 @@ include ('dbConnect.php');
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
-
     <link href="material/css/bootstrap.min.css" rel="stylesheet">
+
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <div class="navbar-header">
+
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a class="navbar-brand" href="#">Visual Upload</a>
+
+            </div>
+
+        </div>
+    </nav>
 
 </head>
 <body>
+
 <div class="container">
     <div style="width: 500px; margin: 50px auto;">
         <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
