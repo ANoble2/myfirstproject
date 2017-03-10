@@ -1,36 +1,8 @@
 <?php
-
-if (isset($_POST["upload"])) {
-
-    $img_file = $_FILES["img_file"]["name"];
-    $folderName = "images/";
-    $validExt = array("jpg", "png", "jpeg", "bmp", "gif");
-
-    if ($img_file == "") {
-        $msg = errorMessage( "Attach an image");
-    } elseif ($_FILES["img_file"]["size"] <= 0 ) {
-        $msg = errorMessage( "Image is not proper.");
-    } else {
-        $ext = strtolower(end(explode(".", $img_file)));
-
-        if ( !in_array($ext, $validExt) )  {
-            $msg = errorMessage( "Not a valid image file");
-        } else {
-            $filePath = $folderName. rand(10000, 990000). '_'. time().'.'.$ext;
-
-            if ( move_uploaded_file( $_FILES["img_file"]["tmp_name"], $filePath)) {
-                $sql = "INSERT INTO tbl_demo5 VALUES (NULL, '".prepare_input($filePath) ."')";
-
-                $msg = ( mysql_query($sql))  ? successMessage("Uploaded and saved to database.") : errorMessage( "Problem in saving to database");
-
-            } else {
-                $msg = errorMessage( "Problem in uploading file");
-            }
-
-        }
-    }
+session_start();
+if(!isset($_SESSION['username'])){
+    header('location:index.php');
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -69,8 +41,8 @@ if (isset($_POST["upload"])) {
                     <li><a href="">View Gallery</a></li>
                     <li class="active"><a href="">Upload images</a></li>
                 </ul>
-                <form class="navbar-form navbar-right" action="logout.php" method="post">
-                    <button type="button" class="btn btn-default"> <span class="glyphicon glyphicon-log-out"></span> Log Out </button>
+                <form class="navbar-form navbar-right">
+                    <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
                 </form>
 
             </div>
@@ -89,7 +61,7 @@ if (isset($_POST["upload"])) {
 
 
 <div class="panel panel-primary">
-    <div class="panel-heading">Choose image to Upload
+    <div class="panel-heading">Choose an image to Upload
     </div>
     <div id="panelbody1" class="panel-body">
         <form action="" method="post" enctype="multipart/form-data" onSubmit="return validateImage();" >>

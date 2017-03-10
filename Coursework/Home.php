@@ -43,8 +43,8 @@ if(!isset($_SESSION['username'])){
 
 
                     <form class="navbar-form navbar-right">
-                        Welcome :<?php echo $_SESSION['username']; ?>
-                        <a class="btn btn-lg btn-default" href="logout.php" ><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
+                        Welcome : <?php echo $_SESSION['username']; ?>
+                        <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
                     </form>
 
                 </div>
@@ -58,7 +58,7 @@ if(!isset($_SESSION['username'])){
 <div class="container">
     <div class="jumbotron">
         <h1>Visual Upload - Photo Gallery</h1>
-        <p>Welcome to Visual Upload! you can now upload and view your images.</p>
+        <p>Welcome to Visual Upload! <br>You can now upload and view your images.</p>
     </div>
 
     <div class="container">
@@ -70,7 +70,7 @@ if(!isset($_SESSION['username'])){
                 <p>View your uploaded images.</p>
             </div>
             <div class="col-md-4">
-                <img src="material/images/upload.PNG." class="img-rounded" alt="Responsive" width="304" height="236">
+                <img src="material/images/upload.PNG" class="img-rounded" alt="upload image" width="304" height="236">
                 <h2>Upload images</h2>
                 <p> Upload and save your images </p>
 

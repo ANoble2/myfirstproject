@@ -85,12 +85,12 @@ if(isset($_POST['btn-login'])){
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-                <h1> Viusal upload</h1><br>
+                <h1> Viusal Upload</h1><br>
                 <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/>
             </div>
             <div class="col-md-6">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-                    <center><h2>Login</h2></center>
+                    <center><h2> Please Login</h2></center>
                     <hr/>
                     <?php
                     if(isset($errorMsg)){
