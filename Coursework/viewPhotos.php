@@ -5,8 +5,8 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-
-$upload_dir = 'uploads/';
+include ('dbConnect.php');
+$upload_dir = 'Uploads/';
 ?>
 
 <!DOCTYPE html>
