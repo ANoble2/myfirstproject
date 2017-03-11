@@ -5,8 +5,27 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
+session_start();
 include ('dbConnect.php');
 $upload_dir = 'Uploads/';
+if(isset($_GET['delete'])){
+   $id = $_GET['delete'];
+
+   //select the old image name from the database
+   $sql = "select image from tbl_users where id = ".$id;
+   $result = mysqli_query($link, $sql);
+   if(mysqli_num_rows($result) > 0){
+       $row = mysqli_fetch_assoc($result);
+       $image = $row['image'];
+       unlink($upload_dir.$image);
+       // delete record from the database
+       $sql = "delete from tbl_users where id=".$id;
+       if(mysqli_query($link, $sql)){
+           header('location:viewPhotos.php');
+       }
+   }
+
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,18 +113,30 @@ $upload_dir = 'Uploads/';
                                     </tr>
                                     </thead>
                                     <tbody>
+
+                                    <?php
+                                    $sql = "select * from tbl_images";
+                                    $result = mysqli_query($link, $sql);
+                                    if(mysqli_num_rows($result)){
+                                    while($row = mysqli_fetch_assoc($result)) {
+
+                                    ?>
+
                                     <tr>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th><img src=> </th>
-                                        <th>
-                                            <a class="btn btn-info" href="">
-                                                <span class="glyphicon glyphicon-edit"></span> Edit</a>
-                                            <a class="btn btn-danger" href=""><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>
-                                        </th>
+                                        <td><?php echo $row['id'] ?></td>
+                                        <td><?php echo $row['name'] ?></td>
+                                        <td><?php echo $row['description'] ?></td>
+                                        <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> </td>
+                                        <td>
+                                            <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                            <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" ><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>
+                                        </td>
 
                                     </tr>
+                                    <?php
+                                        }
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -9,8 +9,19 @@ session_start();
 include ('dbConnect.php');
 $upload_dir = 'Uploads/';
 
+if (isset($_GET['id'])){
+     $id = $_GET['id'];
+     $sql = "select * from tbl_images where id=" .$id;
+     $result = mysqli_query($link, $sql);
+     if(mysqli_num_rows($result) > 0){
+     $row =mysqli_fetch_assoc($result);
+   }else{
+  $errorMsg = 'Could  not select a record';
+     }
+}
+
 // if upload button is pressed passes variables entered in form
-if(isset($_POST['btnUpload'])) {
+if(isset($_POST['btnUpdate'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
 
@@ -23,41 +34,50 @@ if(isset($_POST['btnUpload'])) {
         $errorMsg = 'Please enter a name';
     }elseif(empty($description)) {
         $errorMsg = 'Please enter description';
-    }elseif (empty($imgName)) {
-        $errorMsg = 'Please select an Image';
-    }else{
+    }
+
+    // update image if user select new image
+    if($imgName) {
         // get image extension
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         // allow extension
         $allowExt = array('jpeg', 'jpg', 'png', 'gif');
         //random new name for image
-        $userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
+        $userPic = time() . '_' . rand(1000, 9999) . '.' . $imgExt;
         //check its a valid image
-        if(in_array($imgExt, $allowExt)){
+        if (in_array($imgExt, $allowExt)) {
             //check image size is less than certain amount in this case 5MB
-            if($imgSize < 5000000){
-                move_uploaded_file($imgTmp,$upload_dir.$userPic);
-            }else{
+            if ($imgSize < 5000000) {
+                // delete the old image
+                unlink($upload_dir . $row['image']);
+                move_uploaded_file($imgTmp, $upload_dir . $userPic);
+            } else {
                 $errorMsg = 'The image is too large';
             }
-        }else{
+        } else {
             $errorMsg = 'Please select a valid image';
-            }
         }
+    }else{
+        //if not select new image - use old image
+        $userPic = $row['image'];
+    }
 
-        // check upload file error then can upload image to database
-        if(!isset($errorMsg)){
-            $sql = "insert into tbl_images(name, description, image)
-                values('".$name."', '".$description."', '".$userPic."')";
-            $result = mysqli_query($link, $sql);
-            if ($result){
-                $successMsg = 'New image data has been successfully added';
+    // check upload file error then can upload image to database
+    if(!isset($errorMsg)){
+        $sql = "update tbl_images 
+                                  set name = '".$name."',
+                                  description = '".$description."',
+                                  image = '".$userPic."'
+                                  where id=".$id;
+        $result = mysqli_query($link, $sql);
+        if ($result){
+            $successMsg = 'New image data has been updated successfully';
             header('refresh;5;uploadimages.php');
         }else{
-                    $errorMsg = 'Error '.mysqli_error($link);
-                  }
-            }
+            $errorMsg = 'Error '.mysqli_error($link);
+        }
     }
+}
 ?>
 
 <!DOCTYPE html>
@@ -156,29 +176,30 @@ if(isset($_POST['btnUpload'])) {
                     <div class="form-group">
                         <label for="name" class="col-md-2">Name </label>
                         <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" value="">
+                            <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="description" class="col-md-2">Description</label>
                         <div class="col-md-10">
-                            <input type="text" name="description" class="form-control" value="">
+                            <input type="text" name="description" class="form-control" value="<?php echo $row['description']; ?>">
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="image" class="col-md-2">Image</label>
+                        <label for="photo" class="col-md-2">Image</label>
                         <div class="col-md-10">
+                            <img src="<?php echo $upload_dir.$row['image'] ?>" width="200">
                             <input type="file" name="myfile">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success" name="btnUpload">
-                        <span class="glyphicon glyphicon-open"></span> Upload Image
+                    <button type="submit" class="btn btn-success" name="btnUpdate">
+                        <span class="glyphicon glyphicon-open"></span> Update Image
                     </button>
                 </form>
             </div>
         </div>
-        </div>
+    </div>
 
 
     <footer class="footer">
