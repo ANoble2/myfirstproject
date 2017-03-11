@@ -16,6 +16,7 @@ if(!isset($_SESSION['username'])){
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.min.css" rel="stylesheet">
+    <link href="material/css/bootstrap.css" rel="stylesheet">
 
     <nav class="navbar navbar-default">
         <div class="container">
@@ -94,6 +95,7 @@ if(!isset($_SESSION['username'])){
 
 
         <script src="material/js/bootstrap.min.js"></script>
+        <script scr="material/js/bootstrap.js"></script>
 
 
 </body>

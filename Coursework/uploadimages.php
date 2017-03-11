@@ -1,8 +1,62 @@
 <?php
-session_start();
-if(!isset($_SESSION['username'])){
-    header('location:index.php');
-}
+/**
+ * Created by PhpStorm.
+ * User: Ashley
+ * Date: 11/03/2017
+ * Time: 15:27
+ */
+include ('dbConnect.php');
+$upload_dir = 'uploads/';
+
+// if upload button is pressed passes variables entered in form
+if(isset($_POST['btnUpload'])) {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+    $imgName = $_Files['myfile']['name'];
+    $imgTmp = $_Files['myfile']['tmp_name'];
+    $imgSize = $_Files['myfile']['size'];
+
+    // if form boxes are empty display error
+    if(empty($name)){
+        $errorMsg = 'Please enter a name';
+    }elseif(empty($description)) {
+        $errorMsg = 'Please enter description';
+    }elseif (empty($imgName)) {
+        $errorMsg = 'Please select an Image';
+    }else{
+        // get image extension
+        $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
+        // allow extension
+        $allowExt = array('jpeg', 'jpg', 'png', 'gif');
+        //random new name for image
+        $userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
+        //check its a valid image
+        if(in_array($imgExt, $allowExt)){
+            //check image size is less than certain amount in this case 5MB
+            if($imgSize < 5000000){
+                move_uploaded_file($imgTmp,$upload_dir.$userPic);
+            }else{
+                $errorMsg = 'The image is too large';
+            }
+        }else{
+            $errorMsg = 'Please select a valid image';
+            }
+        }
+
+        // check upload file error then can upload image to database
+        if(!isset($errorMsg)){
+            $sql = "insert into tbl_images(name, description, image)
+                values('".$name."', '".$description."', '".$userPic."')";
+            $result = mysqli_query($link, $sql);
+            if ($result){
+                $successMsg = 'New image data has been successfully added';
+            header('refresh;5;uploadimages.php');
+        }else{
+                    $errorMsg = 'Error '.mysqli_error($link);
+                  }
+            }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -12,6 +66,7 @@ if(!isset($_SESSION['username'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
@@ -32,11 +87,11 @@ if(!isset($_SESSION['username'])){
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">Visual Upload</a>
+                <a class="navbar-brand" href="#">Visual Upload</a> <!-- shows web app name in nav bar-->
 
             </div>
 
-            <div class="collapse navbar-collapse">
+            <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
                     <li><a href="">Gallery</a></li>
@@ -51,7 +106,7 @@ if(!isset($_SESSION['username'])){
 
         </div>
 
-    </nav>
+    </nav><!--end of nav bar -->
 
 </head>
 
@@ -60,18 +115,65 @@ if(!isset($_SESSION['username'])){
 
 <div class="container">
     <div class="jumbotron">
+        <div class="page-header">
+            <h3> Add New Images
+                <a class="btn btn-default" href="uploadimages.php">
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
+                </a>
+            </h3>
+        </div>
+
+        <?php
+        if(isset($errorMsg)){
+            ?>
+            <div class="alert alert-danger">
+                <span class="glyphicon glyphicon-info-sign">
+                <strong><?php echo $errorMsg; ?></strong>
+                    </span>
+            </div>
+            <?php
+        }
+        ?>
+
+        <?php
+        if(isset($successMsg)){
+            ?>
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <?php echo $successMsg; ?> redirecting
+            </div>
+            <?php
+        }
+        ?>
 
         <div class="panel panel-primary">
-            <div class="panel-heading">Choose an image to Upload
+            <div class="panel-heading">Select Images you would like to upload
             </div>
             <div id="panelbody1" class="panel-body">
-                <form action="" method="post" enctype="multipart/form-data" onSubmit="return validateImage();" >>
-                    Select image to upload:
-                    <br>
-                    <br>
-                    <input type="file" name="img_file" id="img_file">
-                    <br>
-                    <input type="submit"  value="Upload Image" name="upload">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                    <div class="form-group">
+                        <label for="name" class="col-md-2">Name </label>
+                        <div class="col-md-10">
+                            <input type="text" name="name" class="form-control" value="">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="description" class="col-md-2">Description</label>
+                        <div class="col-md-10">
+                            <input type="text" name="description" class="form-control" value="">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="photo" class="col-md-2">Image</label>
+                        <div class="col-md-10">
+                            <input type="file" name="myfile">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success" name="btnUpload">
+                        <span class="glyphicon glyphicon-open"></span> Upload Image
+                    </button>
                 </form>
             </div>
         </div>
@@ -85,13 +187,10 @@ if(!isset($_SESSION['username'])){
 </div> <!-- end of container-->
 
 
-</body>
-</html>
-
+<!--scripts-->
 <script src="material/js/bootstrap.min.js"></script>
 <script src=material/js/jquery-1.10.2.min.js></script>
 
 
 </body>
 </html>
-

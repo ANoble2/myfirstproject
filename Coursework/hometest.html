@@ -127,8 +127,67 @@
         </div>
     </div>
 
+        <div class="container">
+            <div class="jumbotron">
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header">Photo Gallery</h1>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+
+                            <div class="panel panel-default">
+
+                                <div class="panel-heading">
+                                    Photo Gallery Control panel
+                                </div>
+                                <div class="panel-body">
+
+                                    <div class="table-responsive table-bordered">
+                                        <table class=" table table-bordered table-responsive">
+                                            <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Position</th>
+                                                <th>Photo</th>
+                                                <th>Action</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr>
+                                                <th><?php echo $row['id'] ?></th>
+                                                <th><?php echo $row['name'] ?></th>
+                                                <th><?php echo $row['position'] ?></th>
+                                                <th><img src="<?php echo $upload_dir.$row['photo'] ?>" height="40"> </th>
+                                                <th>
+                                                    <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?>">
+                                                        <span class="glyphicon glyphicon-edit"></span> Edit</a>
+                                                    <a class="btn btn-danger" href=""><span class="glyphicon glyphicon-remove-circle"></span> Delete</a>
+                                                </th>
+
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
 
+
+
+
+
+                            </div>
+                            <hr>
+                            <footer class="footer">
+                                <p>&copy; 2017 Ashley Noble</p>
+                            </footer>
+                        </div><!-- end of container-->
 
 
 

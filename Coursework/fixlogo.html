@@ -318,9 +318,9 @@ this is for add page
                 $name = $_POST['name'];
                   $position = $_POST['position'];
 
-                  $imgName = $_Files['myfile']['name'];
-                  $imgTmp = $_Files['myfile']['tmp_name'];
-                  $imgSize = $_Files['myfile']['size'];
+                  $imgName = $_Files['myfile']['name'];  // extracts information about the file name
+                  $imgTmp = $_Files['myfile']['tmp_name']; // extracts information about the file for temporary location
+                  $imgSize = $_Files['myfile']['size']; // extracts information about the file size
 
                   if(empty($name)){
                     $errorMsg = 'Please enter a name';
@@ -331,8 +331,8 @@ this is for add page
                 if($imgName){
                     // get image extension
                     $imgExt = pathinfo($imgName, PATHINFO_EXTENSION));
-                    // allow extension
-                    $alloExt = array('jpeg', 'jpg', 'png', 'gif');
+                    // file extensions you allow
+                    $allowExt = array('jpeg', 'jpg', 'png', 'gif');
                     //random new name for image
                     $userPic = time().'_'.rand(1000,9999).'.'$imgExt;
                     //check its a valid image
@@ -407,19 +407,19 @@ this is for add page
                         <div class="form-group">
                             <label for="name" class="col-md-2">Name </label>
                             <div class="col-md-10">
-                                <input type="text" name="name" class="form-control" value=" <?php echo $row['name']; ?>">
+                                <input type="text" name="name" class="form-control" value=">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="position" class="col-md-2">Position </label>
                             <div class="col-md-10">
-                                <input type="text" name="position" class="form-control" value="<?php echo $row['position']; ?>>
+                                <input type="text" name="position" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="photo" class="col-md-2">Photo</label>
                             <div class="col-md-10">
-                                <img src="<?php echo $upload_dir.$row['photo'] ?> " width="200">
+                                <img src="" width="200">
                                 <input type="file" name="myfile">
                             </div>
                         </div>
@@ -427,7 +427,7 @@ this is for add page
                             <label for="photo" class="col-md-2"></label>
                             <div class="col-md-10">
                                 <button type="submit" class="btn btn-success" name="btnUpdate">
-                                    <span class="glyphicon glyphicon-save"></span>Update
+                                    <span class="glyphicon glyphicon-save"></span>Upload Image
                                 </button>
                     </form>
                 </div>
