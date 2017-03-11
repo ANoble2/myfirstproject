@@ -13,9 +13,9 @@ if(isset($_POST['btnUpload'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
 
-    $imgName = $_Files['myfile']['name'];
-    $imgTmp = $_Files['myfile']['tmp_name'];
-    $imgSize = $_Files['myfile']['size'];
+    $imgName = $_FILES['myfile']['name'];
+    $imgTmp = $_FILES['myfile']['tmp_name'];
+    $imgSize = $_FILES['myfile']['size'];
 
     // if form boxes are empty display error
     if(empty($name)){
