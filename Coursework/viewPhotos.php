@@ -7,19 +7,19 @@
  */
 session_start();
 include ('dbConnect.php');
-$upload_dir = "uploads/";
+$upload_dir = 'uploads/';
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
 
    //select the old image name from the database
-   $sql = "select image from tbl_users where id = ".$id;
+   $sql = "select image from tbl_images where id = ".$id;
    $result = mysqli_query($link, $sql);
    if(mysqli_num_rows($result) > 0){
        $row = mysqli_fetch_assoc($result);
        $image = $row['image'];
        unlink($upload_dir.$image);
        // delete record from the database
-       $sql = "delete from tbl_users where id=".$id;
+       $sql = "delete from tbl_images where id=".$id;
        if(mysqli_query($link, $sql)){
            header('location:viewPhotos.php');
        }

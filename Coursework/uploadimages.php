@@ -7,7 +7,7 @@
  */
 session_start();
 include ('dbConnect.php');
-$upload_dir = "uploads/";
+$upload_dir = 'uploads/';
 
 // if upload button is pressed passes variables entered in form
 if(isset($_POST['btnUpload'])) {
@@ -26,9 +26,9 @@ if(isset($_POST['btnUpload'])) {
     }elseif (empty($imgName)) {
         $errorMsg = 'Please select an Image';
     }else{
-        // get image extension
+        // gets image extension
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
-        // allow extension
+        // allowed extensions
         $allowExt = array('jpeg', 'jpg', 'png', 'gif');
         //random new name for image
         $userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
@@ -141,7 +141,7 @@ if(isset($_POST['btnUpload'])) {
             ?>
             <div class="alert alert-success">
                 <span class="glyphicon glyphicon-info-sign"></span>
-                <?php echo $successMsg; ?> redirecting
+                <strong><?php echo $successMsg; ?> redirecting</strong>
             </div>
             <?php
         }
@@ -190,7 +190,7 @@ if(isset($_POST['btnUpload'])) {
 
 <!--scripts-->
 <script src="material/js/bootstrap.min.js"></script>
-<script src=material/js/jquery-1.10.2.min.js></script>
+<script src=material/js/bootstrap.js></script>
 
 
 </body>
