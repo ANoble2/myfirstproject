@@ -7,7 +7,7 @@
  */
 session_start();
 include ('dbConnect.php');
-$upload_dir = "uploads/". basename($_FILES["myfile"]["name"]);
+$upload_dir = 'uploads/';
 
 // if upload button is pressed passes variables entered in form
 if(isset($_POST['btnUpload'])) {

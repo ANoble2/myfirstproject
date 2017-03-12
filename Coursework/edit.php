@@ -7,7 +7,7 @@
  */
 session_start();
 include ('dbConnect.php');
-$upload_dir = "uploads/". basename($_FILES["myfile"]["name"]);
+$upload_dir = 'uploads/';
 
 if (isset($_GET['id'])){
      $id = $_GET['id'];
