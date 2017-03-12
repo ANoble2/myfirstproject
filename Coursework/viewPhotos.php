@@ -114,20 +114,13 @@ if(isset($_GET['delete'])){
                                     </thead>
                                     <tbody>
 
+                                    <?php
+                                    $sql = "select * from tbl_images";
+                                    $result = mysqli_query($link, $sql);
+                                    if(mysqli_num_rows($result)){
+                                    while($row = mysqli_fetch_assoc($result)) {
 
-                                        <?php
-// create a SQL query as a string
-                                        $sql_query = "SELECT * FROM tbl_images";
-// execute the SQL query
-                                        $result = $link->query($sql_query);
-// iterate over $result object one $row at a time
-// use fetch_array() to return an associative array
-                                        while($row = $result->fetch_array()){
-                                            $dbimage = $row['image'];
-                                            echo "<li>{$dbimage}</li>";
-
-
-                                        ?>
+                                    ?>
 
                                     <tr>
                                         <td><?php echo $row['id'] ?></td>
@@ -141,6 +134,7 @@ if(isset($_GET['delete'])){
 
                                     </tr>
                                     <?php
+                                        }
                                     }
                                     ?>
                                     </tbody>
