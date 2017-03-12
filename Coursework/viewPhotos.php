@@ -11,7 +11,7 @@ error_reporting(E_ALL);
 
 
 include ('dbConnect.php');
-$upload_dir = 'uploads/';
+$upload_dir = "uploads/". basename($_FILES["myfile"]["name"]);
 if(isset($_GET['delete'])){
    $id = $_GET['delete'];
 
