@@ -6,6 +6,7 @@
  * Time: 15:27
  */
 session_start();
+error_reporting(E_ALL); ini_set('display_errors', '1');
 include ('dbConnect.php');
 $upload_dir = 'uploads/';
 if(isset($_GET['delete'])){
