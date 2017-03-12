@@ -116,6 +116,13 @@
                     </footer>
             </div>
 
+                <?php
+                                    $sql = "select * from tbl_images";
+                                    $result = mysqli_query($link, $sql);
+                                    if(mysqli_num_rows($result)){
+                                    while($row = mysqli_fetch_assoc($result)) {
+
+                                    ?>
 <!-- index page code for upload-->
 
                 <?php
