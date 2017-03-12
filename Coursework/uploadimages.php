@@ -35,7 +35,7 @@ if(isset($_POST['btnUpload'])) {
         //check its a valid image
         if(in_array($imgExt, $allowExt)){
             //check image size is less than certain amount in this case 5MB
-            if($imgSize < 5000000){
+            if($imgSize < 500000){
                 move_uploaded_file($imgTmp,$upload_dir.$userPic);
             }else{
                 $errorMsg = 'The image is too large';
