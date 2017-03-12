@@ -126,7 +126,7 @@ if(isset($_GET['delete'])){
                                         <td><?php echo $row['id'] ?></td>
                                         <td><?php echo $row['name'] ?></td>
                                         <td><?php echo $row['description'] ?></td>
-                                        <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> </td>
+                                        <td><img src="<?php echo $upload_dir ?> 1.jpeg" height="40"> </td>
                                         <td>
                                             <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a>
                                             <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" ><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>
