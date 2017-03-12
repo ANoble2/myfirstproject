@@ -151,6 +151,7 @@ if(isset($_POST['btnUpload'])) {
             <div class="panel-heading">Select Images you would like to upload
             </div>
             <div id="panelbody1" class="panel-body">
+
                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
 
                     <div class="form-group">
