@@ -1,9 +1,15 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Ashley
+ * Date: 11/03/2017
+ * Time: 15:27
+ */
 session_start();
-include ('dbConnect.php');
+include ('dbConnect.php'); // create connection to the database
 
 
-$error = false;
+$error = false; // variable to store for error to be used later in code
 if(isset($_POST['btn-login'])){
     //Help prevent sql injection with cleaning user input
     $email = trim($_POST['email']);
@@ -23,9 +29,9 @@ if(isset($_POST['btn-login'])){
     if(empty($password)){
         $error = true;
         $errorPassword = 'Please enter password';
-    }elseif(strlen($password)< 8){
+    }elseif(strlen($password)< 8){ // password must be a least 8 characters long
         $error = true;
-        $errorPassword = 'Password  must be at least 8 character';
+        $errorPassword = 'Password  must be at least 8 character'; // if password isn't 8 characters long presents error mesaage
     }
 
     if(!$error){
@@ -54,7 +60,7 @@ if(isset($_POST['btn-login'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Ashley's Project</title>
+    <title>Ashley's Project</title> <!-- title page -->
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
@@ -72,7 +78,7 @@ if(isset($_POST['btn-login'])){
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">Visual Upload</a>
+                <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
             </div>
 
@@ -85,8 +91,8 @@ if(isset($_POST['btn-login'])){
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-                <h1> Viusal Upload</h1><br>
-                <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/>
+                <h1> Viusal Upload</h1><br> <!-- Name of the web app in login page-->
+                <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/> <!-- logo image for web app -->
             </div>
             <div class="col-md-6">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
@@ -121,9 +127,9 @@ if(isset($_POST['btn-login'])){
             </div>
         </div>
     </div>
-    <footer class="footer">
-        <p>&copy; 2017 Ashley Noble</p>
-    </footer>
+    <footer class="footer"><!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer><!-- end of footer for page  -->
 </div> <!-- end of container-->
 
 

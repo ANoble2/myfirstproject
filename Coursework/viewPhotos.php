@@ -67,7 +67,7 @@ if(isset($_GET['delete'])){
                     <li class=""><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Image Gallery</a></li>
                     <li class=""><a href="uploadimages.php">Upload Images</a></li>
-                    <li class="active"><a href="viewPhotos.php">Image Control Panel</a></li>
+                    <li class="active"><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
 
 

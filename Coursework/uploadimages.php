@@ -18,7 +18,7 @@ if(isset($_POST['btnUpload'])) {
     $imgTmp = $_FILES['myfile']['tmp_name'];
     $imgSize = $_FILES['myfile']['size'];
 
-    // if form boxes are empty display error
+    // if form boxes are empty display error whether name, description or image is missing
     if(empty($name)){
         $errorMsg = 'Please enter a name';
     }elseif(empty($description)) {
@@ -94,9 +94,10 @@ if(isset($_POST['btnUpload'])) {
 
             <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li class="active"><a href="">Upload Images</a></li>
+                    <li class=><a href="Home.php">Home</a></li>
+                    <li class=""><a href="gallery.php">Gallery</a></li>
+                    <li class="active"><a href="uploadimages.php">Upload Images</a></li>
+                    <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->

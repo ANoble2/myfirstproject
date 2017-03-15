@@ -1,4 +1,10 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: Ashley
+ * Date: 11/03/2017
+ * Time: 15:27
+ */
 session_start();
 if(!isset($_SESSION['username'])){
     header('location:index.php');
@@ -40,6 +46,7 @@ if(!isset($_SESSION['username'])){
                     <li class="active"><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Gallery</a></li>
                     <li class=""><a href="uploadimages.php">Upload Images</a></li>
+                    <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
 
 
