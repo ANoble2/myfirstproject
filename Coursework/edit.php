@@ -115,8 +115,10 @@ if(isset($_POST['btnUpdate'])) {
             <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
                 <ul class="nav navbar-nav">
                     <li><a href="#">Home</a></li>
-                    <li><a href="">Gallery</a></li>
-                    <li class="active"><a href="">Upload Images</a></li>
+                    <li class=><a href="Home.php">Home</a></li>
+                    <li class=""><a href="gallery.php">Image Gallery</a></li>
+                    <li class=""><a href="uploadimages.php">Upload Images</a></li>
+                    <li class="active"><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
                 <form class="navbar-form navbar-right">
                     Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->
@@ -137,7 +139,7 @@ if(isset($_POST['btnUpdate'])) {
 <div class="container">
     <div class="jumbotron">
         <div class="page-header">
-            <h3> Add New Images
+            <h3> Edit Image Entry
                 <a class="btn btn-default" href="viewPhotos.php"> <!-- button for users to go back to view photos page -->
                     <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
                 </a>

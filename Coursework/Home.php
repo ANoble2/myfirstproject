@@ -45,7 +45,7 @@ if(!isset($_SESSION['username'])){
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
                     <li class="active"><a href="Home.php">Home</a></li>
-                    <li class=""><a href="gallery.php">Gallery</a></li>
+                    <li class=""><a href="gallery.php"> Image Gallery</a></li>
                     <li class=""><a href="uploadimages.php">Upload Images</a></li>
                     <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
@@ -75,12 +75,12 @@ if(!isset($_SESSION['username'])){
         <div class="row">
             <div class="col-md-4">
                 <img src="material/images/image%20gallery.PNG" class="img-rounded" alt="Image Gallery" width="304" height="236"> <!-- image for section of web app -->
-                <h2>Image Gallery</h2>
+                <h2><a href="gallery.php">Image Gallery</a></h2>
                 <p>View your uploaded images.</p>
             </div>
             <div class="col-md-4">
                 <img src="material/images/upload.PNG" class="img-rounded" alt="upload image" width="304" height="236"> <!-- image for section of web app -->
-                <h2>Upload images</h2>
+                <h2><a href="uploadimages.php">Upload Images</a></h2>
                 <p> Upload and save your images. </p>
 
             </div>
