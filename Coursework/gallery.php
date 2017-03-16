@@ -109,7 +109,12 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     </div> <!-- end of container -->
 
 </div> <!-- end of gallery div -->
-
+<div class="container"
+<hr> <!-- creates line to break up content -->
+<footer class="footer"> <!-- start of footer for page  -->
+    <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+</footer> <!-- end of footer for page  -->
+</div>
 
 
 <!-- scripts -->
