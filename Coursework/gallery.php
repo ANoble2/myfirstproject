@@ -89,7 +89,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
         <div class="row">
             <div class="col-md-3 step">
-                <img src="<?php echo $upload_dir . $row['image'] ?>" width="304" height="236">
+                <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178">
 
             </div>
 
@@ -99,12 +99,13 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             }
             ?>
 
-
-        </div> <!-- end of row div -->
+            <div class="container"
         <hr> <!-- creates line to break up content -->
         <footer class="footer"> <!-- start of footer for page  -->
             <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
         </footer> <!-- end of footer for page  -->
+        </div>
+
     </div> <!-- end of container -->
 
 </div> <!-- end of gallery div -->
