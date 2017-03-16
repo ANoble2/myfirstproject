@@ -82,7 +82,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
 
 
-
+        <div class="row" style="min-height:220px">
             <div class=" col-md-3 ">
                 <div class="row" style="min-height:220px">
 
