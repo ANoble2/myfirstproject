@@ -129,6 +129,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
             </div> <!-- end of col-md-6 div -->
         </div> <!-- end of row div -->
     </div> <!-- end of jumbotron div -->
+    <hr> <!-- creates line to break up content -->
     <footer class="footer"> <!-- start of footer for page  -->
         <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
     </footer><!-- end of footer for page  -->
