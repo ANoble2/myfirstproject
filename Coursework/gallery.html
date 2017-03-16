@@ -33,6 +33,63 @@ http://stackoverflow.com/questions/35345728/echo-bootstrap-grid-with-pictures-fr
 echo "<div class='col-sm-4'> <img width='100%' height='200' src='$link' /></div>";
 ?>
 
+
+
+$results = array_chunk($con->query($sql), 5);
+
+foreach($results as $rows)
+{
+echo '<div class="row">';
+
+    foreach($rows as $row)
+    {
+    echo '<div class="col-md-2 portfolio-item">';
+        // output row data here
+        echo '</div>';
+    }
+
+    echo '</div>';
+}
+
+
+
+<?php
+	$rows = $result->num_rows;    // Find total rows returned by database
+if($rows > 0) {
+$cols = 3;    // Define number of columns
+$counter = 1;     // Counter used to identify if we need to start or end a row
+$nbsp = $cols - ($rows % $cols);    // Calculate the number of blank columns
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
