@@ -5,15 +5,15 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-ini_set('display_errors', 1);
+ini_set('display_errors', 1); // error checking
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-session_start();
-include ('dbConnect.php');
-$upload_dir = 'uploads/';
+session_start(); // Start the session
+include ('dbConnect.php');// create connection to the database
+$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
-if(isset($_GET['delete'])){
+if(isset($_GET['delete'])){ // if delete button is pressed
    $id = $_GET['delete'];
 
    //select the old image name from the database
@@ -46,12 +46,12 @@ if(isset($_GET['delete'])){
     <link href="material/css/bootstrap.min.css" rel="stylesheet">
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <!-- provides collapse button to appear in corner for smaller screens -->
                     <span class="sr-only">Toggle navigation</span>
 
                     <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
@@ -75,12 +75,12 @@ if(isset($_GET['delete'])){
                 <form class="navbar-form navbar-right"> <!-- makes contents appear on the right -->
                     Welcome : <?php echo $_SESSION['username']; ?><!-- display logged in users name -->
                     <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a> <!-- log out button -->
-                </form>
+                </form> <!-- end of form-->
 
-            </div>
+            </div>  <!-- end of nav bar collapse div -->
 
-        </div>
-    </nav>
+        </div> <!-- end of container -->
+    </nav>  <!-- end of nav bar -->
 </head>
 
 <body>
@@ -90,12 +90,11 @@ if(isset($_GET['delete'])){
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="page-header">Add New Image
+                <h3 class="page-header">Uploaded Images
                         <a class="btn btn-default" href="uploadimages.php"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add new <!-- button for users to go back to upload page -->
                         </a>
                     </h3>
             </div>
-
             <div class="row">
                 <div class="col-md-12">
 
@@ -110,7 +109,7 @@ if(isset($_GET['delete'])){
                                 <table class=" table table-bordered table-responsive">
                                     <thead>
                                     <tr>
-                                        <th>ID</th>
+                                        <th>ID</th> <!-- headings for table -->
                                         <th>Name</th>
                                         <th>Position</th>
                                         <th>Image</th>
@@ -120,7 +119,7 @@ if(isset($_GET['delete'])){
                                     <tbody>
 
                                     <?php
-                                    $sql = "select * from tbl_images";
+                                    $sql = "select * from tbl_images"; // select all from table tbl_images
                                     $result = mysqli_query($link, $sql);
                                     if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_assoc($result)) {
@@ -128,13 +127,14 @@ if(isset($_GET['delete'])){
                                     ?>
 
                                     <tr>
-                                        <td><?php echo $row['id'] ?></td>
+                                        <td><?php echo $row['id'] ?></td> <!-- display contents from database specified -->
                                         <td><?php echo $row['name'] ?></td>
                                         <td><?php echo $row['description'] ?></td>
-                                        <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> </td>
+                                        <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> </td> <!-- display image from database -->
                                         <td>
-                                            <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                                            <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" ><span class="glyphicon glyphicon-remove-sign"></span> Delete</a>
+                                            <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a> <!-- button for users to go edit page -->
+                                            <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" >
+                                                <span class="glyphicon glyphicon-remove-sign"></span> Delete</a> <!-- button for users to go edit page -->
                                         </td>
 
                                     </tr>
@@ -142,20 +142,20 @@ if(isset($_GET['delete'])){
                                         }
                                     }
                                     ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                                    </tbody> <!-- end of table body -->
+                                </table> <!-- end of table -->
+                            </div> <!-- end of table div -->
+                        </div> <!-- end of panel body div -->
+                    </div> <!-- end of panel primary div -->
+                </div> <!-- end of col-md-12 div -->
+            </div> <!-- end of second row div -->
+        </div> <!-- end of row div -->
 
 
 
 
 
-
-        </div>
+        </div> <!-- end of jumbotron div -->
         <hr> <!-- creates line to break up content -->
         <footer class="footer"> <!-- start of footer for page  -->
             <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->

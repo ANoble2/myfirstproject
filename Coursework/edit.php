@@ -5,13 +5,13 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-session_start();
-include ('dbConnect.php');
-$upload_dir = 'uploads/';
+session_start(); // Start the session
+include ('dbConnect.php');// create connection to the database
+$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
 if (isset($_GET['id'])){
      $id = $_GET['id'];
-     $sql = "select * from tbl_images where id=" .$id;
+     $sql = "select * from tbl_images where id=" .$id; // finds the record of specific idea to be edited if cant find it displays error
      $result = mysqli_query($link, $sql);
      if(mysqli_num_rows($result) > 0){
      $row =mysqli_fetch_assoc($result);
@@ -25,9 +25,9 @@ if(isset($_POST['btnUpdate'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
 
-    $imgName = $_FILES['myfile']['name'];
-    $imgTmp = $_FILES['myfile']['tmp_name'];
-    $imgSize = $_FILES['myfile']['size'];
+    $imgName = $_FILES['myfile']['name']; // extracts information about the file name
+    $imgTmp = $_FILES['myfile']['tmp_name'];  // extracts information about the file for temporary location
+    $imgSize = $_FILES['myfile']['size']; // extracts information about the file size
 
     // if form boxes are empty display error
     if(empty($name)){
@@ -38,15 +38,15 @@ if(isset($_POST['btnUpdate'])) {
 
     // update image if user select new image
     if($imgName) {
-        // get image extension
+        // get image extension and changes to lower case
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         // allow extension
         $allowExt = array('jpeg', 'jpg', 'png', 'gif');
-        //random new name for image
+        //random new name for image when goes to database
         $userPic = time() . '_' . rand(1000, 9999) . '.' . $imgExt;
         //check its a valid image
         if (in_array($imgExt, $allowExt)) {
-            //check image size is less than certain amount in this case 5MB
+            //check image size is less than certain amount in this case 5MB or displays error
             if ($imgSize < 5000000) {
                 // delete the old image
                 unlink($upload_dir . $row['image']);
@@ -72,7 +72,7 @@ if(isset($_POST['btnUpdate'])) {
         $result = mysqli_query($link, $sql);
         if ($result){
             $successMsg = 'New image data has been updated successfully';
-            header('refresh;3;uploadimages.php');
+            header('refresh;5;viewPhotos.php'); // user redirected to view photos page automatically within 5 secs
         }else{
             $errorMsg = 'Error '.mysqli_error($link);
         }
@@ -88,17 +88,17 @@ if(isset($_POST['btnUpdate'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Ashley's Project</title>
+    <title>Ashley's Project</title><!-- title page -->
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
     <link href="material/css/bootstrap-theme.min.css" rel="stylesheet">
 
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -110,7 +110,7 @@ if(isset($_POST['btnUpdate'])) {
 
                 <a class="navbar-brand" href="#">Visual Upload</a> <!-- shows web app name in nav bar-->
 
-            </div>
+            </div> <!-- end of nav bar header div -->
 
             <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
                 <ul class="nav navbar-nav">
@@ -121,11 +121,11 @@ if(isset($_POST['btnUpdate'])) {
                 <form class="navbar-form navbar-right">
                     Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->
                     <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
-                </form>
+                </form> <!-- end of form -->
 
-            </div>
+            </div>  <!-- end of nav bar collapse div -->
 
-        </div>
+        </div> <!-- end of container -->
 
     </nav><!--end of nav bar -->
 
@@ -138,7 +138,7 @@ if(isset($_POST['btnUpdate'])) {
     <div class="jumbotron">
         <div class="page-header">
             <h3> Add New Images
-                <a class="btn btn-default" href="viewPhotos.php">
+                <a class="btn btn-default" href="viewPhotos.php"> <!-- button for users to go back to view photos page -->
                     <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
                 </a>
             </h3>
@@ -148,7 +148,7 @@ if(isset($_POST['btnUpdate'])) {
         if(isset($errorMsg)){
             ?>
             <div class="alert alert-danger">
-                <span class="glyphicon glyphicon-info-sign">
+                <span class="glyphicon glyphicon-info-sign"> <!-- displays errorMsg variable at top of the form -->
                 <strong><?php echo $errorMsg; ?></strong>
                     </span>
             </div>
@@ -160,7 +160,7 @@ if(isset($_POST['btnUpdate'])) {
         if(isset($successMsg)){
             ?>
             <div class="alert alert-success">
-                <span class="glyphicon glyphicon-info-sign"></span>
+                <span class="glyphicon glyphicon-info-sign"></span> <!-- displays successMsg variable at top of the form redirecting user-->
                 <?php echo $successMsg; ?> redirecting
             </div>
             <?php
@@ -176,35 +176,36 @@ if(isset($_POST['btnUpdate'])) {
                     <div class="form-group">
                         <label for="name" class="col-md-2">Name </label>
                         <div class="col-md-10">
-                            <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>">
+                            <input type="text" name="name" class="form-control" value="<?php echo $row['name']; ?>"> <!-- display name contents from database -->
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="description" class="col-md-2">Description</label>
                         <div class="col-md-10">
-                            <input type="text" name="description" class="form-control" value="<?php echo $row['description']; ?>">
+                            <input type="text" name="description" class="form-control" value="<?php echo $row['description']; ?>"> <!-- display description contents from database -->
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="photo" class="col-md-2">Image</label>
                         <div class="col-md-10">
-                            <img src="<?php echo $upload_dir.$row['image'] ?>" width="200">
+                            <img src="<?php echo $upload_dir.$row['image'] ?>" width="200"> <!-- display image from database  -->
                             <input type="file" name="myfile">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success" name="btnUpdate">
+                    <button type="submit" class="btn btn-success" name="btnUpdate"> <!-- button for users to submit -->
                         <span class="glyphicon glyphicon-open"></span> Update Image
                     </button>
-                </form>
-            </div>
-        </div>
-    </div>
+                </form> <!-- end of form -->
+
+            </div> <!-- end of panel body div -->
+        </div> <!-- end of panel primary div -->
+    </div> <!-- end of jumbotron div-->
 
 
-    <footer class="footer">
-        <p>&copy; 2017 Ashley Noble</p>
-    </footer>
+    <footer class="footer"> <!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer> <!-- end of footer for page  -->
 
 </div> <!-- end of container-->
 

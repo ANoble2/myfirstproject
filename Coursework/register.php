@@ -8,8 +8,9 @@
 include ('dbConnect.php'); // create connection to the database
 
 $error = false;
-if(isset($_POST['btn-register'])){ // if btn-register is pressed 
-    //Help prevent sql injection with cleaning user input
+if(isset($_POST['btn-register'])){ // if btn-register is pressed
+
+    //Help prevent sql injection with cleaning user input / Strip unnecessary characters
     $username = $_POST['username'];
     $username = strip_tags($username);
     $username = htmlspecialchars($username);
@@ -29,7 +30,7 @@ if(empty($username)){
     $errorUsername = 'Please enter username';
 }
 
-if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+if(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // to validate email check is well formed/expected input
     $error = true;
     $errorEmail = 'Please enter a valid email address';
 }
@@ -103,14 +104,14 @@ if(!$error){
             </div> <!-- end of col-md-6 div -->
             
             <div class="col-md-6">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"> <!-- prevent attackers from exploiting  code with register form -->
                     <center><h2>Register</h2></center> <!-- heading for form-->
                     <hr/>
                     <?php
                     if(isset($successMsg)){
                         ?>
                         <div class="alert alert-success">
-                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <span class="glyphicon glyphicon-info-sign"></span> <!-- displays successMsg variable at top of the form -->
                             <?php echo $successMsg; ?>
                         </div>
                         <?php
@@ -149,7 +150,7 @@ if(!$error){
 </div><!-- end of container -->
 
 
-<!-- java scripts -->
+<!-- scripts -->
 <script src="material/js/bootstrap.min.js"></script>
 </body>
 </html>

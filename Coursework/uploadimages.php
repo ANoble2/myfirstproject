@@ -5,18 +5,18 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-session_start();
-include ('dbConnect.php');
-$upload_dir = 'uploads/';
+session_start(); // Start the session
+include ('dbConnect.php'); // create connection to the database
+$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
 // if upload button is pressed passes variables entered in form
 if(isset($_POST['btnUpload'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
 
-    $imgName = $_FILES['myfile']['name'];
-    $imgTmp = $_FILES['myfile']['tmp_name'];
-    $imgSize = $_FILES['myfile']['size'];
+    $imgName = $_FILES['myfile']['name']; // extracts information about the file name
+    $imgTmp = $_FILES['myfile']['tmp_name']; // extracts information about the file for temporary location
+    $imgSize = $_FILES['myfile']['size']; // extracts information about the file size
 
     // if form boxes are empty display error whether name, description or image is missing
     if(empty($name)){
@@ -26,16 +26,16 @@ if(isset($_POST['btnUpload'])) {
     }elseif (empty($imgName)) {
         $errorMsg = 'Please select an Image';
     }else{
-        // gets image extension
+        // gets image extension and changes to lower case
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         // allowed extensions
         $allowExt = array('jpeg', 'jpg', 'png', 'gif');
-        //random new name for image
+        //random new name for image when goes to database
         $userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
         //check its a valid image
         if(in_array($imgExt, $allowExt)){
-            //check image size is less than certain amount in this case 5MB
-            if($imgSize < 500000){
+            //check image size is less than certain amount in this case 5MB or displays error
+            if($imgSize < 5000000){
                 move_uploaded_file($imgTmp,$upload_dir.$userPic);
             }else{
                 $errorMsg = 'The image is too large';
@@ -52,7 +52,7 @@ if(isset($_POST['btnUpload'])) {
             $result = mysqli_query($link, $sql);
             if ($result){
                 $successMsg = 'New image data has been successfully added';
-            header('refresh;5;uploadimages.php');
+            header('refresh;5;viewPhotos.php'); // user redirected to view photos page automatically within 5 secs
         }else{
                     $errorMsg = 'Error '.mysqli_error($link);
                   }
@@ -75,10 +75,10 @@ if(isset($_POST['btnUpload'])) {
     <link href="material/css/bootstrap-theme.min.css" rel="stylesheet">
 
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -90,7 +90,7 @@ if(isset($_POST['btnUpload'])) {
 
                 <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
-            </div>
+            </div> <!-- start of nav bar header div -->
 
             <div class="collapse navbar-collapse"> 
                 <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
@@ -102,11 +102,11 @@ if(isset($_POST['btnUpload'])) {
                 <form class="navbar-form navbar-right"> <!-- makes contents appear on the right -->
                     Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->
                     <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a> <!-- log out button -->
-                </form>
+                </form> <!-- end of form -->
 
-            </div>
+            </div>  <!-- end of nav bar collapse div -->
 
-        </div>
+        </div> <!-- end of container -->
 
     </nav><!--end of nav bar -->
 
@@ -120,7 +120,7 @@ if(isset($_POST['btnUpload'])) {
         <div class="page-header">
             <h3> Add New Images
                 <a class="btn btn-default" href="viewPhotos.php">
-                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back
+                    <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back <!-- button for users to go back to view photos page -->
                 </a>
             </h3>
         </div>
@@ -129,7 +129,7 @@ if(isset($_POST['btnUpload'])) {
         if(isset($errorMsg)){
             ?>
             <div class="alert alert-danger">
-                <span class="glyphicon glyphicon-info-sign">
+                <span class="glyphicon glyphicon-info-sign">  <!-- displays errorMsg variable at top of the form -->
                 <strong><?php echo $errorMsg; ?></strong>
                     </span>
             </div>
@@ -142,7 +142,7 @@ if(isset($_POST['btnUpload'])) {
             ?>
             <div class="alert alert-success">
                 <span class="glyphicon glyphicon-info-sign"></span>
-                <strong><?php echo $successMsg; ?> redirecting</strong>
+                <strong><?php echo $successMsg; ?> redirecting</strong>  <!-- displays successMsg variable at top of the form -->
             </div>
             <?php
         }
@@ -153,7 +153,7 @@ if(isset($_POST['btnUpload'])) {
             </div>
             <div id="panelbody1" class="panel-body">
 
-                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                <form action="" method="post" enctype="multipart/form-data" class="form-horizontal"> <!-- upload form -->
 
                     <div class="form-group">
                         <label for="name" class="col-md-2">Name </label>

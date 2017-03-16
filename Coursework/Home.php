@@ -5,7 +5,8 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-session_start();
+session_start(); // Start the session
+include ('dbConnect.php'); // create connection to the database
 if(!isset($_SESSION['username'])){
     header('location:index.php');
 }
@@ -24,12 +25,12 @@ if(!isset($_SESSION['username'])){
     <link href="material/css/bootstrap.min.css" rel="stylesheet">
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <!-- provides collapse button to appear in corner for smaller screens -->
                     <span class="sr-only">Toggle navigation</span>
 
                     <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
@@ -39,7 +40,7 @@ if(!isset($_SESSION['username'])){
 
                 <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
-            </div>
+            </div> <!-- end of nav bar header div -->
 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
@@ -55,10 +56,10 @@ if(!isset($_SESSION['username'])){
                         <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a> <!-- log out button -->
                     </form>
 
-                </div>
+                </div> <!-- end of nav bar collapse div -->
 
-        </div>
-    </nav>
+        </div> <!-- end of container -->
+    </nav> <!-- end of nav bar -->
 </head>
 
 <body>
@@ -67,7 +68,7 @@ if(!isset($_SESSION['username'])){
     <div class="jumbotron">
         <h1>Visual Upload - Photo Gallery</h1>
         <p>Welcome to Visual Upload! <br>You can now upload and view your images.</p>
-    </div>
+    </div> <!-- end of jumbotron div-->
 
     <div class="container">
         <!-- Example row of columns -->
@@ -91,9 +92,9 @@ if(!isset($_SESSION['username'])){
             </div>
 
 
-        </div>
+        </div><!-- end of row -->
 
-    </div>
+    </div> <!-- end of container-->
     <hr> <!-- creates line to break up content -->
     <footer class="footer"> <!-- start of footer for page  -->
         <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->

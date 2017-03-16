@@ -5,13 +5,13 @@
  * Date: 11/03/2017
  * Time: 15:27
  */
-session_start();
+session_start();// Start the session
 include ('dbConnect.php'); // create connection to the database
 
 
 $error = false; // variable to store for error to be used later in code
 if(isset($_POST['btn-login'])){ // if btn-login is pressed
-    //Help prevent sql injection with cleaning user input
+    //Help prevent sql injection with cleaning user input / Strip unnecessary characters
     $email = trim($_POST['email']);
     $email = htmlspecialchars(strip_tags($email));
 
@@ -21,7 +21,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
     if(empty($email)){
         $error = true;
         $errorEmail = 'Please enter email';
-    }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+    }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // to validate email check is well formed/expected input
         $error = true;
         $errorEmail = 'Please enter a valid email address';
     }
@@ -96,14 +96,14 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
             </div> <!-- end of col-md-6 div -->
 
             <div class="col-md-6">
-                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
+                <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off"> <!-- prevent attackers from exploiting code with login form -->
                     <center><h2> Please Login</h2></center> <!-- heading for form-->
                     <hr/>
                     <?php
                     if(isset($errorMsg)){
                         ?>
                         <div class="alert alert-danger">
-                            <span class="glyphicon glyphicon-info-sign"></span>
+                            <span class="glyphicon glyphicon-info-sign"></span>  <!-- displays errorMsg variable at top of the form -->
                             <?php echo $errorMsg; ?>
                         </div>
                         <?php
@@ -136,7 +136,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
 
 
 
-<!-- java scripts -->
+<!-- scripts -->
 <script src="material/js/bootstrap.min.js"></script>
 </body>
 </html>
