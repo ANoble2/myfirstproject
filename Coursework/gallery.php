@@ -71,7 +71,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 </div><!-- end of container -->
 
-
+<div class="gallery">
     <div class="container">
 
         <?php
@@ -79,16 +79,11 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         $result = mysqli_query($link, $sql);
         if(mysqli_num_rows($result)){
         while ($row = mysqli_fetch_assoc($result)) {
-
-        echo '<div class="col-md-4">';
-        echo '<p>image</p><br>'
-            > Changed;next;line;
-        $link = $upload_dir . $row['image'];
         ?>
 
 
         <div class="row">
-            <div class="col-md-4 step">
+            <div class="col-md-4">
 
                 <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail">
 
@@ -110,6 +105,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
     </div> <!-- end of container -->
 
+</div> <!-- end of gallery div -->
 
 
 
