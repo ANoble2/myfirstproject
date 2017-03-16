@@ -80,7 +80,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         if(mysqli_num_rows($result)){
         while ($row = mysqli_fetch_assoc($result)) {
 
-        echo '<div class="col-md-3">';
+        echo '<div class="col-md-4">';
         echo '<p>image</p><br>'
             > Changed;next;line;
         $link = $upload_dir . $row['image'];
@@ -95,38 +95,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             </div>
 
 
-            <?php
-            }
-            }
-            ?>
-            <div class="table-responsive table-bordered">
-                <table class=" table table-bordered table-responsive">
 
-                    <tbody>
-
-                    <?php
-                    $sql = "select * from tbl_images"; // select all from table tbl_images
-                    $result = mysqli_query($link, $sql);
-                    if(mysqli_num_rows($result)){
-                        while($row = mysqli_fetch_assoc($result)) {
-
-                            ?>
-
-                            <tr>
-
-                                <td><?php echo $row['name'] ?></td>
-
-                                <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40"> </td> <!-- display image from database -->
-
-                            </tr>
-                            <?php
-                        }
-                    }
-                    ?>
-
-                    </tbody> <!-- end of table body -->
-                </table> <!-- end of table -->
-            </div> <!-- end of table div -->
 
             <?php
 
