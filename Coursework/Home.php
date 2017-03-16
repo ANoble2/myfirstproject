@@ -81,13 +81,13 @@ if(!isset($_SESSION['username'])){
             <div class="col-md-4">
                 <img src="material/images/upload.PNG" class="img-rounded" alt="upload image" width="304" height="236"> <!-- image for section of web app -->
                 <h2>Upload images</h2>
-                <p> Upload and save your images </p>
+                <p> Upload and save your images. </p>
 
             </div>
             <div class="col-md-4">
-                <img src="material/images/integration.PNG" class="img-rounded" alt="Integration" width="304" height="236"> <!-- image for section of web app -->
-                <h2>Control Panel</h2>
-                <p> Control Panel available to edit and delete your uploaded images </p>
+                <img src="material/images/control%20panel.PNG" class="img-rounded" alt="control panel" width="304" height="236"> <!-- image for section of web app -->
+                <h2> <a href="viewPhotos.php">Control Panel</a></h2>
+                <p> Allows you to edit and delete your existing images. </p>
 
             </div>
 
