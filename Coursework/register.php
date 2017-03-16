@@ -1,8 +1,14 @@
 <?php
-include ('dbConnect.php');
+/**
+ * Created by PhpStorm.
+ * User: Ashley
+ * Date: 11/03/2017
+ * Time: 15:27
+ */
+include ('dbConnect.php'); // create connection to the database
 
 $error = false;
-if(isset($_POST['btn-register'])){
+if(isset($_POST['btn-register'])){ // if btn-register is pressed 
     //Help prevent sql injection with cleaning user input
     $username = $_POST['username'];
     $username = strip_tags($username);
@@ -30,10 +36,10 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
 
 if(empty($password)){
     $error = true;
-    $errorPassword = 'Please enter password';
-}elseif(strlen($password) < 8){
+    $errorPassword = 'Please enter password'; 
+}elseif(strlen($password) < 8){ // password must be a least 8 characters long
     $error = true;
-    $errorPassword = 'Password must at least 8 characters';
+    $errorPassword = 'Password must at least 8 characters'; // if password isn't 8 characters long presents error message
 }
 
 //encrypt password with md5
@@ -42,12 +48,12 @@ $password = md5($password);
 //insert data if no error
 if(!$error){
     //  SQL query as a string for inserting information to database
-    $sql = "insert into tbl_users(username, email ,password)
-                values('$username', '$email', '$password')";
+    $sql = "insert into tbl_users(username, email ,password) 
+                values('$username', '$email', '$password')"; // insert values specified into tbl_users in columns username , email , password
     if(mysqli_query($link, $sql)){
-        $successMsg = ' You have Registered Successfully. <a href="index.php">click here to login</a>';
+        $successMsg = ' You have Registered Successfully. <a href="index.php">click here to login</a>'; // if register successful display this message to direct to login page
     }else{
-        echo 'Error '.mysqli_error($link);
+        echo 'Error '.mysqli_error($link); // if register unsuccessful display error
     }
 
 }
@@ -61,30 +67,30 @@ if(!$error){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Ashley's Project</title>
+    <title>Ashley's Project</title> <!-- title page -->
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="material/css/bootstrap.css">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <!-- provides collapse button to appear in corner for smaller screens -->
                     <span class="sr-only">Toggle navigation</span>
 
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">Visual Upload</a>
+                <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
-            </div>
+            </div> <!-- end of nav bar header div -->
 
-        </div>
-    </nav>
+        </div> <!-- end of container -->
+    </nav> <!-- end of nav bar -->
 
 </head>
 <body>
@@ -92,12 +98,13 @@ if(!$error){
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-                <h1> Viusal upload</h1><br>
-                <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/>
-            </div>
+                <h1> Viusal upload</h1><br>  <!-- Name of the web app in login page-->
+                <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/> <!-- logo image for web app -->
+            </div> <!-- end of col-md-6 div -->
+            
             <div class="col-md-6">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-                    <center><h2>Register</h2></center>
+                    <center><h2>Register</h2></center> <!-- heading for form-->
                     <hr/>
                     <?php
                     if(isset($successMsg)){
@@ -110,36 +117,39 @@ if(!$error){
                     }
                     ?>
                     <div class="form-group">
-                        <label for="username" class="control-label">Username</label>
-                        <input type="text" name="username" class="form-control">
-                        <span class="text-danger"><?php if(isset($errorUsername)) echo $errorUsername; ?></span>
+                        <label for="username" class="control-label">Username</label> <!-- label to identify login box for username -->
+                        <input type="text" name="username" class="form-control" autocomplete="off"> <!-- part of form where to enter username -->
+                        <span class="text-danger"><?php if(isset($errorUsername)) echo $errorUsername; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <label for="email" class="control-label">Email</label>
-                        <input type="email" name="email" class="form-control" autocomplete="off">
-                        <span class="text-danger"><?php if(isset($errorEmail)) echo $errorEmail; ?></span>
+                        <label for="email" class="control-label">Email</label> <!-- label to identify login box for email -->
+                        <input type="email" name="email" class="form-control" autocomplete="off"> <!-- part of form where to enter email -->
+                        <span class="text-danger"><?php if(isset($errorEmail)) echo $errorEmail; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <label for="password" class="control-label">Password</label>
-                        <input type="password" name="password" class="form-control" autocomplete="off">
-                        <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span>
+                        <label for="password" class="control-label">Password</label> <!-- label to identify login box for password -->
+                        <input type="password" name="password" class="form-control" autocomplete="off"> <!-- part of form where to enter password -->
+                        <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <center><input type="submit" name="btn-register" value="Login" class="btn btn-primary"></center>
+                        <center><input type="submit" name="btn-register" value="Login" class="btn btn-primary"></center>  <!-- button for users to submit -->
                     </div>
                     <hr/>
-                    <a href="index.php">Login</a>
+                    <a href="index.php">Login</a> <!-- link  back to login page -->
                 </form>
-            </div>
-        </div>
-    </div>
-    <hr>
-    <footer class="footer">
-        <p>&copy; 2017 Ashley Noble</p>
-    </footer>
+                
+            </div> <!-- end of col-md-6 div -->
+        </div> <!-- end of row div -->
+    </div> <!-- end of jumbotron div -->
+    
+    <hr> <!-- creates line to break up content --> 
+    <footer class="footer"> <!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer> <!-- end of footer for page  -->
 </div><!-- end of container -->
 
 
-
+<!-- java scripts -->
+<script src="material/js/bootstrap.min.js"></script>
 </body>
 </html>

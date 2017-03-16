@@ -68,7 +68,7 @@ if(isset($_POST['btnUpload'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-    <title>Ashley's Project</title>
+    <title>Ashley's Project</title> <!-- title page -->
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
@@ -83,25 +83,25 @@ if(isset($_POST['btnUpload'])) {
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
 
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
 
-                <a class="navbar-brand" href="#">Visual Upload</a> <!-- shows web app name in nav bar-->
+                <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
             </div>
 
-            <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
-                <ul class="nav navbar-nav">
+            <div class="collapse navbar-collapse"> 
+                <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
                     <li class=><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Gallery</a></li>
                     <li class="active"><a href="uploadimages.php">Upload Images</a></li>
                     <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
-                <form class="navbar-form navbar-right">
+                <form class="navbar-form navbar-right"> <!-- makes contents appear on the right -->
                     Welcome : <?php echo $_SESSION['username']; ?> <!-- display logged in users name -->
-                    <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a>
+                    <a href="logout.php" class="btn btn-default" role="button"><span class="glyphicon glyphicon-log-out"></span> Log Out </a> <!-- log out button -->
                 </form>
 
             </div>
@@ -174,18 +174,20 @@ if(isset($_POST['btnUpload'])) {
                             <input type="file" name="myfile">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success" name="btnUpload">
+                    <button type="submit" class="btn btn-success" name="btnUpload"> <!-- button for users to submit -->
                         <span class="glyphicon glyphicon-open"></span> Upload Image
                     </button>
-                </form>
-            </div>
-        </div>
-        </div>
+                </form> <!-- end of form -->
+                
+            </div>  <!-- end panel body div -->
+        </div>  <!-- end of panel primary div -->
+        
+        </div>  <!-- end of jumbotron div -->
 
-
-    <footer class="footer">
-        <p>&copy; 2017 Ashley Noble</p>
-    </footer>
+    <hr> <!-- creates line to break up content -->
+    <footer class="footer"> <!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer> <!-- end of footer for page  -->
 
 </div> <!-- end of container-->
 

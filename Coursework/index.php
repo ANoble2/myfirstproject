@@ -10,7 +10,7 @@ include ('dbConnect.php'); // create connection to the database
 
 
 $error = false; // variable to store for error to be used later in code
-if(isset($_POST['btn-login'])){
+if(isset($_POST['btn-login'])){ // if btn-login is pressed
     //Help prevent sql injection with cleaning user input
     $email = trim($_POST['email']);
     $email = htmlspecialchars(strip_tags($email));
@@ -31,22 +31,22 @@ if(isset($_POST['btn-login'])){
         $errorPassword = 'Please enter password';
     }elseif(strlen($password)< 8){ // password must be a least 8 characters long
         $error = true;
-        $errorPassword = 'Password  must be at least 8 character'; // if password isn't 8 characters long presents error mesaage
+        $errorPassword = 'Password  must be at least 8 character'; // if password isn't 8 characters long presents error message
     }
 
     if(!$error){
-        $password = md5($password);
+        $password = md5($password); //encrypt password with md5
         // SQL query as a string for selecting all from email column matches email address provided
-        $sql = "select * from tbl_users where email='$email' ";
+        $sql = "select * from tbl_users where email='$email' "; // selects all from table called tbl_users where email column = email variable
         // execute the SQL query
         $result = mysqli_query($link, $sql);
         $count = mysqli_num_rows($result);
         $row = mysqli_fetch_assoc($result);
         if($count==1 && $row['password'] == $password){
             $_SESSION['username'] = $row['username'];
-            header('location: Home.php');
+            header('location: Home.php'); // redirect user to home page if users login is successful
         }else{
-            $errorMsg = 'Incorrect Username or Password';
+            $errorMsg = 'Incorrect Username or Password'; // if login not successful present this error message
         }
     }
 }
@@ -65,25 +65,25 @@ if(isset($_POST['btn-login'])){
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
-    <nav class="navbar navbar-default">
-        <div class="container">
+    <nav class="navbar navbar-default"> <!-- start of nav bar -->
+        <div class="container"> <!-- start of container -->
 
-            <div class="navbar-header">
+            <div class="navbar-header"> <!-- start of nav bar header div -->
 
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <!-- provides collapse button to appear in corner for smaller screens -->
                     <span class="sr-only">Toggle navigation</span>
 
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
 
                 <a class="navbar-brand" href="#">Visual Upload</a> <!-- name of web app in nav bar section -->
 
-            </div>
+            </div> <!-- end of nav bar header div -->
 
-        </div>
-    </nav>
+        </div> <!-- end of container -->
+    </nav> <!-- end of nav bar -->
 
 </head>
 <body>
@@ -93,10 +93,11 @@ if(isset($_POST['btn-login'])){
             <div class="col-md-6">
                 <h1> Viusal Upload</h1><br> <!-- Name of the web app in login page-->
                 <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/> <!-- logo image for web app -->
-            </div>
+            </div> <!-- end of col-md-6 div -->
+
             <div class="col-md-6">
                 <form method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-                    <center><h2> Please Login</h2></center>
+                    <center><h2> Please Login</h2></center> <!-- heading for form-->
                     <hr/>
                     <?php
                     if(isset($errorMsg)){
@@ -109,32 +110,33 @@ if(isset($_POST['btn-login'])){
                     }
                     ?>
                     <div class="form-group">
-                        <label for="email" class="control-label">Email</label>
-                        <input type="email" name="email" class="form-control" autocomplete="off">
-                        <span class="text-danger"><?php if(isset($errorEmail)) echo $errorEmail; ?></span>
+                        <label for="email" class="control-label">Email</label> <!-- label to identify login box for email -->
+                        <input type="email" name="email" class="form-control" autocomplete="off"> <!-- part of login where to enter email -->
+                        <span class="text-danger"><?php if(isset($errorEmail)) echo $errorEmail; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <label for="password" class="control-label">Password</label>
-                        <input type="password" name="password" class="form-control" autocomplete="off">
-                        <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span>
+                        <label for="password" class="control-label">Password</label> <!-- label to identify login box for password -->
+                        <input type="password" name="password" class="form-control" autocomplete="off"> <!-- part of login where to enter password -->
+                        <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <center><input type="submit" name="btn-login" value="Login" class="btn btn-primary"></center>
+                        <center><input type="submit" name="btn-login" value="Login" class="btn btn-primary"></center> <!-- button for users to submit -->
                     </div>
                     <hr/>
-                    <a href="register.php">Register</a>
-                </form>
-            </div>
-        </div>
-    </div>
-    <footer class="footer"><!-- start of footer for page  -->
+                    <a href="register.php">Register</a> <!-- link to register page if user doesn't have account already -->
+                </form> <!-- end of form -->
+
+            </div> <!-- end of col-md-6 div -->
+        </div> <!-- end of row div -->
+    </div> <!-- end of jumbotron div -->
+    <footer class="footer"> <!-- start of footer for page  -->
         <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
     </footer><!-- end of footer for page  -->
 </div> <!-- end of container-->
 
 
 
-
+<!-- java scripts -->
 <script src="material/js/bootstrap.min.js"></script>
 </body>
 </html>
