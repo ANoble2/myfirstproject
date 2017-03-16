@@ -82,8 +82,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
 
 
-        <div class="row">
+
             <div class="col-md-4">
+                <div class="row">
 
                 <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail">
 
@@ -114,7 +115,6 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 <!-- scripts -->
 <script src="material/js/bootstrap.min.js"></script>
 <script scr="material/js/bootstrap.js"></script>
-<script src="material/js/bootstrap.min.js"></script>
 <script src=material/js/galleryjquery.js></script>
 <script src=material/js/lity.js></script>
 
