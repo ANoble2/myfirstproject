@@ -73,48 +73,32 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="gallery">
     <div class="container">
-<?php
-$sql = "SELECT * FROM tbl_images";
-$result = mysql_query($sql);
-while($row = mysql_fetch_array($result))
-{
-    echo '<div class="col-md-3">';
-    echo '<p>image</p><br>'
-    > Changed; next; line;
-$link = $upload_dir.$row['image'];
-    ?>
 
+        <?php
+        $sql = "select * from tbl_images"; // select all from table tbl_images
+        $result = mysqli_query($link, $sql);
+        if(mysqli_num_rows($result)){
+        while ($row = mysqli_fetch_assoc($result)) {
 
-
-
+        echo '<div class="col-md-3">';
+        echo '<p>image</p><br>'
+            > Changed;next;line;
+        $link = $upload_dir . $row['image'];
+        ?>
 
 
         <div class="row">
             <div class="col-md-3 step">
-                <img src="<?php echo $upload_dir.$row['image']?>" height="40">
+                <img src="<?php echo $upload_dir . $row['image'] ?>" height="40">
 
             </div>
-
 
 
             <?php
             }
+            }
             ?>
-            <div class="col-md-3 step">
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
-            <div class="col-md-3 step">
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
-            <div class="col-md-3 step">
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
-            <div class="col-md-3 step">
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
-            <div class="col-md-3 step">
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
+
 
         </div> <!-- end of row div -->
         <hr> <!-- creates line to break up content -->
