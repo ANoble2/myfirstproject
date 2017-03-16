@@ -71,7 +71,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 </div><!-- end of container -->
 
-<div class="gallery">
+
     <div class="container">
 
         <?php
@@ -84,6 +84,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
             <div class="row">
             <div class=" col-md-3 ">
+
                     <center><img src="<?php echo $upload_dir . $row['image'] ?>" data-lity class="img-responsive"></center> <!-- display image from database -->
                    <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
             </div> <!-- end of row div -->
@@ -96,7 +97,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
     </div> <!-- end of container -->
 
-</div> <!-- end of gallery div -->
+
 
 <div class="container">
 
