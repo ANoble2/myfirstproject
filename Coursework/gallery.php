@@ -71,7 +71,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 </div><!-- end of container -->
 
-<div class="gallery">
+
     <div class="container">
 
         <?php
@@ -87,10 +87,11 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
 
 
-
+        <div class="row">
             <div class="col-md-4 step">
-                <div class="row">
+
                 <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail">
+
             </div>
         </div>
             <?php
@@ -109,7 +110,6 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
     </div> <!-- end of container -->
 
-</div> <!-- end of gallery div -->
 
 
 
