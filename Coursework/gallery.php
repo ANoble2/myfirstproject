@@ -45,9 +45,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
                     <li class=""><a href="Home.php">Home</a></li>
-                    <li class=""><a href="gallery.php">Image Gallery</a></li>
+                    <li class="active"><a href="gallery.php">Image Gallery</a></li>
                     <li class=""><a href="uploadimages.php">Upload Images</a></li>
-                    <li class="active"><a href="viewPhotos.php">Control Panel</a></li>
+                    <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
 
 
