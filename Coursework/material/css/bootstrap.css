@@ -1129,8 +1129,8 @@ img {
 }
 .img-thumbnail {
   display: inline-block;
-  height:250px;
-  width:100%;
+  max-width: 100%;
+  height: auto;
   padding: 4px;
   line-height: 1.42857143;
   background-color: #fff;
