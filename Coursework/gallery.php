@@ -66,7 +66,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
-        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?> Gallery</h3>
+        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?> Gallery</h3> <!-- displays users name next to gallery-->
     </div>  <!-- end of jumbotron div -->
 
 </div><!-- end of container -->
@@ -86,7 +86,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             <div class="col-md-3">
                 <div class="row">
 
-                    <center><img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail"></center> <!-- display image from database -->
+                    <center><img src="<?php echo $upload_dir . $row['image'] ?>" class="img-responsive" data-lity class="img-thumbnail"></center> <!-- display image from database -->
                    <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
             </div> <!-- end of row div -->
         </div>  <!-- end of col-md-4 div -->
