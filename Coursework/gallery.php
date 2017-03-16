@@ -82,7 +82,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
         echo '<div class="col-md-4">';
         echo '<p>image</p><br>'
-            > Changed;next;line;
+            > Changed;
+        next;
+        line;
         $link = $upload_dir . $row['image'];
         ?>
 
@@ -90,17 +92,14 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         <div class="row">
             <div class="col-md-4 step">
 
-                <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail">
+                <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity
+                     class="img-thumbnail">
 
             </div>
-
-
-
-
-
-
-
-
+            <?php
+            }
+            }
+            ?>
 
 
             <div class="container"
