@@ -86,7 +86,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             <div class="col-md-3">
                 <div class="row">
 
-                    <center><img src="<?php echo $upload_dir . $row['image'] ?>" class="img-responsive" data-lity class="img-thumbnail"></center> <!-- display image from database -->
+                    <center><img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="220" data-lity class="img-thumbnail"></center> <!-- display image from database -->
                    <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
             </div> <!-- end of row div -->
         </div>  <!-- end of col-md-4 div -->
@@ -108,7 +108,14 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 </div> <!-- end of gallery div -->
 
+<div class="container">
 
+    <hr> <!-- creates line to break up content -->
+    <footer class="footer"> <!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer> <!-- end of footer for page  -->
+
+</div>
 
 
 
