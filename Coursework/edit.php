@@ -72,7 +72,7 @@ if(isset($_POST['btnUpdate'])) {
         $result = mysqli_query($link, $sql);
         if ($result){
             $successMsg = 'New image data has been updated successfully';
-            header('refresh;5;uploadimages.php');
+            header('refresh;3;uploadimages.php');
         }else{
             $errorMsg = 'Error '.mysqli_error($link);
         }
@@ -103,7 +103,7 @@ if(isset($_POST['btnUpdate'])) {
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
 
-                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> <!-- three lines appear on collapse button -->
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
@@ -211,7 +211,7 @@ if(isset($_POST['btnUpdate'])) {
 
 <!--scripts-->
 <script src="material/js/bootstrap.min.js"></script>
-<script src=material/js/jquery-1.10.2.min.js></script>
+<script src=material/js/bootstrap.js></script>
 
 
 </body>

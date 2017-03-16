@@ -22,8 +22,8 @@ if(isset($_GET['delete'])){
    if(mysqli_num_rows($result) > 0){
        $row = mysqli_fetch_assoc($result);
        $image = $row['image'];
-       unlink($upload_dir.$image);
        // delete record from the database
+       unlink($upload_dir.$image);
        $sql = "delete from tbl_images where id=".$id;
        if(mysqli_query($link, $sql)){
            header('location:viewPhotos.php');
