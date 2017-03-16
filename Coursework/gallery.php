@@ -97,16 +97,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 
 
-            <?php
 
-            echo '<div class="row">';
-            for ($i = 0; $i < count($upload_dir); $i++) {
-                echo '<div class="col-md-3"><img class="img-responsive" src="' . $upload_dir[$i] . '"/></div>';
-                if (($i+1) % 4 == 0)
-                    echo '</div><div class="row">';
-            }
-            echo '</div>';
-            ?>
 
 
 
