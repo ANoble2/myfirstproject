@@ -88,8 +88,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 
         <div class="row">
-            <div class="col-md-3 step">
-                <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178">
+            <div class="col-md-4 step">
+
+                <img src="<?php echo $upload_dir . $row['image'] ?>" width="300" height="178" data-lity class="img-thumbnail">
 
             </div>
 
@@ -122,9 +123,26 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                         }
                     }
                     ?>
+
                     </tbody> <!-- end of table body -->
                 </table> <!-- end of table -->
             </div> <!-- end of table div -->
+
+            <?php
+
+            echo '<div class="row">';
+            for ($i = 0; $i < count($upload_dir); $i++) {
+                echo '<div class="col-md-3"><img class="img-responsive" src="' . $upload_dir[$i] . '"/></div>';
+                if (($i+1) % 4 == 0)
+                    echo '</div><div class="row">';
+            }
+            echo '</div>';
+            ?>
+
+
+
+
+
             <div class="container"
         <hr> <!-- creates line to break up content -->
         <footer class="footer"> <!-- start of footer for page  -->
