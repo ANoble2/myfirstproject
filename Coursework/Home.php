@@ -22,7 +22,6 @@ if(!isset($_SESSION['username'])){
     <title>Ashley's Project</title> <!-- title page -->
 
     <!-- Bootstrap -->
-    <link href="material/css/bootstrap.min.css" rel="stylesheet">
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
     <nav class="navbar navbar-default"> <!-- start of nav bar -->
