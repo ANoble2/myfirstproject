@@ -89,7 +89,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
         <div class="row">
             <div class="col-md-3 step">
-                <img src="<?php echo $upload_dir . $row['image'] ?>" height="40">
+                <img src="<?php echo $upload_dir . $row['image'] ?>" width="304" height="236">
 
             </div>
 

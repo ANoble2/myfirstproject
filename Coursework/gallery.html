@@ -10,6 +10,21 @@ $link = "sc/uploads/" .$row[1];
 
 http://fellowtuts.com/php/display-data-in-responsive-columns-from-database-using-php/
 
+<div class="row">
+    <?php
+     $query=mysql_query("select * from tbl_gallery")or die(mysql_error());
+     while($row = mysql_fetch_array($query))
+     {
+       $id=$row['Photo_ID'];
+     ?>
+    <div class="col-md-4">
+        <a  href="adminln/<?php echo $row['Photo']; ?>" class="thumbnail">
+            <img src="adminln/<?php echo $row['Photo']; ?>"alt="..." class="img-rounded img-responsive">
+        </a>
+    </div>
+    <?php  } ?>
+</div>
+
 echo '<img style="width:100%;height:200px" src="' . $link . '"/>';
 echo '</div>';
 }
