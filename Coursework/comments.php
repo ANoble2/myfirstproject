@@ -41,8 +41,8 @@ echo "<form method='POST' action='".insComments($link)."'>
     
 </form>";
 
-
 ?>
+    <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
 <h3 class="panel-title">User comments</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
