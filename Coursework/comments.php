@@ -37,13 +37,13 @@ echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea name='message'></textarea><br>
-     <button type='submit' name='submitComment'>Post Comment</button>
+     <button type='button' class='btn btn-primary' name='submitComment'>Post Comment</button>
     
 </form>";
 
 
 ?>
-<h3 class="panel-primary"</h3>
+
 <div class="panel-body">
     <?php retrieveComments($link);?>
     </div>
