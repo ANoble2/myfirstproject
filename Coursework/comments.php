@@ -38,7 +38,7 @@ echo "<form method='POST' action='".insComments($link)."'>
 
 retrieveComments($link);
 ?>
-retrieveComments($link);
+
 
 
 </body>
