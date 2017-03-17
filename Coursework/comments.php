@@ -29,7 +29,7 @@ include 'comments-func.php'; // reference function for form to use
 <img src="material/images/logo.PNG">
 
 <?php
-echo "<form method='POST' action='".insComments()."'>
+echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea name='message'></textarea><br>

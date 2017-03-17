@@ -6,7 +6,7 @@
  * Time: 16:31
  */
 
-function insComments(){
+function insComments($link){
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
        $uid = $_POST['uid'];
        $date = $_POST['date'];
