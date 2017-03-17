@@ -4,25 +4,20 @@
  * User: Ashley
  * Date: 17/03/2017
  * Time: 15:39
- *
+ * textarea {
+width: 400px;
+height: 80px;
+background-color: #fff;
+resize:none;
+}
  */
+
+
+
 date_default_timezone_set('Europe/London');// takes current time specified when submit post
 include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
-
-if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
-    $uid = $_POST['uid'];
-    $date = $_POST['date'];
-    $message = $_POST['message'];
-
-    $sql = "insert into tbl_comments(uid, date, message) 
-                VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
-    $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
-
-}
-
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,23 +26,24 @@ if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run 
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
-    <link href="material/css/comment.css" rel="stylesheet">
+
 </head>
 <body>
 
 <img src="material/images/logo.PNG">
 
-<form method='POST' action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+<?php
+echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' name='uid' value='anonymous'>
-    <input type='hidden' name='date' value='"<?php date('Y-m-d H:i:s')?>"'>
+    <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea name='message'></textarea><br>
-     <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
+     <button type='submit' name='submitComment'>Post Comment</button>
     
-</form>
+</form>";
 
 
-
-<h3 class="panel-title">User comments</h3>
+?>
+<h3 class="panel-primary"</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
     </div>
