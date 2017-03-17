@@ -44,17 +44,7 @@ if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run 
      <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
     
 </form>
-<div class="container">
-<div class='form-group'>
-<form method='POST' action='"<?php insComments($link);?>"'>
-    <input type='hidden' class='form-control' name='uid' value='anonymous'>
-    <input type='hidden' class='form-control' name='date' value='"<?php date('Y-m-d H:i:s')?>"'>
-    <textarea class='form-control' name='message' ></textarea>
-    <button type='submit' class='btn_btn-primary' name='submitComment'>Post Comment</button>
 
-</form>
-</div>
-</div>
 
 
 <h3 class="panel-title">User comments</h3>
