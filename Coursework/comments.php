@@ -36,7 +36,7 @@ include 'comments-func.php'; // reference function for form to use
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='"<?php date('Y-m-d H:i:s')?>"'>
     <textarea name='message'></textarea><br>
-     <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
+     <input type='submit' class='btn_btn-primary' name='submitComment'>Post Comment</input>
     
 </form>
 <h3 class="panel-title">User comments</h3>
