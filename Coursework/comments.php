@@ -36,14 +36,13 @@ include 'comments-func.php'; // reference function for form to use
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='"<?php date('Y-m-d H:i:s')?>"'>
     <textarea name='message'></textarea><br>
-     <input type='submit' class='btn_btn-primary' name='submitComment'>Post Comment</input>
+     <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
     
 </form>
 <h3 class="panel-title">User comments</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
     </div>
-<input type="submit" name="btn-login" value="Login" class="btn btn-primary">
 
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
