@@ -36,7 +36,7 @@ include 'comments-func.php'; // reference function for form to use
 echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='anonymous'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
-    <textarea id='textarea-1' name='message'></textarea><br>
+    <textarea  name='message'></textarea><br>
      <button type='button' class='btn btn-primary' name='submitComment'>Post Comment</button>
     
 </form>";
