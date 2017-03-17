@@ -33,10 +33,10 @@ echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' name='uid' value='anonymous'>
     <input type='hidden' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea name='message'></textarea><br>
+    <a class=\"btn btn-danger<span class=\"glyphicon glyphicon-remove-sign\"></span> Delete</a>
     <button type='submit' name='submitComment'>Post Comment</button>
 </form>";
 
-retrieveComments($link);
 ?>
 <div class="panel-body">
     <?php retrieveComments($link);?>
