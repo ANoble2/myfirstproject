@@ -28,7 +28,7 @@ include 'comments-func.php'; // reference function for form to use
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
 </head>
-<body>
+<div>
 
 <img src="material/images/logo.PNG">
 
@@ -43,6 +43,7 @@ echo "<form method='POST' action='".insComments($link)."'>
 
 
 ?>
+<h3 class="panel-title">User comments</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
     </div>
