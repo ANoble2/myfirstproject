@@ -35,8 +35,10 @@ echo "<form method='POST' action='".insComments($link)."'>
     <textarea name='message'></textarea><br>
     <button type='submit' name='submitComment'>Comment</button>
 </form>";
-?>
 
+retrieveComments($link);
+?>
+retrieveComments($link);
 
 
 </body>
