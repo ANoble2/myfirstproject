@@ -40,9 +40,9 @@ include 'comments-func.php'; // reference function for form to use
     
 </form>
 <h3 class="panel-title">User comments</h3>
-<div class="panel-body">
+<textarea class="form-control">
     <?php retrieveComments($link);?>
-    </div>
+  </textarea>
 
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
