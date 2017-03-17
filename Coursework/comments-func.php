@@ -22,7 +22,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     $sql = "select * from tbl_comments"; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     $row = $result->fetch_assoc(); // gets all the different results from database to be echoed as goes into a array
-    $row['message']; // specify what you want to be displayed on page
+    echo $row['message']; // specify what you want to be displayed on page
 }
 
 ?>
