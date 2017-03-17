@@ -34,6 +34,18 @@ include 'comments-func.php'; // reference function for form to use
      <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
     
 </form>
+<div class='form-group'>
+<form method='POST' action='"<?php insComments($link);?>"'>
+    <input type='hidden' class='form-control' name='uid' value='anonymous'>
+    <input type='hidden' class='form-control' name='date' value='"<?php date('Y-m-d H:i:s')?>"'>
+    <textarea class='form-control' name='message' ></textarea>
+    <button type='submit' class='btn_btn-primary' name='submitComment'>Post Comment</button>
+
+</form>
+</div>
+
+
+
 <h3 class="panel-title">User comments</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
