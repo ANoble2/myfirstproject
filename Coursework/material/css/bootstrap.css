@@ -6758,4 +6758,9 @@ button.close {
 body {
   background-color:#DADADA;
 }
+
+.textarea-1 {
+  width: 200px;
+  height: 80px;
+}
 /*# sourceMappingURL=bootstrap.css.map */
