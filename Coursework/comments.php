@@ -4,12 +4,7 @@
  * User: Ashley
  * Date: 17/03/2017
  * Time: 15:39
- * textarea {
-width: 400px;
-height: 80px;
-background-color: #fff;
-resize:none;
-}
+ *
  */
 
 
@@ -26,7 +21,7 @@ include 'comments-func.php'; // reference function for form to use
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
-
+    <link href="material/css/comment.css" rel="stylesheet">
 </head>
 <body>
 

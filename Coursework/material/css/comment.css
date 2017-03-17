@@ -1,0 +1,14 @@
+textarea {
+    width: 200px;
+    height: 80px;
+    background-color: #fff;
+    resize:none;
+}
+
+button {
+    width: 80px;
+    height: 30px;
+    background-color: #3277B2;
+    color: #FFFFFF;
+
+}
