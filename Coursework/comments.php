@@ -41,12 +41,11 @@ echo "<form method='POST' action='".insComments($link)."'>
     
 </form>";
 
+retrieveComments($link)
 
 ?>
 
-<div class="panel-body">
-    <?php retrieveComments($link);?>
-    </div>
+
 
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

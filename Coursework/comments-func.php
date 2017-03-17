@@ -23,7 +23,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     $sql = "select * from tbl_comments"; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
-        echo "<div class='boxCom'><p>";
+        echo "<div class='panel-body'><p>";
             echo $row['uid']."<br>"; // display user who posted comment
             echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
