@@ -28,7 +28,7 @@ include 'comments-func.php'; // reference function for form to use
     <link href="material/css/bootstrap.css" rel="stylesheet">
 
 </head>
-
+<body>
 
 <img src="material/images/logo.PNG">
 
@@ -39,12 +39,11 @@ include 'comments-func.php'; // reference function for form to use
      <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
     
 </form>
-
-    <button type='submit' class='btn_btn-danger' name='submitComment'>Post Comment</button>
 <h3 class="panel-title">User comments</h3>
 <div class="panel-body">
     <?php retrieveComments($link);?>
     </div>
+<input type="submit" name="btn-login" value="Login" class="btn btn-primary">
 
 <!-- scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
