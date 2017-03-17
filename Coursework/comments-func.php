@@ -4,6 +4,7 @@
  * User: Ashley
  * Date: 17/03/2017
  * Time: 16:31
+ *   $row = $result->fetch_assoc(); // gets all the different results from database to be echoed as goes into a array
  */
 
 function insComments($link){ // insert comments to the database, link is connection
@@ -21,8 +22,9 @@ function insComments($link){ // insert comments to the database, link is connect
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
     $sql = "select * from tbl_comments"; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
-    $row = $result->fetch_assoc(); // gets all the different results from database to be echoed as goes into a array
-    echo $row['message']; // specify what you want to be displayed on page
+    while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
+        echo $row['message']; // specify what you want to be displayed on page
+    }
 }
 
 ?>
