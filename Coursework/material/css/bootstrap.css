@@ -1092,6 +1092,10 @@ input,
 button,
 select,
 textarea {
+  width: 200px;
+  height: 80px;
+  background-color: #fff;
+  resize: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -6759,10 +6763,5 @@ body {
   background-color:#DADADA;
 }
 
-textarea {
-  width: 200px;
-  height: 80px;
-  background-color: #fff;
-  resize: none;
-}
+
 /*# sourceMappingURL=bootstrap.css.map */
