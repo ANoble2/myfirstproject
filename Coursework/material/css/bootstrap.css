@@ -1092,10 +1092,6 @@ input,
 button,
 select,
 textarea {
-  width: 200px;
-  height: 80px;
-  background-color: #fff;
-  resize: none;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -6757,11 +6753,8 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+  body {
+    background-color:#DADADA;
+  }
 }
-
-body {
-  background-color:#DADADA;
-}
-
-
 /*# sourceMappingURL=bootstrap.css.map */

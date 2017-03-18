@@ -1,94 +1,3 @@
-<?php
-     $sql = "SELECT * FROM tbl_images";
-     $result = mysql_query($sql);
-     while($row = mysql_fetch_array($result))
-     {
-         echo '<div class="col-sm-4">';
-echo '<h3>image </h3><br>';
-> Changed next line
-$link = "sc/uploads/" .$row[1];
-
-http://fellowtuts.com/php/display-data-in-responsive-columns-from-database-using-php/
-
-<div class="row">
-    <?php
-     $query=mysql_query("select * from tbl_gallery")or die(mysql_error());
-     while($row = mysql_fetch_array($query))
-     {
-       $id=$row['Photo_ID'];
-     ?>
-    <div class="col-md-4">
-        <a  href="adminln/<?php echo $row['Photo']; ?>" class="thumbnail">
-            <img src="adminln/<?php echo $row['Photo']; ?>"alt="..." class="img-rounded img-responsive">
-        </a>
-    </div>
-    <?php  } ?>
-</div>
-
-echo '<img style="width:100%;height:200px" src="' . $link . '"/>';
-echo '</div>';
-}
-http://stackoverflow.com/questions/35345728/echo-bootstrap-grid-with-pictures-from-array
-
-echo "<div class='col-sm-4'> <img width='100%' height='200' src='$link' /></div>";
-?>
-
-
-
-$results = array_chunk($con->query($sql), 5);
-
-foreach($results as $rows)
-{
-echo '<div class="row">';
-
-    foreach($rows as $row)
-    {
-    echo '<div class="col-md-2 portfolio-item">';
-        // output row data here
-        echo '</div>';
-    }
-
-    echo '</div>';
-}
-
-
-
-<?php
-	$rows = $result->num_rows;    // Find total rows returned by database
-if($rows > 0) {
-$cols = 3;    // Define number of columns
-$counter = 1;     // Counter used to identify if we need to start or end a row
-$nbsp = $cols - ($rows % $cols);    // Calculate the number of blank columns
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -158,10 +67,7 @@ $nbsp = $cols - ($rows % $cols);    // Calculate the number of blank columns
             <div class="col-md-3 step">
                     <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
             </div>
-            <div class="col-md-3 step">
-                echo '<img style="width:100%;height:200px" src="' . $link . '"/>';
-                <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
-            </div>
+
             <div class="col-md-3 step">
                 <a href="material/images/1.jpg"><img src="material/images/1.jpg" data-lity class="img-thumbnail"/></a>
             </div>
@@ -179,7 +85,41 @@ $nbsp = $cols - ($rows % $cols);    // Calculate the number of blank columns
     </div>
 
 
+<div class="container pb-cmnt-container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="panel panel-info">
+                <div class="panel-body">
+                    <textarea placeholder="Write your comment here!" class="pb-cmnt-textarea"></textarea>
+                    <form class="form-inline">
+                        <div class="btn-group">
+                            <button class="btn" type="button"><span class="fa fa-picture-o fa-lg"></span></button>
+                            <button class="btn" type="button"><span class="fa fa-video-camera fa-lg"></span></button>
+                            <button class="btn" type="button"><span class="fa fa-microphone fa-lg"></span></button>
+                            <button class="btn" type="button"><span class="fa fa-music fa-lg"></span></button>
+                        </div>
+                        <button class="btn btn-primary pull-right" type="button">Share</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<style>
+    .pb-cmnt-container {
+        font-family: Lato;
+        margin-top: 100px;
+    }
+
+    .pb-cmnt-textarea {
+        resize: none;
+        padding: 20px;
+        height: 130px;
+        width: 100%;
+        border: 1px solid #F2F2F2;
+    }
+</style>
 
 
 
