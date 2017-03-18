@@ -114,7 +114,6 @@ if(isset($_POST['btnUpdate'])) {
 
             <div class="collapse navbar-collapse"> <!-- section that holds links to other pages-->
                 <ul class="nav navbar-nav">
-                    <li><a href="#">Home</a></li>
                     <li class=><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Image Gallery</a></li>
                     <li class=""><a href="uploadimages.php">Upload Images</a></li>
