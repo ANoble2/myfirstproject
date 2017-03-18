@@ -120,7 +120,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
                         <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <center><input type="submit" name="btn-login" value="Login" class="btn btn-primary"></center> <!-- button for users to submit -->
+                        <center><input type="submit" name="btn-login" value="Login" class="btn btn-primary btn-md"></center> <!-- button for users to submit -->
                     </div>
                     <hr/>
                     <a href="register.php">Register</a> <!-- link to register page if user doesn't have account already -->
