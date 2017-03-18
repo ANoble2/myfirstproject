@@ -25,6 +25,7 @@ include 'comments-func.php'; // reference function for form to use
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
+    <link href="material/css/bootstrap.css" rel="stylesheet">
 
 
 </head>
