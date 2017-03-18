@@ -64,6 +64,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
 
     <!-- Bootstrap -->
     <link href="material/css/bootstrap.css" rel="stylesheet">
+    <script src="material/js/bootstrap.min.js"></script>
 
     <nav class="navbar navbar-default"> <!-- start of nav bar -->
         <div class="container"> <!-- start of container -->
