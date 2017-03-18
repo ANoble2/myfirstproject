@@ -25,7 +25,7 @@ include 'comments-func.php'; // reference function for form to use
     <title>Ashley's Project</title>
 
     <!-- Bootstrap -->
-    <link href="material/css/bootstrap.css" rel="stylesheet">
+
 
 </head>
 <body>
@@ -37,7 +37,7 @@ echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='anonymous'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea  name='message'></textarea><br>
-     <button type='button' class='btn btn-primary' name='submitComment'>Post Comment</button>
+     <button type='submit' class='btn btn-primary' name='submitComment'>Post Comment</button>
     
 </form>";
 

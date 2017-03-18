@@ -53,8 +53,7 @@ function deletePosts($link) {
     <meta charset="utf-8">
     <title>Ashley's Project</title>
 
-    <!-- Bootstrap -->
-    <link href="material/css/bootstrap.css" rel="stylesheet">
+
 
 </head>
 <body>
