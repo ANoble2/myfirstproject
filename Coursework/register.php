@@ -72,7 +72,7 @@ if(!$error){
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="material/css/bootstrap.css">
-    <script src="material/js/bootstrap.min.js"></script>
+
 
     <nav class="navbar navbar-default"> <!-- start of nav bar -->
         <div class="container"> <!-- start of container -->
