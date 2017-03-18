@@ -85,7 +85,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
             <div class="col-md-3">
                 <ul class="row">
-                   <center><img src="<?php echo $upload_dir . $row['image'] ?>" data-lity class="img-responsive"></center> <!-- display image from database -->
+                   <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                    <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                 </ul>
         </div>  <!-- end of col div -->
