@@ -101,7 +101,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                     <div class="panel panel-primary">
 
                         <div class="panel-heading">
-                            Image Gallery Control panel
+                            Image Gallery Control Panel
                         </div>
                         <div class="panel-body">
 
@@ -122,7 +122,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                                     $sql = "select * from tbl_images"; // select all from table tbl_images
                                     $result = mysqli_query($link, $sql);
                                     if(mysqli_num_rows($result)){
-                                    while($row = mysqli_fetch_assoc($result)) {
+                                    while($row = mysqli_fetch_assoc($result)) { // loop through all records to display all until none left
 
                                     ?>
 
