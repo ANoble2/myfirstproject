@@ -111,9 +111,9 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                                     <tr>
                                         <th>ID</th> <!-- headings for table -->
                                         <th>Name</th>
-                                        <th>Position</th>
+                                        <th>Description</th>
                                         <th>Image</th>
-                                        <th>Action</th>
+                                        <th>Action Buttons</th>
                                     </tr>
                                     </thead>
                                     <tbody>
