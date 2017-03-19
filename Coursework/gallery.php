@@ -8,7 +8,6 @@
 session_start(); // Start the session
 include ('dbConnect.php');// create connection to the database
 $upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
-include 'comments-func.php'; // reference function for form to use
 ?>
 
 
@@ -98,9 +97,7 @@ include 'comments-func.php'; // reference function for form to use
 
     </div> <!-- end of container -->
 
-<div class="lity-wrap">
-<?php    retrieveComments($link) ?>
-</div>
+
 
 <div class="container">
 
