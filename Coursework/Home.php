@@ -7,7 +7,7 @@
  */
 session_start(); // Start the session
 include ('dbConnect.php'); // create connection to the database
-if(!isset($_SESSION['username'])){
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
 }
 ?>
