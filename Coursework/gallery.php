@@ -97,9 +97,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
     </div> <!-- end of container -->
 
-<div class="lity-container">
-    <p>hi show something</p>
-</div>
+
 
 <div class="container">
 
