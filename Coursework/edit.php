@@ -16,7 +16,7 @@ if (isset($_GET['id'])){
      if(mysqli_num_rows($result) > 0){
      $row =mysqli_fetch_assoc($result);
    }else{
-  $errorMsg = 'Could  not select a record';
+  $errorMsg = 'Could not find a record';
      }
 }
 
@@ -52,7 +52,7 @@ if(isset($_POST['btnUpdate'])) {
                 unlink($upload_dir . $row['image']);
                 move_uploaded_file($imgTmp, $upload_dir . $userPic);
             } else {
-                $errorMsg = 'The image is too large';
+                $errorMsg = 'Sorry, The image is too large';
             }
         } else {
             $errorMsg = 'Please select a valid image';

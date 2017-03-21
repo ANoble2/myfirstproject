@@ -27,7 +27,7 @@ if(isset($_POST['btn-register'])){ // if btn-register is pressed
 //validate the users input
 if(empty($username)){
     $error = true;
-    $errorUsername = 'Please enter username';
+    $errorUsername = 'Please enter a username';
 }
 
 if(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // to validate email check is well formed/expected input
@@ -37,10 +37,10 @@ if(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // to validate email check is we
 
 if(empty($password)){
     $error = true;
-    $errorPassword = 'Please enter password'; 
+    $errorPassword = 'Please enter a password'; 
 }elseif(strlen($password) < 8){ // password must be a least 8 characters long
     $error = true;
-    $errorPassword = 'Password must at least 8 characters'; // if password isn't 8 characters long presents error message
+    $errorPassword = 'Password must be at least 8 characters'; // if password isn't 8 characters long presents error message
 }
 
 //encrypt password with md5

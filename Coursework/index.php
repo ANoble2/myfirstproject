@@ -20,7 +20,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
 
     if(empty($email)){
         $error = true;
-        $errorEmail = 'Please enter email';
+        $errorEmail = 'Please enter a email';
     }elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)){ // to validate email check is well formed/expected input
         $error = true;
         $errorEmail = 'Please enter a valid email address';
@@ -28,10 +28,10 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
 //validate the users input
     if(empty($password)){
         $error = true;
-        $errorPassword = 'Please enter password';
+        $errorPassword = 'Please enter a password';
     }elseif(strlen($password)< 8){ // password must be a least 8 characters long
         $error = true;
-        $errorPassword = 'Password  must be at least 8 character'; // if password isn't 8 characters long presents error message
+        $errorPassword = 'Password  must be at least 8 characters'; // if password isn't 8 characters long presents error message
     }
 
     if(!$error){

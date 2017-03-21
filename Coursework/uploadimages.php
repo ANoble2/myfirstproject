@@ -22,7 +22,7 @@ if(isset($_POST['btnUpload'])) {
     if(empty($name)){
         $errorMsg = 'Please enter a name';
     }elseif(empty($description)) {
-        $errorMsg = 'Please enter description';
+        $errorMsg = 'Please enter description for image';
     }elseif (empty($imgName)) {
         $errorMsg = 'Please select an Image';
     }else{
@@ -51,7 +51,7 @@ if(isset($_POST['btnUpload'])) {
                 values('".$name."', '".$description."', '".$userPic."')";
             $result = mysqli_query($link, $sql);
             if ($result){
-                $successMsg = 'New image data has been successfully added';
+                $successMsg = 'New image  has been successfully added';
             header('refresh;5;viewPhotos.php'); // user redirected to view photos page automatically within 5 secs
         }else{
                     $errorMsg = 'Error '.mysqli_error($link);
