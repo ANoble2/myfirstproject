@@ -75,7 +75,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     <div class="container">
 
         <?php
-        $sql = "select * from tbl_images"; // select all from table tbl_images
+        $sql = "select * from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
         $result = mysqli_query($link, $sql);
         if(mysqli_num_rows($result)){
         while ($row = mysqli_fetch_assoc($result)) {
@@ -87,6 +87,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <ul class="row">
                    <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                    <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
+                    <a href="comments.php">Post/View comments</a>
                 </ul>
         </div>  <!-- end of col div -->
             <?php
