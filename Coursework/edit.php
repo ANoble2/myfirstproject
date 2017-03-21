@@ -36,7 +36,7 @@ if(isset($_POST['btnUpdate'])) {
         $errorMsg = 'Please enter description';
     }
 
-    // update image if user select new image
+    // update image if user selects a new image
     if($imgName) {
         // get image extension and changes to lower case
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
@@ -58,7 +58,7 @@ if(isset($_POST['btnUpdate'])) {
             $errorMsg = 'Please select a valid image';
         }
     }else{
-        //if not select new image - use old image
+        //if no new image selected - use old image
         $userPic = $row['image'];
     }
 
