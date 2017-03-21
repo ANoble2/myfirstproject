@@ -9,7 +9,7 @@ session_start();// Start the session
 include ('dbConnect.php'); // create connection to the database
 
 
-$error = false; // variable to store for error to be used later in code
+$error = false; // variable to store for error to be used later in code whether error is false or true
 if(isset($_POST['btn-login'])){ // if btn-login is pressed
     //Help prevent sql injection with cleaning user input / Strip unnecessary characters
     $email = trim($_POST['email']);

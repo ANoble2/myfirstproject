@@ -7,7 +7,7 @@
  */
 include ('dbConnect.php'); // create connection to the database
 
-$error = false;
+$error = false; // variable to store for error to be used later in code whether error is false or true
 if(isset($_POST['btn-register'])){ // if btn-register is pressed
 
     //Help prevent sql injection with cleaning user input / Strip unnecessary characters

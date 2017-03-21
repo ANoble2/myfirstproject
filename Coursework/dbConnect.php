@@ -5,6 +5,8 @@
  * Date: 07/03/2017
  * Time: 12:34
  */
+
+// how to connect to database when using microsoft azure platform. Provided in lecture notes by lecturer.
 $connectstr_dbhost = '';
 $connectstr_dbname = '';
 $connectstr_dbusername = '';
