@@ -46,7 +46,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
             $_SESSION['username'] = $row['username'];
             header('location: Home.php'); // redirect user to home page if users login is successful
         }else{
-            $errorMsg = 'Incorrect Username or Password'; // if login not successful present this error message
+            $errorMsg = 'Incorrect Username and/or Password'; // if login not successful present this error message
         }
     }
 }
