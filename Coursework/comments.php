@@ -19,7 +19,7 @@ include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
 $upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 ?>
-
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,6 +33,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 </head>
 <body>
 
+<img src="material/images/logo.PNG">
 
 <?php
 $sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
@@ -42,11 +43,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 } 
 }
 ?>
-<div class="col-md-3">
-    <ul class="row">
-        <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
-    </ul>
-</div>  <!-- end of col div -->
+<img src="<?php echo $upload_dir . $row['image'] ?> height='168" width="290" data-lity class='img-responsive'>";
+
 
 
 
