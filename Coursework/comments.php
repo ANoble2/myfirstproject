@@ -33,7 +33,13 @@ include 'comments-func.php'; // reference function for form to use
 
 <img src="material/images/logo.PNG">
 
-
+<?php
+$sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+$result = mysqli_query($link, $sql);
+if(mysqli_num_rows($result)){
+while ($row = mysqli_fetch_assoc($result)) {
+?>
+?>
 
 
 <?php
