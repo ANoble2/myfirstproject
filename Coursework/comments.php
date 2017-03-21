@@ -13,7 +13,7 @@ resize:none;
  */
 
 
-
+session_start(); // Start the session
 date_default_timezone_set('Europe/London');// takes current time specified when submit post
 include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
