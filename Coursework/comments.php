@@ -38,6 +38,8 @@ $sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; //
 $result = mysqli_query($link, $sql);
 if(mysqli_num_rows($result)){
 while ($row = mysqli_fetch_assoc($result)) {
+} 
+}
 ?>
 
 
