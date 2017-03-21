@@ -41,7 +41,11 @@ while ($row = mysqli_fetch_assoc($result)) {
 } 
 }
 ?>
-<img src="<?php echo $upload_dir . $row['image'] ?> height='168' width='290' data-lity class='img-responsive'>"';
+<div class="col-md-3">
+    <ul class="row">
+        <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
+    </ul>
+</div>  <!-- end of col div -->
 
 
 
