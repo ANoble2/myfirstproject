@@ -119,7 +119,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                                     <tbody>
 
                                     <?php
-                                    $sql = "select * from tbl_images"; // select all from table tbl_images
+                                    $sql = "select * from tbl_images where userid =  '". $_SESSION['id'] ."'"; // select all from table tbl_images
                                     $result = mysqli_query($link, $sql);
                                     if(mysqli_num_rows($result)){
                                     while($row = mysqli_fetch_assoc($result)) { // loop through all records to display all until none left
