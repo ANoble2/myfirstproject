@@ -41,12 +41,13 @@ while ($row = mysqli_fetch_assoc($result)) {
 } 
 }
 ?>
+<img src="<?php echo $upload_dir . $row['image'] ?> height='168' width='290' data-lity class='img-responsive'>"';
 
 
 
 <?php
 echo "<form method='POST' action='".insComments($link)."'>
-    <input type='hidden' class='form-control 'name='uid' value='test name'>
+    <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['id'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea  name='message'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
