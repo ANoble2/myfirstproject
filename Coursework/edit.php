@@ -72,7 +72,6 @@ if(isset($_POST['btnUpdate'])) {
         $result = mysqli_query($link, $sql);
         if ($result){
             $successMsg = 'New image data has been updated successfully';
-            header('refresh;5;viewPhotos.php'); // user redirected to view photos page automatically within 5 secs
         }else{
             $errorMsg = 'Error '.mysqli_error($link);
         }
