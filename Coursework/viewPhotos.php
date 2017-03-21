@@ -127,13 +127,13 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                                     ?>
 
                                     <tr>
-                                        <td><?php echo $row['id'] ?></td> <!-- display contents from database specified -->
+                                        <td><?php echo $row['id'] ?></td> <!-- display contents from database specified in the table  -->
                                         <td><?php echo $row['name'] ?></td>
                                         <td><?php echo $row['description'] ?></td>
                                         <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40" width="80"> </td> <!-- display image from database -->
                                         <td>
                                             <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a> <!-- button for users to go edit page -->
-                                            <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" >
+                                            <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" > <!-- provide a pop up box to check whether user is sure about deleting image record.-->
                                                 <span class="glyphicon glyphicon-remove-sign"></span> Delete</a> <!-- button for users to go edit page -->
                                         </td>
 
