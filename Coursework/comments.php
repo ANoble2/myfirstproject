@@ -17,6 +17,8 @@ session_start(); // Start the session
 date_default_timezone_set('Europe/London');// takes current time specified when submit post
 include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
+$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
+?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,7 +33,6 @@ include 'comments-func.php'; // reference function for form to use
 </head>
 <body>
 
-<img src="material/images/logo.PNG">
 
 <?php
 $sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
