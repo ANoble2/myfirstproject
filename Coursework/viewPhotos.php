@@ -91,7 +91,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
         <div class="row">
             <div class="col-md-12">
                 <h3 class="page-header">Uploaded Images
-                        <a class="btn btn-default" href="uploadimages.php"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add new <!-- button for users to go back to upload page -->
+                        <a class="btn btn-default" href="uploadimages.php"><span class="glyphicon glyphicon-plus"></span>&nbsp;Add new <!-- button for users to go back to upload page,$nbsp creates non breaking space between symbol and text. -->
                         </a>
                     </h3>
             </div>
