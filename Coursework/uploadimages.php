@@ -47,8 +47,8 @@ if(isset($_POST['btnUpload'])) {
 
         // check upload file error then can upload image to database
         if(!isset($errorMsg)){
-            $sql = "insert into tbl_images(name, description, image)
-                values('".$name."', '".$description."', '".$userPic."')";
+            $sql = "insert into tbl_images(name, description, image, userid)
+                values('".$name."', '".$description."', '".$userPic."', '". $_SESSION['id'] ."')";
             $result = mysqli_query($link, $sql);
             if ($result){
                 $successMsg = 'New image  has been successfully added';

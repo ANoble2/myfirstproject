@@ -44,6 +44,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
         $row = mysqli_fetch_assoc($result);
         if($count==1 && $row['password'] == $password){
             $_SESSION['username'] = $row['username'];
+            $_SESSION['id'] = $row['id'];
             header('location: Home.php'); // redirect user to home page if users login is successful
         }else{
             $errorMsg = 'Incorrect Username and/or Password'; // if login not successful present this error message
