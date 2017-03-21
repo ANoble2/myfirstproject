@@ -6,6 +6,8 @@
  * Time: 15:27
  */
 session_start(); // Start the session
+echo "user id is {$_SESSION['id']}";
+
 include ('dbConnect.php'); // create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');

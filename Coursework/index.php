@@ -7,7 +7,6 @@
  */
 session_start();// Start the session
 
-echo "user id is {$_SESSION['id']}";
 include ('dbConnect.php'); // create connection to the database
 
 
