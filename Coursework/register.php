@@ -100,7 +100,7 @@ if(!$error){
     <div class="jumbotron">
         <div class="row">
             <div class="col-md-6">
-                <h1> Viusal upload</h1><br>  <!-- Name of the web app in login page-->
+                <h1> Visual upload</h1><br>  <!-- Name of the web app in login page-->
                 <img src="material/images/logo.PNG" class="img-rounded "width="304" height="236"/> <!-- logo image for web app -->
             </div> <!-- end of col-md-6 div -->
             
