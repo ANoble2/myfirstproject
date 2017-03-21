@@ -39,7 +39,7 @@ $result = mysqli_query($link, $sql);
 if(mysqli_num_rows($result)){
 while ($row = mysqli_fetch_assoc($result)) {
 ?>
-?>
+
 
 
 <?php
