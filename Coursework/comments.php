@@ -85,9 +85,8 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             }
         }
         ?>
-        <img src="<?php echo $upload_dir . $row['image'] ?> height='168" width="290" data-lity class='img-responsive'>";
-
-
+        
+        <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center>
 
 
         <?php
