@@ -50,7 +50,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 <?php
 echo "<form method='POST' action='".insComments($link)."'>
-    <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['id'] ."'>
+    <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea  name='message'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
