@@ -56,7 +56,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <ul class="nav navbar-nav"> <!-- section that holds links to other pages-->
                     <li class=><a href="Home.php">Home</a></li>
                     <li class=""><a href="gallery.php">Image Gallery</a></li>
-                    <li class="active"><a href="uploadimages.php">Upload Images</a></li>
+                    <li class=""><a href="uploadimages.php">Upload Images</a></li>
                     <li class=""><a href="viewPhotos.php">Control Panel</a></li>
                 </ul>
                 <form class="navbar-form navbar-right"> <!-- makes contents appear on the right -->
@@ -71,29 +71,27 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     </nav><!--end of nav bar -->
 
 </head>
-
-
-
-</head>
 <body>
+<div class="container">
+    <div class="jumbotron">
 
-<img src="material/images/logo.PNG">
+        <img src="material/images/logo.PNG">
 
-<?php
-$sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
-$result = mysqli_query($link, $sql);
-if(mysqli_num_rows($result)){
-while ($row = mysqli_fetch_assoc($result)) {
-} 
-}
-?>
-<img src="<?php echo $upload_dir . $row['image'] ?> height='168" width="290" data-lity class='img-responsive'>";
-
-
+        <?php
+        $sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+        $result = mysqli_query($link, $sql);
+        if(mysqli_num_rows($result)){
+            while ($row = mysqli_fetch_assoc($result)) {
+            }
+        }
+        ?>
+        <img src="<?php echo $upload_dir . $row['image'] ?> height='168" width="290" data-lity class='img-responsive'>";
 
 
-<?php
-echo "<form method='POST' action='".insComments($link)."'>
+
+
+        <?php
+        echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
     <textarea  name='message'></textarea><br>
@@ -101,9 +99,18 @@ echo "<form method='POST' action='".insComments($link)."'>
     
 </form>";
 
-retrieveComments($link)
+        retrieveComments($link)
 
-?>
+        ?>
+
+
+    </div>  <!-- end of jumbotron div -->
+
+    <footer class="footer"> <!-- start of footer for page  -->
+        <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
+    </footer> <!-- end of footer for page  -->
+    </div> <!-- end of container-->
+
 
 
 
