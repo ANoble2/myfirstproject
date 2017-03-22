@@ -105,11 +105,13 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
-        echo "</div>";
-        retrieveComments($link)
+        ?>
+</div>
+        <div class="container">
+   <?php     retrieveComments($link)
 
         ?>
-
+        </div>
 
     </div>  <!-- end of jumbotron div -->
 
