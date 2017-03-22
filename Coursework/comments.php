@@ -78,14 +78,14 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         <img src="material/images/logo.PNG">
 
         <?php
-        $sql = "select image from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+        $sql = "select * from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
         $result = mysqli_query($link, $sql);
         if(mysqli_num_rows($result)){
             while ($row = mysqli_fetch_assoc($result)) {
             }
         }
         ?>
-        
+
         <center><img src="<?php echo $upload_dir . $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center>
 
 
