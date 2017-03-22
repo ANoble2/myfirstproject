@@ -19,7 +19,7 @@ include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
 $upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 ?>
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
