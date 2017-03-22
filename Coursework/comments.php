@@ -73,7 +73,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 </head>
 <body>
 <div class="container">
-    <div class="jumbotron">
+
 
         <?php
         $sql = "select * from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
@@ -94,7 +94,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             }
         }
         ?>
-
+    </div> <!-- end of container-->
 
 <div class="container">
         <?php
@@ -113,13 +113,15 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
         </div>
 
-    </div>  <!-- end of jumbotron div -->
 
+<div class="container">
+
+    <hr> <!-- creates line to break up content -->
     <footer class="footer"> <!-- start of footer for page  -->
         <p>&copy; 2017 Ashley Noble</p> <!-- Contents of footer to be displayed on the page-->
     </footer> <!-- end of footer for page  -->
-    </div> <!-- end of container-->
 
+</div>
 
 
 
