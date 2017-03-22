@@ -74,8 +74,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 <body>
 <div class="container">
     <div class="jumbotron">
-
-        <img src="material/images/logo.PNG">
+        
         <?php
         $sql = "select * from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
         $result = mysqli_query($link, $sql);
