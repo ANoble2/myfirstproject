@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Ashley's Project</title> <!-- title page -->
+
+    <!-- Bootstrap -->
+    <link href="material/css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+
 <?php
 /**
  * Created by PhpStorm.
@@ -47,15 +61,13 @@ function deletePosts($link) {
     }
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Ashley's Project</title>
 
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="material/js/bootstrap.min.js"></script>
+<script scr="material/js/bootstrap.js"></script>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
-
-</head>
-<body>
 </body>
 </html>
