@@ -74,7 +74,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 <body>
 <div class="container">
     <div class="jumbotron">
-        
+
         <?php
         $sql = "select * from tbl_images where userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
         $result = mysqli_query($link, $sql);
@@ -96,7 +96,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
 
 
-
+<div class="container">
         <?php
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
@@ -105,7 +105,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
-
+        echo "</div>";
         retrieveComments($link)
 
         ?>
