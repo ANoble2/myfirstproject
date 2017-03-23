@@ -115,7 +115,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         <div id="panelbody1" class="panel-body">
                 <table class=" table table-bordered table-responsive">
                     <tbody>
-                < <?php   echo  retrieveComments($link) ?>
+                    <tr>
+                <?php   echo  retrieveComments($link) ?>
+                    </tr>
             </tbody> <!-- end of table body -->
             </table> <!-- end of table -->
         </div>  <!-- end panel body div -->
