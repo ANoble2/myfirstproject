@@ -116,7 +116,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <table class=" table table-bordered table-responsive">
                     <tbody>
                     <tr>
+                        <td>
                 <?php   echo  retrieveComments($link) ?>
+                        </td>
                     </tr>
             </tbody> <!-- end of table body -->
             </table> <!-- end of table -->
