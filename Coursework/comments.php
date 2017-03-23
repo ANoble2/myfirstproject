@@ -106,14 +106,14 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     
 </form>";
         ?>
-</div>
+</div><br>
 
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">Users Comments
         </div>
         <div id="panelbody1" class="panel-body">
-            
+
    <?php   echo  retrieveComments($link)
 
         ?>
