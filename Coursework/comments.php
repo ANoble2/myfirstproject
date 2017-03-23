@@ -103,7 +103,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
       <label for='comment'><p>Post a Comment:</p></label>
-    <textarea class='form-control' name='message' width='304' height='236'></textarea><br>
+    <textarea class='form-control' name='message' placeholder='Enter your comment here'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
