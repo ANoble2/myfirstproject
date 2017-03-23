@@ -108,8 +108,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     
 </form>";
         ?>
-    </div>  <!-- end of jumbotron div -->
-</div><br>
+
+
+    <br>
 
 <div class="container">
     <div class="panel panel-primary">
@@ -128,8 +129,8 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         </div>  <!-- end panel body div -->
     </div>
     </div>>
-
-
+    </div>
+</div>  <!-- end of jumbotron div -->
 <div class="container">
 
     <hr> <!-- creates line to break up content -->
