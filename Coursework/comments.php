@@ -108,10 +108,11 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
 </div>
 
+<div class="container">
    <?php   echo  retrieveComments($link)
 
         ?>
-        
+    </div>
 
 
 <div class="container">
