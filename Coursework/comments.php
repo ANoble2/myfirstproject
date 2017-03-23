@@ -97,6 +97,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     </div> <!-- end of container-->
 
 <div class="container">
+    <div class="jumbotron">
         <?php
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
@@ -107,6 +108,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     
 </form>";
         ?>
+    </div>  <!-- end of jumbotron div -->
 </div><br>
 
 <div class="container">
