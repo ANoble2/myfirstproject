@@ -113,10 +113,9 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         <div class="panel-heading">Users Comments
         </div>
         <div id="panelbody1" class="panel-body">
-
-   <?php   echo  retrieveComments($link)
-
-        ?>
+            <ul class="list-group">
+                <li class="list-group-item"> <?php   echo  retrieveComments($link) ?> </li>
+                </ul>
         </div>  <!-- end panel body div -->
     </div>
     </div>>
