@@ -96,23 +96,22 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         ?>
     </div> <!-- end of container-->
 
-
+<div class="container">
         <?php
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
-    <textarea  name='message  height='168' width='290'></textarea><br>
+    <textarea  name='message'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
-
-        retrieveComments($link)
         ?>
+</div>
 
+   <?php   echo  retrieveComments($link)
+
+        ?>
         
-
-
-
 
 
 <div class="container">
