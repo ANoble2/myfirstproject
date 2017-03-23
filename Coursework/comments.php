@@ -95,7 +95,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         }
         ?>
     </div> <!-- end of container-->
-
+<br>
 <div class="container">
     <div class="jumbotron">
         <?php
@@ -111,6 +111,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 
     <br>
+        <br>
 
 <div class="container">
     <div class="panel panel-primary">
@@ -128,7 +129,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             </table> <!-- end of table -->
         </div>  <!-- end panel body div -->
     </div>
-    </div>>
+    </div>
     </div>
 </div>  <!-- end of jumbotron div -->
 <div class="container">
