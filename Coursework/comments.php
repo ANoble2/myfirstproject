@@ -115,7 +115,8 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
     <div class="panel panel-primary">
         <div class="panel-heading">Users Comments
         </div>
-        <div id="panelbody1" class="panel-body">
+        <div class="panel-body">
+            <div class="table-responsive table-bordered">
             <table class=" table table-bordered table-responsive">
                 <tbody>
                 <tr>
@@ -125,6 +126,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 </tr>
                 </tbody> <!-- end of table body -->
             </table> <!-- end of table -->
+            </div> <!-- end of table div -->
         </div>  <!-- end panel body div -->
     </div> <!-- end of panel primary-->
 </div> <!-- end of container-->
