@@ -31,7 +31,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
         echo "</p>
             <form class='delete-form' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>
-            <button type='submit' name='deletePost' class='pull-right'>Delete</button>
+            <button type='submit' name='deletePost' class='pull-right btn btn-danger'><span class='glyphicon glyphicon-remove-sign'></span>Delete</button>
             
 </form>
 </div>";
