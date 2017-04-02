@@ -21,7 +21,7 @@ function insComments($link){ // insert comments to the database, link is connect
 }
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
-    $sql = "select * from tbl_comments ORDER BY DATE ASC "; // query the database
+    $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
         echo "<div class='message-box'><p>";
@@ -31,7 +31,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
         echo "</p>
             <form class='delete-form' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>
-            <button type='submit' name='deletePost' class='pull-right btn btn-danger'><span class='glyphicon glyphicon-remove-sign'></span> Delete</button>
+            <button type='submit' name='deletePost' class='btn btn-danger'><span class='glyphicon glyphicon-remove-sign'></span> Delete</button>
             
 </form>
 </div>";
