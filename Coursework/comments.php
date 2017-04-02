@@ -94,24 +94,40 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
             }
         }
         ?>
-    </div> <!-- end of container-->
+</div> <!-- end of container-->
 
 <div class="container">
+    <div class="jumbotron">
         <?php
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
-    <textarea  name='message  height='168' width='290'></textarea><br>
+      <label for='comment'><p>Post a Comment:</p></label>
+    <textarea class='form-control' name='message' width='304' height='236'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
         ?>
-</div>
-        <div class="container">
-   <?php     retrieveComments($link)
+    </div>  <!-- end of jumbotron div -->
+</div><br>
 
-        ?>
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Users Comments
         </div>
+        <div id="panelbody1" class="panel-body">
+            <table class=" table table-bordered table-responsive">
+                <tbody>
+                <tr>
+                    <td>
+                        <?php   echo  retrieveComments($link) ?>
+                    </td>
+                </tr>
+                </tbody> <!-- end of table body -->
+            </table> <!-- end of table -->
+        </div>  <!-- end panel body div -->
+    </div> <!-- end of panel primary-->
+</div> <!-- end of container-->
 
 
 <div class="container">

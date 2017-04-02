@@ -6758,4 +6758,14 @@ button.close {
 body {
   background-color: #DADADA;
 }
+
+.message-box {
+  width: 815px;
+  padding: 20px;
+  margin-bottom: 4px;
+  background-color: #fff;
+  border-radius:4px;
+}
+
+
 /*# sourceMappingURL=bootstrap.css.map */
