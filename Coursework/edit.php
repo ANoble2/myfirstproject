@@ -19,8 +19,8 @@ if(!isset($_SESSION['username'])){ // check user logged in or not , if not redir
 }
 $target_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
-if (isset($_POST['id'])){
-     $id = $_POST['id'];
+if (isset($_GET['id'])){
+     $id = $_GET['id'];
      $sql = "select * from tbl_images where id=" .$id; // finds the record of specific idea to be edited if cant find it displays error
      $result = mysqli_query($link, $sql);
      if(mysqli_num_rows($result) > 0){
