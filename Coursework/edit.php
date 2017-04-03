@@ -9,13 +9,15 @@
 https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
  * Learn PHP Programming From Scratch stone river elearning
 https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ * code tube tutorials Make File (Create, Rename, Move, Delete, Copy) Using PHP
+ * https://www.youtube.com/watch?v=IkcpNXBmwYI
  */
 session_start(); // Start the session
 include ('dbConnect.php');// create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
 }
-$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
+$target_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
 if (isset($_GET['id'])){
      $id = $_GET['id'];
@@ -57,10 +59,10 @@ if(isset($_POST['btnUpdate'])) {
             //check image size is less than certain amount in this case 5MB or displays error
             if ($imgSize < 5000000) {
                 // delete the old image
-                unlink($upload_dir . $row['image']);
-                move_uploaded_file($imgTmp, $upload_dir . $userPic);
+                unlink($target_dir . $row['image']);
+                move_uploaded_file($imgTmp, $target_dir. $userPic);
             } else {
-                $errorMsg = 'Sorry, The image is too large';
+                $errorMsg = 'Sorry, The image is too big';
             }
         } else {
             $errorMsg = 'Please select a valid image';
@@ -197,7 +199,7 @@ if(isset($_POST['btnUpdate'])) {
                     <div class="form-group">
                         <label for="photo" class="col-md-2">Image</label>
                         <div class="col-md-10">
-                            <img src="<?php echo $upload_dir.$row['image'] ?>" width="200"> <!-- display image from database  -->
+                            <img src="<?php echo $target_dir.$row['image'] ?>" width="200"> <!-- display image from database  -->
                             <input type="file" name="myfile">
                         </div>
                     </div>

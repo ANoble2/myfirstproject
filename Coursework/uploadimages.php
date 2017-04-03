@@ -9,13 +9,15 @@
 https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
  * Learn PHP Programming From Scratch stone river elearning
 https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ * code course file uploading
+ * https://www.youtube.com/watch?v=PRCobMXhnyw&t=7s
  */
 session_start(); // Start the session
 include ('dbConnect.php'); // create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
 }
-$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
+$target_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
 
 // if upload button is pressed passes variables entered in form
@@ -38,16 +40,16 @@ if(isset($_POST['btnUpload'])) {
         // gets image extension and changes to lower case
         $imgExt = strtolower(pathinfo($imgName, PATHINFO_EXTENSION));
         // allowed extensions
-        $allowExt = array('jpeg', 'jpg', 'png', 'gif');
+        $allowExt = array('jpg', 'jpeg', 'png', 'gif');
         //random new name for image when goes to database
         $userPic = time().'_'.rand(1000,9999).'.'.$imgExt;
         //check its a valid image
         if(in_array($imgExt, $allowExt)){
             //check image size is less than certain amount in this case 5MB or displays error
             if($imgSize < 5000000){
-                move_uploaded_file($imgTmp,$upload_dir.$userPic);
+                move_uploaded_file($imgTmp,$target_dir.$userPic);
             }else{
-                $errorMsg = 'Sorry, The image is too large';
+                $errorMsg = 'Sorry, The image is too big';
             }
         }else{
             $errorMsg = 'Please select a valid image';

@@ -38,7 +38,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
             echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
         echo "</p>
-            <form class='delete-form' method='post' action='".deletePosts($link)."'>
+            <form class='form-group' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>
             <button type='submit' name='deletePost' class='btn btn-danger'><span class='glyphicon glyphicon-remove-sign'></span> Delete</button>
             <br>

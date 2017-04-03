@@ -9,6 +9,10 @@
 https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
  * Learn PHP Programming From Scratch stone river elearning
 https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ * code tube tutorial upload ,view and delete using PHP MySQL
+ * https://www.youtube.com/watch?v=iV-u3bTxXN0&t=340s
+ * code tube tutorials Make File (Create, Rename, Move, Delete, Copy) Using PHP
+ * https://www.youtube.com/watch?v=IkcpNXBmwYI
  */
 ini_set('display_errors', 1); // error checking
 ini_set('display_startup_errors', 1);
@@ -19,7 +23,7 @@ include ('dbConnect.php');// create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
 }
-$upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
+$target_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 
 if(isset($_GET['delete'])){ // if delete button is pressed
    $id = $_GET['delete'];
@@ -31,7 +35,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
        $row = mysqli_fetch_assoc($result);
        $image = $row['image'];
        // delete record from the database
-       unlink($upload_dir.$image);
+       unlink($target_dir.$image);
        $sql = "delete from tbl_images where id=".$id;
        if(mysqli_query($link, $sql)){
            header('location:viewPhotos.php');
@@ -138,7 +142,7 @@ if(isset($_GET['delete'])){ // if delete button is pressed
                                         <td><?php echo $row['id'] ?></td> <!-- display contents from database specified in the table  -->
                                         <td><?php echo $row['name'] ?></td>
                                         <td><?php echo $row['description'] ?></td>
-                                        <td><img src="<?php echo $upload_dir.$row['image'] ?>" height="40" width="80"> </td> <!-- display image from database -->
+                                        <td><img src="<?php echo $target_dir.$row['image'] ?>" height="40" width="80"> </td> <!-- display image from database -->
                                         <td>
                                             <a class="btn btn-info" href="edit.php?id=<?php echo $row['id'] ?> "><span class="glyphicon glyphicon-edit"></span> Edit</a> <!-- button for users to go edit page -->
                                             <a class="btn btn-danger" href="viewPhotos.php?delete=<?php echo $row['id'] ?>" onclick="return confirm('Are you sure you want to delete this image?')" > <!-- provide a pop up box to check whether user is sure about deleting image record.-->

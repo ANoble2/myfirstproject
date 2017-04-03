@@ -9,6 +9,8 @@
 https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
  * Learn PHP Programming From Scratch stone river elearning
 https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ * * code course php tutorials
+ * https://www.youtube.com/watch?v=9kyQGBABA38&list=PLE134D877783367C7
  */
 include ('dbConnect.php'); // create connection to the database
 
@@ -139,7 +141,7 @@ if(!$error){
                         <span class="text-danger"><?php if(isset($errorPassword)) echo $errorPassword; ?></span> <!-- to echo error message when input is wrong or not valid -->
                     </div>
                     <div class="form-group">
-                        <center><input type="submit" name="btn-register" value="Login" class="btn btn-primary"></center>  <!-- button for users to submit -->
+                        <center><input type="submit" name="btn-register" value="Register" class="btn btn-primary"></center>  <!-- button for users to submit -->
                     </div>
                     <hr/>
                     <a href="index.php">Login</a> <!-- link  back to login page -->
