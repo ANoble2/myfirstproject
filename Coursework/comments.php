@@ -18,6 +18,9 @@ session_start(); // Start the session
 date_default_timezone_set('Europe/London');// takes current time specified when submit post
 include ('dbConnect.php'); // create connection to the database
 include 'comments-func.php'; // reference function for form to use
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
+    header('location:index.php');
+}
 $upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
 ?>
 
@@ -121,7 +124,7 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <tbody>
                 <tr>
                     <td>
-                        <?php   echo  retrieveComments($link) ?>
+                        <?php   echo  retrieveComments($link) ?> <!-- displays the comments stored on the database by users -->
                     </td>
                 </tr>
                 </tbody> <!-- end of table body -->

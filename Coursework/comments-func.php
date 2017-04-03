@@ -13,6 +13,9 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  *  * mmtuts learn PHP easily
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
+    header('location:index.php');
+}
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below

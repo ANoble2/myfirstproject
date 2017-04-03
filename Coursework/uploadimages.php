@@ -12,7 +12,11 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  */
 session_start(); // Start the session
 include ('dbConnect.php'); // create connection to the database
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
+    header('location:index.php');
+}
 $upload_dir = 'uploads/'; // specifies the directory where the file is going to be placed
+
 
 // if upload button is pressed passes variables entered in form
 if(isset($_POST['btnUpload'])) {
