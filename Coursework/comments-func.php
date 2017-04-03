@@ -21,7 +21,13 @@ function insComments($link){ // insert comments to the database, link is connect
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
        $uid = $_POST['uid'];
        $date = $_POST['date'];
-       $message = $_POST['message'];
+       $message = trim($_POST['message']);
+
+       //sanitize message comment from post
+        $message = stripslashes($message);
+        $message = mysqli_real_escape_string($link, $_POST ['message']);
+        $message = htmlspecialchars($message);
+
 
        $sql = "insert into tbl_comments(uid, date, message) 
                 VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
