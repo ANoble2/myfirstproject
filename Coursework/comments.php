@@ -13,7 +13,7 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
 
-
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start(); // Start the session
 date_default_timezone_set('Europe/London');// takes current time specified when submit post
 include ('dbConnect.php'); // create connection to the database

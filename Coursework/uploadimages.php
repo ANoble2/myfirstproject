@@ -12,6 +12,7 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  * code course file uploading
  * https://www.youtube.com/watch?v=PRCobMXhnyw&t=7s
  */
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start(); // Start the session
 include ('dbConnect.php'); // create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)

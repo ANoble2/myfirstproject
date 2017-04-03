@@ -13,6 +13,7 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  * https://www.youtube.com/watch?v=9kyQGBABA38&list=PLE134D877783367C7
  *
  */
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start();// Start the session
 
 include ('dbConnect.php'); // create connection to the database

@@ -18,6 +18,7 @@ ini_set('display_errors', 1); // error checking
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start(); // Start the session
 include ('dbConnect.php');// create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
