@@ -51,13 +51,13 @@ if(empty($password)){
 }
 
 //encrypt password with md5
-$StorePassword = password_hash($password,PASSWORD_BCRYPT,array('cost' => 10));
+$password = md5($password);
 
 //insert data if no error
 if(!$error){
     //  SQL query as a string for inserting information to database
     $sql = "insert into tbl_users(username, email ,password) 
-                values('$username', '$email', '$StorePassword')"; // insert values specified into tbl_users in columns username , email , password
+                values('$username', '$email', '$password')"; // insert values specified into tbl_users in columns username , email , password
     if(mysqli_query($link, $sql)){
         $successMsg = ' You have Registered Successfully. <a href="index.php">click here to login</a>'; // if register successful display this message to direct to login page
     }else{
