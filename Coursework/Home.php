@@ -11,8 +11,6 @@ https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/l
 https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  */
 session_start(); // Start the session
-echo "user id is {$_SESSION['id']}";
-
 include ('dbConnect.php'); // create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
