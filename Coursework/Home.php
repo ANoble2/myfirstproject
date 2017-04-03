@@ -73,7 +73,7 @@ if(!isset($_SESSION['username'])){ // check user logged in or not , if not redir
 <div class="container">
     <div class="jumbotron">
         <h1>Visual Upload - Photo Gallery</h1>
-        <p>Welcome to Visual Upload! <br>You can now upload and view your images.</p>
+        <p>Welcome to Visual Upload! <br>You are now able to upload and view your images.</p>
     </div> <!-- end of jumbotron div-->
 
     <div class="container">
@@ -87,7 +87,7 @@ if(!isset($_SESSION['username'])){ // check user logged in or not , if not redir
             <div class="col-md-4">
                 <img src="material/images/upload.PNG" class="img-rounded" alt="upload image" width="304" height="236"> <!-- image for section of web app -->
                 <h2><a href="uploadimages.php">Upload Images</a></h2>
-                <p> Upload and save your images. </p>
+                <p> Upload and save your favourite images. </p>
 
             </div>
             <div class="col-md-4">
