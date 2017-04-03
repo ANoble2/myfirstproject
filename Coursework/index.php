@@ -45,7 +45,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
     }
 
     if(!$error){
-        $password = md5($password); //encrypt password with md5
+        if (password_verify($password,$row['password'] ))
         // SQL query as a string for selecting all from email column matches email address provided
         $sql = "select * from tbl_users where email='$email' "; // selects all from table called tbl_users where email column = email variable
         // execute the SQL query
