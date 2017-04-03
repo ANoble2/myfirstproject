@@ -4,6 +4,12 @@
  * User: Ashley
  * Date: 11/03/2017
  * Time: 15:27
+ * code sources references below
+ * php for beginners - become a php master Edwin Diaz
+https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
+ * Learn PHP Programming From Scratch stone river elearning
+https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ *
  */
 session_start();// Start the session
 

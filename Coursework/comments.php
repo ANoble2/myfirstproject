@@ -4,12 +4,13 @@
  * User: Ashley
  * Date: 17/03/2017
  * Time: 15:39
- * textarea {
-width: 400px;
-height: 80px;
-background-color: #fff;
-resize:none;
-}
+ * code sources references below
+ * php for beginners - become a php master Edwin Diaz
+https://www.udemy.com/php-for-complete-beginners-includes-msql-object-oriented/learn/v4/overview
+ * Learn PHP Programming From Scratch stone river elearning
+https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
+ * mmtuts learn PHP easily
+ * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
 
 
@@ -116,7 +117,6 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
         <div class="panel-heading">Users Comments
         </div>
         <div class="panel-body">
-            <div class="table-responsive table-bordered">
             <table class=" table table-bordered table-responsive">
                 <tbody>
                 <tr>
@@ -126,7 +126,6 @@ $upload_dir = 'uploads/'; // specifies the directory where the file is going to 
                 </tr>
                 </tbody> <!-- end of table body -->
             </table> <!-- end of table -->
-            </div> <!-- end of table div -->
         </div>  <!-- end panel body div -->
     </div> <!-- end of panel primary-->
 </div> <!-- end of container-->
