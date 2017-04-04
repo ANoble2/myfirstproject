@@ -13,7 +13,12 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  *  * mmtuts learn PHP easily
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
-
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
+session_start(); // Start the session
+include ('dbConnect.php'); // create connection to the database
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
+    header('location:index.php');
+}
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
@@ -57,7 +62,7 @@ function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
         $cid = $_POST['cid'];
 
-        $sql = "delete from tbl_comments where cid='$cid' and uid='". $_SESSION['id'] ."'";
+        $sql = "delete from tbl_comments where cid='$cid'and uid= '". $_SESSION['id'] ."'";
         $result = $link->query($sql); // variable to store connection to use query on sql variable about with update statement above
         header("location: comments.php");
     }
