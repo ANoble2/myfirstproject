@@ -12,6 +12,7 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  * * code tube tutorial upload ,view and delete using PHP MySQL
  * https://www.youtube.com/watch?v=iV-u3bTxXN0&t=340s
  */
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start(); // Start the session
 include ('dbConnect.php');// create connection to the database
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
@@ -97,7 +98,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <ul class="row">
                    <center><img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                     <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
-                    <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or Comment</a><center>
+                    <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a><center>
 
                 </ul>
         </div>  <!-- end of col div -->
