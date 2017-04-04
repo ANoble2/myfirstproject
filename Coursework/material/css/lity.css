@@ -154,7 +154,6 @@
     outline: none;
     -webkit-box-shadow: none;
     box-shadow: none;
-    cursor: pointer;
 }
 .lity-close:active {
     top: 1px;
