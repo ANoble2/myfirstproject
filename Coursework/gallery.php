@@ -110,7 +110,43 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
     </div> <!-- end of container -->
 
+<hr> <!-- creates line to break up content -->
 
+<div class="container">
+    <div class="jumbotron">
+        <h3 style="text-align:center">Other Users Gallery</h3> <!-- displays users name next to gallery-->
+    </div>  <!-- end of jumbotron div -->
+
+</div><!-- end of container -->
+
+
+<div class="container">
+
+    <?php
+    $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+    $result = mysqli_query($link, $sql);
+    if(mysqli_num_rows($result)){
+        while ($row = mysqli_fetch_assoc($result)) {
+            ?>
+
+
+
+            <div class="col-md-3">
+                <ul class="row">
+                    <img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"> <!-- display image from database -->
+                    <p><?php echo $row['name'] ?></p> <!-- display image name along with image -->
+                    <p>Uploaded by <?php echo $row ['userid']?></p>
+                    <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a>
+
+                </ul>
+            </div>  <!-- end of col div -->
+            <?php
+        }
+    }
+    ?>
+
+
+</div> <!-- end of container -->
 
 <div class="container">
 
