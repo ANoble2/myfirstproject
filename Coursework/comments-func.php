@@ -13,6 +13,8 @@ https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  *  * mmtuts learn PHP easily
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
+session_start(); // Start the session
 if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
     header('location:index.php');
 }
