@@ -23,9 +23,12 @@ $error = false; // variable to store for error to be used later in code whether 
 if(isset($_POST['btn-login'])){ // if btn-login is pressed
     //Help prevent sql injection with cleaning user input / Strip unnecessary characters
     $email = trim($_POST['email']);
+    $email = mysqli_real_escape_string($link, $_POST ['email']);
     $email = htmlspecialchars(strip_tags($email));
 
+
     $password = trim($_POST['password']);
+    $password = mysqli_real_escape_string($link, $_POST ['password']);
     $password = htmlspecialchars(strip_tags($password));
 
     if(empty($email)){
