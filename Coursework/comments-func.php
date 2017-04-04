@@ -19,7 +19,6 @@ if(!isset($_SESSION['username'])){ // check user logged in or not , if not redir
     header('location:index.php');
 }
 
-$error = false; // variable to store for error to be used later in code whether error is false or true
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
        $uid = $_POST['uid'];
@@ -31,10 +30,6 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = mysqli_real_escape_string($link, $_POST ['message']);
         $message = htmlspecialchars($message);
 
-        if(empty($message)){
-            $error = true;
-            $errormessage = 'Please enter a comment';
-        }
 
        $sql = "insert into tbl_comments(uid, date, message) 
                 VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
@@ -61,7 +56,6 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 </div>";
     }
 }
-
 
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
