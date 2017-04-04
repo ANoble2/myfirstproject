@@ -14,6 +14,7 @@
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
 
+
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
        $uid = $_POST['uid'];
@@ -55,7 +56,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
         $cid = $_POST['cid'];
-        $sql = "delete from tbl_comments where cid='$cid'and uid= '". $_SESSION['id'] ."'";
+        $sql = "delete from tbl_comments where cid='$cid'and uid= '". $_SESSION['username'] ."'";
         $result = $link->query($sql); // variable to store connection to use query on sql variable about with update statement above
         header("location: comments.php");
     }
