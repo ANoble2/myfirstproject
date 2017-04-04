@@ -29,7 +29,7 @@ if(isset($_POST['btn-register'])){ // if btn-register is pressed
     $password = $_POST['password'];
     $password = strip_tags($password);
     $password = htmlspecialchars($password);
-}
+
 
 //validate the users input
 if(empty($username)){
@@ -53,15 +53,16 @@ if(empty($password)){
 //encrypt password with md5
 $password = md5($password);
 
-//insert data if no error
-if(!$error){
+//insert data if no error is found
+if(!$error) {
     //  SQL query as a string for inserting information to database
     $sql = "insert into tbl_users(username, email ,password) 
                 values('$username', '$email', '$password')"; // insert values specified into tbl_users in columns username , email , password
-    if(mysqli_query($link, $sql)){
+    if (mysqli_query($link, $sql)) {
         $successMsg = ' You have Registered Successfully. <a href="index.php">click here to login</a>'; // if register successful display this message to direct to login page
-    }else{
-        echo 'Error '.mysqli_error($link); // if register unsuccessful display error
+    } else {
+        echo 'Error ' . mysqli_error($link); // if register unsuccessful display error
+        }
     }
 
 }
