@@ -14,7 +14,9 @@
 //login page part
 
 //if (password_verify($password,$row['password'] )){
+// }
 
 //$password = md5($password); //encrypt password with md5
 //$password = md5($password);
+//http://ash1992.azurewebsites.net/Coursework/index.php
 ?>

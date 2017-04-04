@@ -135,7 +135,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
                         <center><input type="submit" name="btn-login" value="Login" class="btn btn-primary"></center> <!-- button for users to submit -->
                     </div>
                     <hr/>
-                    <a href="register.php">Register</a> <!-- link to register page if user doesn't have account already -->
+                    Don't have an account? <a href="register.php">Register Here</a> <!-- link to register page if user doesn't have account already -->
                 </form> <!-- end of form -->
 
             </div> <!-- end of col-md-6 div -->

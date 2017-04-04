@@ -144,7 +144,7 @@ if(!$error){
                         <center><input type="submit" name="btn-register" value="Register" class="btn btn-primary"></center>  <!-- button for users to submit -->
                     </div>
                     <hr/>
-                    <a href="index.php">Login</a> <!-- link  back to login page -->
+                    Back to <a href="index.php">Login Page</a> <!-- link  back to login page -->
                 </form>
                 
             </div> <!-- end of col-md-6 div -->
