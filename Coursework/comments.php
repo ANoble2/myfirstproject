@@ -106,6 +106,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
+    <span class='text-danger><?php if(isset($errormessage)) echo $errormessage; ?></span>
       <label for='comment'><p>Post a Comment:</p></label>
     <textarea class='form-control' name='message' placeholder=' Enter Comment' width='304' height='236'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
