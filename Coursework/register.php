@@ -20,17 +20,20 @@ if(isset($_POST['btn-register'])){ // if btn-register is pressed
     //Help prevent sql injection with cleaning user input / Strip unnecessary characters
     $username = $_POST['username'];
     $username = strip_tags($username);
+    $username = stripslashes($username);
     $username = mysqli_real_escape_string($link, $_POST ['username']);
     $username = htmlspecialchars($username);
 
     $email = $_POST['email'];
     $email = strip_tags($email);
+    $email = stripslashes($email);
     $email = mysqli_real_escape_string($link, $_POST ['email']);
     $email = htmlspecialchars($email);
 
     $password = $_POST['password'];
-    $password = mysqli_real_escape_string($link, $_POST ['password']);
     $password = strip_tags($password);
+    $password = stripslashes($password);
+    $password = mysqli_real_escape_string($link, $_POST ['password']);
     $password = htmlspecialchars($password);
 
 
