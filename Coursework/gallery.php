@@ -114,7 +114,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
-        <h3 style="text-align:center">Other Users Gallery</h3> <!-- displays users name next to gallery-->
+        <h3 style="text-align:center">Other Users Gallery Collection</h3> <!-- displays users name next to gallery-->
     </div>  <!-- end of jumbotron div -->
 
 </div><!-- end of container -->
@@ -133,10 +133,10 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
             <div class="col-md-3">
                 <ul class="row">
-                    <img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"> <!-- display image from database -->
-                    <p><?php echo $row['name'] ?></p> <!-- display image name along with image -->
-                    <p>Uploaded by <?php echo $row ['userid']?></p>
-                    <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a>
+                    <center> <img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
+                    <center> <p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
+                    <center> <p>Uploaded by <?php echo $row ['username']?></p></center>
+                    <center> <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
 
                 </ul>
             </div>  <!-- end of col div -->
