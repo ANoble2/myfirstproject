@@ -140,8 +140,8 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
             ?>
 
             <?php
-            $sql = "select * from tbl_users"; // select all from table tbl_images
-            $result = mysqli_query($link, $sql);
+            $sql2 = "select * from tbl_users"; // select all from table tbl_images
+            $result = mysqli_query($link, $sql2);
             if (mysqli_num_rows($result)) {
                 while ($row = mysqli_fetch_assoc($result)) {
                     ?>
