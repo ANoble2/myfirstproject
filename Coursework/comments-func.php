@@ -55,7 +55,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 
 function deletePosts($link) {
     if (isset($_GET['deletePost'])) { // unless delete button is pressed shouldn't run code below
-        $cid = $_GET['cid'];
+        $cid = $_GET['deletePost'];
         $sql = "delete from tbl_comments where cid='$cid' and uid= '" . $_SESSION['username'] . "'";
         $result = $link->query($sql); // variable to store connection to use query on sql variable about with update statement above
             header('location:comments.php');
