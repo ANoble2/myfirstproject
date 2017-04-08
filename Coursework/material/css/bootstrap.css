@@ -9,6 +9,10 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
+#imglight.img-responsive:hover {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
 }
@@ -6759,7 +6763,5 @@ body {
   background-color: #DADADA;
 }
 
-#imglight.img-responsive:hover {
-  cursor: pointer;
-}
+
 /*# sourceMappingURL=bootstrap.css.map */
