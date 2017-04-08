@@ -36,7 +36,7 @@ function insComments($link){ // insert comments to the database, link is connect
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
     $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
-    while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
+    while ( $row = $result->fetch_assoc($result)) { // loop through all messages to display all until none left
         echo "<div class='panel-primary'><p>";
             echo $row['uid']."<br>"; // display user who posted comment
             echo $row['date']."<br>"; // display date of when comment posted
@@ -54,8 +54,8 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 }
 
 function deletePosts($link) {
-    if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
-        $cid = $_POST['cid'];
+    if (isset($_GET['deletePost'])) { // unless delete button is pressed shouldn't run code below
+        $cid = $_GET['cid'];
         $sql = "delete from tbl_comments where cid='$cid' and uid= '" . $_SESSION['username'] . "'";
         unlink($cid);
         if (mysqli_query($link, $sql)) { // variable to store connection to use query on sql variable about with update statement above
