@@ -37,10 +37,10 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
     <!-- light box source code http://sorgalla.com/lity/ -->
     <link href="material/css/lity.css" rel="stylesheet">
 
-<style>img.img-responsive:hover {
+<!-- <style>img.img-responsive:hover {
         cursor: pointer;
     }
-</style>
+</style> -->
     <nav class="navbar navbar-default"> <!-- start of nav bar -->
         <div class="container"> <!-- start of container -->
 
