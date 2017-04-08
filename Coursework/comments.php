@@ -86,7 +86,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
      <div class='page-header'>
-            <h3> Click Here to Return to Gallery
+            <h3>Return to Gallery
                 <a class='btn btn-default' href='gallery.php'>
                     <span class='glyphicon glyphicon-arrow-left'></span>&nbsp;Back
                 </a>
