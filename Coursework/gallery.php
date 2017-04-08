@@ -83,7 +83,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
-        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?> Gallery</h3> <!-- displays users name next to gallery-->
+        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?>'s Gallery</h3> <!-- displays users name next to gallery-->
     </div>  <!-- end of jumbotron div -->
 
 </div><!-- end of container -->
@@ -132,10 +132,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 <div class="container">
 
     <?php
-    $sql="SELECT tbl_images.userid, tbl_users.username, tbl_images.image
-FROM Orders
-INNER JOIN tbl_users ON tbl_images.userid=tbl_users.uid";
-
+    $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
    // $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
     $result = mysqli_query($link, $sql);
     if(mysqli_num_rows($result)){
