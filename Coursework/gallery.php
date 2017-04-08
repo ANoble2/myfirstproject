@@ -107,7 +107,8 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                     <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
 
                 </ul>
-        </div>  <!-- end of col div -->
+            </div>  <!-- end of col div -->
+            <br>
             <?php
             }
             }
@@ -148,6 +149,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
                 </ul>
             </div>  <!-- end of col div -->
+            <br>
             <?php
         }
     }
