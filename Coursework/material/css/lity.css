@@ -164,7 +164,7 @@
     display: block;
     line-height: 0;
     border: 0;
-    cursor: hand;
+    cursor:pointer;
 }
 /* iFrame */
 .lity-iframe .lity-container,
