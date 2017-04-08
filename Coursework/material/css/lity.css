@@ -164,7 +164,7 @@
     display: block;
     line-height: 0;
     border: 0;
-    cursor:pointer;
+
 }
 /* iFrame */
 .lity-iframe .lity-container,
@@ -202,4 +202,8 @@
 
 .step {
     margin-bottom: 10px;
+}
+
+img.img-responsive {
+    cursor: pointer;
 }
