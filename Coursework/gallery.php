@@ -83,7 +83,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
-        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?>'s Gallery</h3> <!-- displays users name next to gallery-->
+        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?> Gallery</h3> <!-- displays users name next to gallery-->
     </div>  <!-- end of jumbotron div -->
 
 </div><!-- end of container -->
@@ -103,7 +103,6 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
             <div class="col-md-3">
                 <ul class="row">
                    <center><img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
-                    <br>
                     <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                     <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
                     <br>
@@ -139,32 +138,19 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
         while ($row = mysqli_fetch_assoc($result)) {
             ?>
 
+
+
+            <div class="col-md-3">
+                <ul class="row">
+                    <center> <img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
+                    <center> <p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
+                    <center> <p>Uploaded by <?php echo $row ['username']?></p></center>
+                    <center> <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
+                    <br>
+                </ul>
+            </div>  <!-- end of col div -->
+
             <?php
-            $sql2 = "select * from tbl_users"; // select all from table tbl_images
-            $result = mysqli_query($link, $sql2);
-            if (mysqli_num_rows($result)) {
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-
-                    <div class="col-md-3">
-                        <ul class="row">
-                            <center><img src="<?php echo $target_dir . $row['image'] ?>" height="168" width="290"
-                                         data-lity
-                                         class="img-responsive"></center> <!-- display image from database -->
-                            <br>
-                            <center><p><?php echo $row['name'] ?></p></center>
-                            <!-- display image name along with image -->
-                            <center><p>Uploaded by <?php echo $row ['username'] ?></p></center>
-                            <center><a class="btn btn-primary btn-sm" href="comments.php"><span
-                                            class="glyphicon glyphicon-comment"></span> Post or View Comments</a>
-                            </center>
-                            <br>
-                        </ul>
-                    </div>  <!-- end of col div -->
-
-                    <?php
-                }
-            }
         }
     }
     ?>
