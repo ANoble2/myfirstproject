@@ -56,8 +56,8 @@ if(empty($password)){
     $errorPassword = 'Password must be at least 8 characters'; // if password isn't 8 characters long presents error message
 }
 
-//encrypt password with md5
-//$password = md5($password);
+//encrypt password
+//$password = md5($password); old code for passwords
 $StorePassword = password_hash($password,PASSWORD_BCRYPT,array('cost' => 10));
 
 //insert data if no error is found

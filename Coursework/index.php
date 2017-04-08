@@ -48,6 +48,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
     }
 
     if(!$error){
+        //$password = md5($password); old code md5 password
         $StorePassword = password_hash($password,PASSWORD_BCRYPT,array('cost' => 10));
         // SQL query as a string for selecting all from email column matches email address provided
         $sql = "select * from tbl_users where email='$email' "; // selects all from table called tbl_users where email column = email variable
@@ -55,7 +56,7 @@ if(isset($_POST['btn-login'])){ // if btn-login is pressed
         $result = mysqli_query($link, $sql);
         $count = mysqli_num_rows($result);
         $row = mysqli_fetch_assoc($result);
-     //   if($count==1 && $row['password'] == $password)
+        //if($count==1 && $row['password'] == $password) old code for md5 password
         if ($count==1 &&(password_verify($password,$row['password'] ))){
             $_SESSION['username'] = $row['username'];
             $_SESSION['id'] = $row['uid'];
