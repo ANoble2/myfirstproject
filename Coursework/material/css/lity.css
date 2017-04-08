@@ -204,6 +204,6 @@
     margin-bottom: 10px;
 }
 
-img.img-responsive {
+img.img-responsive:hover {
     cursor: pointer;
 }
