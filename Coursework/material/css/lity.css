@@ -17,9 +17,7 @@
     -o-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
 }
-img.img-responsive:hover {
-    cursor: pointer;
-}
+
 .lity.lity-opened {
     opacity: 1;
 }
