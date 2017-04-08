@@ -33,6 +33,15 @@ function insComments($link){ // insert comments to the database, link is connect
     }
 }
 
+function deletePosts($link) {
+    if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
+        $cid = $_POST['cid'];
+        $sql = "delete from tbl_comments where cid='$cid' and uid= '". $_SESSION['username'] ."'";
+        $result = $link->query($sql); // variable to store connection to use query on sql variable about with update statement above
+        header("location:comments.php");
+    }
+}
+
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
     $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
@@ -53,14 +62,6 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     }
 }
 
-function deletePosts($link) {
-    if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
-        $cid = $_POST['cid'];
-        $sql = "delete from tbl_comments where cid='$cid' and uid= '". $_SESSION['username'] ."'";
-        $result = $link->query($sql); // variable to store connection to use query on sql variable about with update statement above
-        header("location:comments.php");
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
