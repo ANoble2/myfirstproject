@@ -59,7 +59,7 @@ function deletePosts($link) {
         $sql = "delete from tbl_comments where cid='$cid' and uid= '" . $_SESSION['username'] . "'";
         unlink($cid);
         if (mysqli_query($link, $sql)) { // variable to store connection to use query on sql variable about with update statement above
-            header("location: comments.php");
+            header('location:comments.php');
         }
     }
 }
