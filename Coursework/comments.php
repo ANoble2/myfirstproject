@@ -79,13 +79,6 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 
 <div class="container">
-    <div class="page-header">
-        <h3> Return to Gallery
-            <a class="btn btn-default" href=gallery.php">
-                <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;Back <!-- button for users to go back to view photos page -->
-            </a>
-        </h3>
-    </div>
     <div class="jumbotron">
         <!-- Form code for users to post comments and back button to return to gallery -->
         <?php
