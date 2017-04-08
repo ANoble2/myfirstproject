@@ -6759,7 +6759,7 @@ body {
   background-color: #DADADA;
 }
 
-img.img-responsive:hover {
+#imglight:hover {
   cursor: pointer;
 }
 /*# sourceMappingURL=bootstrap.css.map */
