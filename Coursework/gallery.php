@@ -37,10 +37,11 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
     <!-- light box source code http://sorgalla.com/lity/ -->
     <link href="material/css/lity.css" rel="stylesheet">
 
-<!-- <style>img.img-responsive:hover {
+    <!-- hover pointer for lightbox effect
+<style>img.img-responsive:hover {
         cursor: pointer;
-    }
-</style> -->
+    }</style> -->
+
     <nav class="navbar navbar-default"> <!-- start of nav bar -->
         <div class="container"> <!-- start of container -->
 
@@ -101,7 +102,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
             <div class="col-md-3">
                 <ul class="row">
-                   <center><img id="imglight" src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
+                   <center><img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                     <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                     <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
 
