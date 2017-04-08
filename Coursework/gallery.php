@@ -105,10 +105,10 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                    <center><img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                     <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                     <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
-
+                    <br>
                 </ul>
             </div>  <!-- end of col div -->
-            <br>
+
             <?php
             }
             }
@@ -146,10 +146,10 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                     <center> <p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                     <center> <p>Uploaded by <?php echo $row ['username']?></p></center>
                     <center> <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
-
+                    <br>
                 </ul>
             </div>  <!-- end of col div -->
-            <br>
+
             <?php
         }
     }
