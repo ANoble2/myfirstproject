@@ -83,7 +83,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
-        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?> Gallery</h3> <!-- displays users name next to gallery-->
+        <h3 style="text-align:center"><?php echo $_SESSION['username']; ?>'s Gallery</h3> <!-- displays users name next to gallery-->
     </div>  <!-- end of jumbotron div -->
 
 </div><!-- end of container -->
