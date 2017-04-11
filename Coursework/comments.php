@@ -83,6 +83,28 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 <div class="container">
     <div class="jumbotron">
+        <?php
+        if(isset($errorMsg)){
+            ?>
+            <div class="alert alert-danger">
+                <span class="glyphicon glyphicon-info-sign">  <!-- displays errorMsg variable at top of the form -->
+                <strong><?php echo $errorMsg; ?></strong>
+                    </span>
+            </div>
+            <?php
+        }
+        ?>
+
+        <?php
+        if(isset($successMsg)){
+            ?>
+            <div class="alert alert-success">
+                <span class="glyphicon glyphicon-info-sign"></span>
+                <strong><?php echo $successMsg; ?> redirecting</strong>  <!-- displays successMsg variable at top of the form -->
+            </div>
+            <?php
+        }
+        ?>
         <!-- Form code for users to post comments and back button to return to gallery -->
         <?php
         echo "<form method='POST' action='".insComments($link)."'>
