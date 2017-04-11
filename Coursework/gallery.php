@@ -132,7 +132,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 <div class="container">
 
     <?php
-    $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+    $sql = "select * from tbl_images JOIN tbl_users ON userid=uid where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
    // $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
     $result = mysqli_query($link, $sql);
     if(mysqli_num_rows($result)){
