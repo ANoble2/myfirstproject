@@ -17,9 +17,10 @@
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
-       $uid = $_POST['uid'];
-       $date = $_POST['date'];
-       $message = trim($_POST['message']);
+        $uid = $_POST['uid'];
+        $date = $_POST['date'];
+        $message = trim($_POST['message']);
+        $pic_id = trim($_POST['pic_id']);
 
        //sanitize message comment from post
         $message = stripslashes($message);
@@ -27,8 +28,8 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = htmlspecialchars($message);
 
 
-       $sql = "insert into tbl_comments(uid, date, message) 
-                VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
+       $sql = "insert into tbl_comments(uid, date, message,picture_id) 
+                VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
         $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
     }
 }

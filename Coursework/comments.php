@@ -85,6 +85,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
         echo "<form method='POST' action='".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
+    <input type='hidden' class='form-control ' name='pic_id' value='".$_GET['id']."'>
      <div class='page-header'>
             <p>Return to Gallery
                 <a class='btn btn-default' href='gallery.php'>
@@ -111,7 +112,6 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <tr>
                     <td>
                         <?php
-                            echo $_GET['id'];
                             echo  retrieveComments($link)
                         ?> <!-- displays the comments stored on the database by users -->
                     </td>
