@@ -110,7 +110,10 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <tbody>
                 <tr>
                     <td>
-                        <?php   echo  retrieveComments($link) ?> <!-- displays the comments stored on the database by users -->
+                        <?php
+                            echo $_GET['id'];
+                            echo  retrieveComments($link)
+                        ?> <!-- displays the comments stored on the database by users -->
                     </td>
                 </tr>
                 </tbody> <!-- end of table body -->
