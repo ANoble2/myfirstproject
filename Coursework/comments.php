@@ -118,6 +118,29 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 </a>
             </p>
         </div>
+        
+          <?php
+        if(isset($errorMsg)){
+            ?>
+            <div class='alert alert-danger'>
+                <span class='glyphicon glyphicon-info-sign'>  <!-- displays errorMsg variable at top of the form -->
+                <strong><?php echo $errorMsg; ?></strong>
+                    </span>
+            </div>
+            <?php
+        }
+        ?>
+
+        <?php
+        if(isset($successMsg)){
+            ?>
+            <div class='alert alert-success'>
+                <span class='glyphicon glyphicon-info-sign'></span>
+                <strong><?php echo $successMsg; ?> redirecting</strong>  <!-- displays successMsg variable at top of the form -->
+            </div>
+            <?php
+        }
+        ?>
       <label for='comment'><p>Post a Comment:</p></label>
     <textarea class='form-control' name='message' placeholder=' Enter Comment' width='304' height='236'></textarea><br>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
