@@ -17,6 +17,7 @@
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
+        $error = false; // variable to store for error to be used later in code whether error is false or true
        $uid = $_POST['uid'];
        $date = $_POST['date'];
        $message = trim($_POST['message']);
@@ -26,10 +27,18 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = mysqli_real_escape_string($link, $_POST ['message']);
         $message = htmlspecialchars($message);
 
-
-       $sql = "insert into tbl_comments(uid, date, message) 
+        if(!isset($errorMsg)) {
+            $sql = "insert into tbl_comments(uid, date, message) 
                 VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
-        $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
+            $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
+            if ($result){
+                $successMsg = 'Your Comment has been Successfully Posted';
+                header('location:comments.php');
+            }else{
+                    $errorMsg = 'Error in Posting Comment'.mysqli_error($link);
+
+            }
+        }
     }
 }
 
