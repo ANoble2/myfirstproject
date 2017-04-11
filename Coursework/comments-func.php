@@ -57,6 +57,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
+        $pic_id = trim($_POST['pic_id']);
         $cid = $_POST['cid'];
 
         $sql = "delete from tbl_comments where cid='$cid' and uid= '". $_SESSION['username'] ."'";
