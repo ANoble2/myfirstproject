@@ -64,7 +64,7 @@ if(isset($_POST['btnUpload'])) {
             $result = mysqli_query($link, $sql);
             if ($result){
                 $successMsg = 'New image  has been successfully added';
-            header('location:viewPhotos.php'); // user redirected to view photos page automatically within 5 secs
+            header('location:viewPhotos.php'); // user redirected to view photos page
         }else{
                     $errorMsg = 'Error '.mysqli_error($link);
                   }
