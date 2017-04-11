@@ -17,28 +17,20 @@
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
-        $error = false; // variable to store for error to be used later in code whether error is false or true
-       $uid = $_POST['uid'];
-       $date = $_POST['date'];
-       $message = trim($_POST['message']);
+        $uid = $_POST['uid'];
+        $date = $_POST['date'];
+        $message = trim($_POST['message']);
+        $pic_id = trim($_POST['pic_id']);
 
        //sanitize message comment from post
         $message = stripslashes($message);
         $message = mysqli_real_escape_string($link, $_POST ['message']);
         $message = htmlspecialchars($message);
 
-        if(!isset($errorMsg)) {
-            $sql = "insert into tbl_comments(uid, date, message) 
-                VALUES ('$uid', '$date', '$message')"; // insert comment information into the tbl_comments table
-            $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
-            if ($result){
-                $successMsg = 'Your Comment has been Successfully Posted';
-                header('location:comments.php');
-            }else{
-                    $errorMsg = 'Error in Posting Comment'.mysqli_error($link);
 
-            }
-        }
+       $sql = "insert into tbl_comments(uid, date, message,picture_id) 
+                VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
+        $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
     }
 }
 
@@ -64,6 +56,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
+        $pic_id = trim($_POST['pic_id']);
         $cid = $_POST['cid'];
 
         $sql = "delete from tbl_comments where cid='$cid' and uid= '". $_SESSION['username'] ."'";

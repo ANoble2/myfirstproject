@@ -104,7 +104,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <ul class="row">
                    <center><img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                     <center><p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
-                    <center><a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
+                    <center><a class="btn btn-primary btn-sm" href="comments.php?id=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
                     <br>
                 </ul>
             </div>  <!-- end of col div -->
@@ -132,7 +132,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 <div class="container">
 
     <?php
-    $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
+    $sql = "select * from tbl_images JOIN tbl_users ON userid=uid where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
    // $sql = "select * from tbl_images where not userid = '". $_SESSION['id'] ."'"; // select all from table tbl_images
     $result = mysqli_query($link, $sql);
     if(mysqli_num_rows($result)){
@@ -146,7 +146,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                     <center> <img src="<?php echo $target_dir. $row['image'] ?>"  height="168" width="290" data-lity class="img-responsive"></center> <!-- display image from database -->
                     <center> <p><?php echo $row['name'] ?></p></center> <!-- display image name along with image -->
                     <center> <p>Uploaded by <?php echo $row ['username']?></p></center>
-                    <center> <a class="btn btn-primary btn-sm" href="comments.php"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
+                    <center> <a class="btn btn-primary btn-sm" href="comments.php?id=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-comment"></span> Post or View Comments</a></center>
                     <br>
                 </ul>
             </div>  <!-- end of col div -->
