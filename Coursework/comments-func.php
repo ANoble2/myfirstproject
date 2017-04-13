@@ -27,6 +27,7 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = mysqli_real_escape_string($link, $_POST ['message']);
         $message = htmlspecialchars($message);
 
+        //display alert messages for when user posts a comment or doesn't
         if(empty($message)){
             echo "</p> <div class='alert alert-danger' role='alert'>Error You Need To Enter a Comment</div>";
         }else { echo "</p> <div class='alert alert-success' role='alert'>Successfully Posted Comment</div>";
