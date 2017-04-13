@@ -29,7 +29,7 @@ function insComments($link){ // insert comments to the database, link is connect
 
         if(empty($message)){
             echo "You didn't enter a comment";
-        }else
+        }else echo " Comment added";
        $sql = "insert into tbl_comments(uid, date, message,picture_id) 
                 VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
         $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
