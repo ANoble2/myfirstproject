@@ -40,15 +40,15 @@ function insComments($link){ // insert comments to the database, link is connect
 }
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
-    $pic_id = (isset($_POST['pic_id']) ? $_POST['pic_id'] : null);
-    $sql = "select * from tbl_comments where picture_id =$pic_id ORDER BY date DESC "; // query the database
+    $pic_id = trim($_POST['pic_id']);
+
+    $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
         echo "<div class='panel-primary'><p>";
             echo $row['uid']."<br>"; // display user who posted comment
             echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
-            echo $row['id'];
         echo "</p>
             <form class='form-group' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>
