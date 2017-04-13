@@ -16,8 +16,8 @@
 
 
 function insComments($link){ // insert comments to the database, link is connection
-    $error = false; // variable to store for error to be used later in code whether error is false or true
-    if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
+    if (isset($_POST['submitComment']) == NULL) { // unless button is pressed shouldn't run code below
+        echo " No Comment been Entered";
         $uid = $_POST['uid'];
         $date = $_POST['date'];
         $message = trim($_POST['message']);
@@ -28,10 +28,6 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = mysqli_real_escape_string($link, $_POST ['message']);
         $message = htmlspecialchars($message);
 
-        if(empty($message)){
-            $error = true;
-            $errorMessage = 'Please enter a comment';
-        }
 
        $sql = "insert into tbl_comments(uid, date, message,picture_id) 
                 VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
