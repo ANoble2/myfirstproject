@@ -11,6 +11,7 @@
  * https://www.udemy.com/learn-php-programming-from-scratch/learn/v4/content
  * code course file uploading
  * https://www.youtube.com/watch?v=PRCobMXhnyw&t=7s
+ * https://www.w3schools.com/php/php_file_upload.asp
  */
 ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
 session_start(); // Start the session
