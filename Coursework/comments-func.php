@@ -40,8 +40,7 @@ function insComments($link){ // insert comments to the database, link is connect
 }
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
-    $pic_id =$_POST['pic_id'];
-    $sql = "select * from tbl_comments join tbl_images ON picture_id=id WHERE picture_id=$pic_id ORDER BY date DESC"; // query the database
+    $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
         echo "<div class='panel-primary'><p>";
@@ -59,7 +58,6 @@ function retrieveComments($link) { // to retrieve comments from the database, li
           </div>";
     }
 }
-
 
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
