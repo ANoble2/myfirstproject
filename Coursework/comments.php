@@ -98,6 +98,7 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
         </div>
       <label for='comment'><p>Post a Comment:</p></label>
     <textarea class='form-control' name='message' placeholder=' Enter Comment' width='304' height='236'></textarea><br>
+    <span class='text-danger'><?php if(isset($errorMessage)) echo $errorMessage; ?></span>
      <button type='submit' class='btn btn-primary btn-md' name='submitComment'>Post Comment</button>
     
 </form>";
