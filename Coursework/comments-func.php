@@ -28,7 +28,7 @@ function insComments($link){ // insert comments to the database, link is connect
         $message = htmlspecialchars($message);
 
         if(empty($message)){
-            echo "</p> <span class='text-danger'><?php You didn't enter a Comment;?></span>";
+            echo "</p> <span class='text-danger'>You didn't enter a Comment</span>";
         }else
        $sql = "insert into tbl_comments(uid, date, message,picture_id) 
                 VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
