@@ -49,6 +49,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
             echo $row['uid']."<br>"; // display user who posted comment
             echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
+            echo $row{'pic_id'};
         echo "</p>
             <form class='form-group' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>
