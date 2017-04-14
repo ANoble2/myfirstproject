@@ -40,6 +40,8 @@ function insComments($link){ // insert comments to the database, link is connect
 }
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
+    echo "<input type='hidden' name='pic_id' name='pic_id' value='".$_GET['id']."'>";
+        htmlentities($pic_id).'">';
     $pic_id = trim($_POST['pic_id']);
     $sql = "select * from tbl_comments where picture_id=$pic_id ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
