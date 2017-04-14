@@ -41,7 +41,6 @@ function insComments($link){ // insert comments to the database, link is connect
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
     "<input type='hidden' class='form-control ' name='pic_id' value='".$_GET['id']."'>";
-    $pic_id = trim($_POST['pic_id']);
     $sql = "select * from tbl_comments where picture_id=$pic_id ORDER BY date DESC "; // query the database
     $result = mysqli_query($link, $sql);
     if(mysqli_num_rows($result) > 0){
