@@ -39,34 +39,29 @@ function insComments($link){ // insert comments to the database, link is connect
     }
 }
 
-function retrieveComments($link)
-{ // to retrieve comments from the database, link is connection
-    if (isset($_POST['viewComments'])) { // unless button is pressed shouldn't run code below
-        $uid = $_POST['uid'];
-        $date = $_POST['date'];
-        $message = trim($_POST['message']);
-        $pic_id = trim($_POST['pic_id']);
-
-        "input type='hidden' class='form-control ' name='pic_id' value='" . $_GET['id'] . "'";
-        $sql = "select * from tbl_comments join tbl_images ON picture_id=id WHERE picture_id=$pic_id ORDER BY date DESC"; // query the database
-        $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
-        while ($row = $result->fetch_assoc()) { // loop through all messages to display all until none left
-            echo "<div class='panel-primary'><p>";
-            echo $row['uid'] . "<br>"; // display user who posted comment
-            echo $row['date'] . "<br>"; // display date of when comment posted
+function retrieveComments($link) { // to retrieve comments from the database, link is connection
+    $pic_id = trim($_POST['pic_id']);
+    "input type='hidden' class='form-control ' name='pic_id' value='".$_POST['id']."'";
+    $pic_id = trim($_POST['pic_id']);
+    $sql = "select * from tbl_comments join tbl_images ON picture_id=id WHERE picture_id=$pic_id ORDER BY date DESC"; // query the database
+    $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
+    while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
+        echo "<div class='panel-primary'><p>";
+           echo $row['uid']."<br>"; // display user who posted comment
+           echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
-            echo "</p>
-            <form class='form-group' method='post' action='" . deletePosts($link) . "'>
-            <input type ='hidden' name='cid' value='" . $row['cid'] . "'>
+        echo "</p>
+            <form class='form-group' method='post' action='".deletePosts($link)."'>
+            <input type ='hidden' name='cid' value='".$row['cid']."'>
             <button type='submit' name='deletePost' class='btn btn-danger'><span class='glyphicon glyphicon-remove-sign'></span> Delete</button>
             <br>
             <br>
             
             </form>
           </div>";
-        }
     }
 }
+
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
         $cid = $_POST['cid'];

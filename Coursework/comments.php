@@ -115,10 +115,8 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
                 <tr>
                     <td>
                         <?php
-                            echo "<form method='POST' action='".retrieveComments($link)."'>
-                        <button type='submit' class='btn btn-primary btn-md' name='viewComment'>View Comments</button>
-                        </form>";
-                        ?>
+                            echo  retrieveComments($link)
+                        ?> <!-- displays the comments stored on the database by users -->
                     </td>
                 </tr>
                 </tbody> <!-- end of table body -->
