@@ -25,7 +25,7 @@ function insComments($link){ // insert comments to the database, link is connect
        //sanitize message comment from post
         $message = stripslashes($message);
         $message = mysqli_real_escape_string($link, $_POST ['message']);
-        $message = htmlspecialchars($message);
+        $message = htmlspecialchars(strip_tags($message));
 
         //display alert messages for when user posts a comment or doesn't
         if(empty($message)){
@@ -43,11 +43,10 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
-        echo ($result);
-       // echo "<div class='panel-primary'><p>";
-           // echo $row['uid']."<br>"; // display user who posted comment
-           // echo $row['date']."<br>"; // display date of when comment posted
-            //echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
+        echo "<div class='panel-primary'><p>";
+           echo $row['uid']."<br>"; // display user who posted comment
+           echo $row['date']."<br>"; // display date of when comment posted
+            echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
         echo "</p>
             <form class='form-group' method='post' action='".deletePosts($link)."'>
             <input type ='hidden' name='cid' value='".$row['cid']."'>

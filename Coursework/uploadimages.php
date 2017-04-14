@@ -27,6 +27,15 @@ if(isset($_POST['btnUpload'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
 
+
+    $name = trim($_POST['name']);
+    $name  = mysqli_real_escape_string($link, $_POST ['name']);
+    $name  = htmlspecialchars(strip_tags($name));
+
+    $description= trim($_POST['description']);
+    $description  = mysqli_real_escape_string($link, $_POST ['description']);
+    $description = htmlspecialchars(strip_tags($description));
+
     $imgName = $_FILES['myfile']['name']; // extracts information about the file name
     $imgTmp = $_FILES['myfile']['tmp_name']; // extracts information about the file for temporary location
     $imgSize = $_FILES['myfile']['size']; // extracts information about the file size
