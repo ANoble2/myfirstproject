@@ -13,7 +13,14 @@
  *  * mmtuts learn PHP easily
  * https://www.youtube.com/watch?v=kWOuUkLtQZw&list=PL0eyrZgxdwhwBToawjm9faF1ixePexft-&index=43
  */
-
+ini_set('session.cookie_httponly', true); // help against session hijacking with javascript code being inserted to steal session ID
+session_start(); // Start the session
+date_default_timezone_set('Europe/London');// takes current time specified when submit post
+include ('dbConnect.php'); // create connection to the database
+include 'comments-func.php'; // reference function for form to use
+if(!isset($_SESSION['username'])){ // check user logged in or not , if not redirect to login page (index.php)
+    header('location:index.php');
+}
 
 function insComments($link){ // insert comments to the database, link is connection
     if (isset($_POST['submitComment'])) { // unless button is pressed shouldn't run code below
@@ -40,7 +47,8 @@ function insComments($link){ // insert comments to the database, link is connect
 }
 
 function retrieveComments($link) { // to retrieve comments from the database, link is connection
-    $sql = "select * from tbl_comments ORDER BY date DESC "; // query the database
+    $pic_id = trim($_POST['pic_id']);
+    $sql = "select * from tbl_comments WHERE picture_id=$pic_id ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
         echo "<div class='panel-primary'><p>";
