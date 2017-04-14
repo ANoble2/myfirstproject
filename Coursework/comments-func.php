@@ -45,7 +45,6 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     $sql = "select * from tbl_comments where picture_id=$pic_id ORDER BY date DESC "; // query the database
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
-        var_dump($result);
         echo "<div class='panel-primary'><p>";
             echo $row['uid']."<br>"; // display user who posted comment
             echo $row['date']."<br>"; // display date of when comment posted
