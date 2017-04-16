@@ -140,7 +140,7 @@ header("location:comments.php");
     <div class="jumbotron">
         <!-- Form code for users to post comments and back button to return to gallery -->
         <?php
-        echo "<form method='POST' action='".insComments($link)."'>
+        echo "<form method='POST' action='comments.php".insComments($link)."'>
     <input type='hidden' class='form-control 'name='uid' value='". $_SESSION['username'] ."'>
     <input type='hidden' class='form-control ' name='date' value='".date('Y-m-d H:i:s')."'>
     <input type='hidden' class='form-control ' name='pic_id' value='".$_GET['id']."'>
