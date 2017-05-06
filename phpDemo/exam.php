@@ -10,7 +10,7 @@ if ($_SERVER['request_method'] === 'get') {
     ?>
 <form action="<?php echo "$_SERVER ['PHP_SELF']";?>" method="post">
     <label>Forename</label>
-    <input type="text" name="forname"/>
+    <input type="text" name="forename"/>
     <label>Surname</label>
     <input type="text" name="surname"/>
     <input type="submit" value="Go Go Go!"/>
