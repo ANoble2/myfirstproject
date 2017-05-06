@@ -16,9 +16,10 @@ if ($_SERVER['request_method'] === 'get') {
     <input type="submit" value="Go Go Go!"/>
 </form>
 <?
-} elseif ($_SERVER['request_method'] === 'post') {
+}
+elseif ($_SERVER['request_method'] === 'post') {
 
     $forename = $_POST["forename"];
     $surname= $_POST["surname"];
-    echo "Hello {$forename}{$surname}";
+    print ("<h1> Hello {$forename}{$surname}</h1>");
 }
