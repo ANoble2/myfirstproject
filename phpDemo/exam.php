@@ -22,5 +22,3 @@ if ($_SERVER['request_method'] === 'get') {
     $surname= $_POST["surname"];
     echo "Hello {$forname}{$surname}";
 }
-
-    ?>
