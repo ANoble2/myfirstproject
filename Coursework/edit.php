@@ -22,6 +22,9 @@ $target_dir = 'uploads/'; // specifies the directory where the file is going to 
 
 if (isset($_GET['id'])){
      $id = $_GET['id'];
+
+   
+
      $sql = "select * from tbl_images where id=" .$id; // finds the record of specific idea to be edited if cant find it displays error
      $result = mysqli_query($link, $sql);
      if(mysqli_num_rows($result) > 0){

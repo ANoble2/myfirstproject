@@ -25,17 +25,12 @@ function insComments($link){ // insert comments to the database, link is connect
        //sanitize message comment from post
         $message = stripslashes($message);
         $message = mysqli_real_escape_string($link, $_POST ['message']);
-        $message = htmlspecialchars(strip_tags($message));
+        $message = htmlspecialchars($message);
 
-        //display alert messages for when user posts a comment or doesn't
-        if(empty($message)){
-            echo "</p> <div class='alert alert-danger' role='alert'>Error You Need To Enter a Comment</div>";
-        }else { echo "</p> <div class='alert alert-success' role='alert'>Successfully Posted Comment</div>";
 
-            $sql = "insert into tbl_comments(uid, date, message,picture_id) 
+       $sql = "insert into tbl_comments(uid, date, message,picture_id) 
                 VALUES ('$uid', '$date', '$message','$pic_id')"; // insert comment information into the tbl_comments table
-            $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
-        }
+        $result = $link->query($sql); // variable to store connection to use query on sql variable about with insert statement above
     }
 }
 
@@ -44,8 +39,8 @@ function retrieveComments($link) { // to retrieve comments from the database, li
     $result = $link->query($sql); // variable to store connection to use query on sql variable about with select statement above
     while ( $row = $result->fetch_assoc()) { // loop through all messages to display all until none left
         echo "<div class='panel-primary'><p>";
-           echo $row['uid']."<br>"; // display user who posted comment
-           echo $row['date']."<br>"; // display date of when comment posted
+            echo $row['uid']."<br>"; // display user who posted comment
+            echo $row['date']."<br>"; // display date of when comment posted
             echo nl2br($row['message']); // specify what you want to be displayed on page, nl2br to create line breaks in messages
         echo "</p>
             <form class='form-group' method='post' action='".deletePosts($link)."'>
@@ -61,6 +56,7 @@ function retrieveComments($link) { // to retrieve comments from the database, li
 
 function deletePosts($link) {
     if (isset($_POST['deletePost'])) { // unless delete button is pressed shouldn't run code below
+        $pic_id = trim($_POST['pic_id']);
         $cid = $_POST['cid'];
 
         $sql = "delete from tbl_comments where cid='$cid' and uid= '". $_SESSION['username'] ."'";
