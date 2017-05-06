@@ -18,7 +18,7 @@ if ($_SERVER['request_method'] === 'get') {
 <?
 } elseif ($_SERVER['request_method'] === 'post') {
 
-    $forname = $_POST["forename"];
+    $forename = $_POST["forename"];
     $surname= $_POST["surname"];
-    echo "Hello {$forname}{$surname}";
+    echo "Hello {$forename}{$surname}";
 }
